@@ -80,10 +80,16 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
+size = Vector2(16.5, 13)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 size = Vector2(14, 27)
 
 [node name="Player" type="CharacterBody2D" unique_id=466900491 node_paths=PackedStringArray("animation")]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 96
 script = ExtResource("1_dovo2")
 animation = NodePath("AnimatedSprite2D")
 
@@ -92,10 +98,19 @@ sprite_frames = SubResource("SpriteFrames_je7p5")
 animation = &"run"
 frame_progress = 0.8600119
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392449761]
+[node name="CollisionShapeSolids" type="CollisionShape2D" parent="." unique_id=96508844]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_gmlin")
+
+[node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=1060278804]
+collision_mask = 0
+
+[node name="CollisionShapeDamage" type="CollisionShape2D" parent="CollisionDamage" unique_id=1392449761]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_fm80t")
 
 [node name="Gun" parent="." unique_id=76791056 instance=ExtResource("3_gmlin")]
-z_index = 2
 position = Vector2(0, 3)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1176107097]
+zoom = Vector2(2, 2)

@@ -1,19 +1,20 @@
 class_name  Bullet
-extends Node2D
+extends Area2D
 
-@export var area: Area2D
-
+var damage: int = 5
 var velocity: Vector2
+var knockback: float = 0.5
 
+# Called when ready
 func _ready():
-	area.body_entered.connect(_on_collision)
+	body_entered.connect(_on_collision)
 
+# Called every tick
 func _physics_process(delta):
 	position += velocity * delta
 
+# Called when a collision is detected
 func _on_collision(body):
-	print(body)
-	if body.is_in_group("mobs"):
-		# TODO: do damage
-		print("hit")
+	if body.get_parent().is_in_group("mobs"):
+		body.get_parent().take_hit(damage, velocity * knockback)
 	queue_free()

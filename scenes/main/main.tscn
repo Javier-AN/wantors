@@ -5,16 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/player/player.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/enemy/enemy.tscn" id="4_l3cfh"]
 
-[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("player", "camera")]
+[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("player")]
+y_sort_enabled = true
 script = ExtResource("1_k2fmo")
 player = NodePath("Player")
-camera = NodePath("Camera2D")
 
 [node name="Level1" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2057411606]
-zoom = Vector2(2, 2)
+position = Vector2(-84, 57)
 
 [node name="Enemy" parent="." unique_id=1937514818 instance=ExtResource("4_l3cfh")]
+position = Vector2(79, -110)
+
+[node name="Enemy2" parent="." unique_id=72088761 instance=ExtResource("4_l3cfh")]
+position = Vector2(266, -22)
+
+[node name="Enemy3" parent="." unique_id=1247877080 instance=ExtResource("4_l3cfh")]
+position = Vector2(259, -130)

@@ -1,25 +1,22 @@
 [gd_scene format=3 uid="uid://fwdlo1243wrf"]
 
 [ext_resource type="Script" uid="uid://cspq15d5dtdpu" path="res://scenes/bullet/bullet.gd" id="1_83itf"]
-[ext_resource type="Texture2D" uid="uid://bur7m7tuuelni" path="res://scenes/bullet/bullet_texture.tres" id="2_83itf"]
+[ext_resource type="Texture2D" uid="uid://bur7m7tuuelni" path="res://textures/bullet_texture.tres" id="2_83itf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83itf"]
 size = Vector2(7.9999995, 9.523809)
 
-[node name="Bullet" type="Node2D" unique_id=27361999 node_paths=PackedStringArray("area")]
+[node name="Bullet" type="Area2D" unique_id=1773121449]
 z_index = 1
+collision_layer = 0
+collision_mask = 32
 script = ExtResource("1_83itf")
-area = NodePath("Area2D")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=778176258]
-collision_layer = 8
-collision_mask = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1641579673]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641579673]
 position = Vector2(-2, 0)
 texture = ExtResource("2_83itf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=955630396]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955630396]
 rotation = -1.5707963
 scale = Vector2(0.5, -0.42)
 shape = SubResource("RectangleShape2D_83itf")

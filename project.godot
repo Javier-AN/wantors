@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PositionController="*uid://0pk52jh70y27"
+Utils="*uid://bf23jhcljbyj1"
+Constants="*uid://4xer0j3vvpxr"
 
 [display]
 
@@ -82,6 +84,7 @@ move_down={
 2d_physics/layer_4="DmgEnemies"
 2d_physics/layer_5="Item"
 2d_physics/layer_6="Solid"
+2d_physics/layer_7="LowSolid"
 
 [physics]
 
@@ -94,4 +97,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.7882353, 0.74509805, 0.74509805, 1)
+environment/defaults/default_clear_color=Color(0.70980394, 0.72156864, 0.65882355, 1)
