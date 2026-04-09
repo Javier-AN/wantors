@@ -61,6 +61,7 @@ func _on_attack_finished():
 # Lowers health
 func take_hit(damage: int, push := Vector2.ZERO):
 	if not _dead:
+		_active = true
 		health -= damage
 		if health > 0:
 			_knockback(push)

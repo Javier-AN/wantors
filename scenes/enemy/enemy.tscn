@@ -165,7 +165,7 @@ sprite_frames = SubResource("SpriteFrames_40wdo")
 animation = &"damage"
 
 [node name="CollisionShapeSolids" type="CollisionShape2D" parent="." unique_id=1021458062]
-position = Vector2(0, 9.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4a83h")
 
 [node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=105531692]
