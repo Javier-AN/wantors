@@ -1,34 +1,51 @@
 class_name Spawner
 extends Node2D
 
+# Signals
+signal mob_cap_reached
+signal enemies_cleared
+
+# Nodes
+@export var marker: Marker2D
 @export var enemies: Array[PackedScene]
+
+# Exported variables
 @export var min_distance: float = 200.0
 @export var max_distance: float = 300.0
-@export var mob_cap: int = 100
+@export var mob_cap: int = 50
 @export var max_attemps: int = 10
 
+# Private variables
 var _mob_count: int = 0
+var _mob_cap_reached: bool = false
+var _alive_enemies: int = 0
 
 # Called when ready
 func _ready() -> void:
-	global_position = PositionController.player_position
+	marker.global_position = PositionController.player_position
 	PositionController.position_updated.connect(_update_position)
 
 # Updates node position
 func _update_position(player_position: Vector2) -> void:
-	global_position = player_position
+	marker.global_position = player_position
 
-func reset_mob_count() -> void:
+func reset_mob_count(new_cap: int = 0) -> void:
 	_mob_count = 0
+	_mob_cap_reached = false
+	if new_cap > 0:
+		mob_cap = new_cap
 
 # Spawns a group of enemies
 func spawn_enemies(amount: int, upgrade_chance: float = 0.0) -> void:
 	for i in range(amount):
 		if _mob_count >= mob_cap:
+			_mob_cap_reached = true
+			mob_cap_reached.emit()
 			return
 		var enemy_type := _upgrade(0, upgrade_chance)
 		if spawn_enemy(enemy_type):
 			_mob_count += 1
+			_alive_enemies += 1
 
 # Has a chance to upgrade the enemy type
 func _upgrade(enemy_type: int, upgrade_chance: float = 0.0) -> int:
@@ -36,7 +53,7 @@ func _upgrade(enemy_type: int, upgrade_chance: float = 0.0) -> int:
 	if enemy_type == enemies.size() - 1:
 		return enemy_type
 	# Chance for upgrade
-	if randf_range(0, 2) < upgrade_chance:
+	if randf_range(0, 1) < upgrade_chance:
 		return _upgrade(enemy_type + 1, upgrade_chance)
 	# No upgrade
 	return enemy_type
@@ -49,9 +66,10 @@ func spawn_enemy(enemy_type: int = 0) -> bool:
 	if enemy_position.length() == 0:
 		return false
 	# If it success, creates an enemy of the given type in the position and returns true
-	var new_enemy := enemies[enemy_type].instantiate()
-	new_enemy.global_position = enemy_position + global_position
-	get_parent().add_child(new_enemy)
+	var new_enemy: Enemy = enemies[enemy_type].instantiate()
+	new_enemy.global_position = enemy_position
+	new_enemy.died.connect(_enemy_died)
+	add_child(new_enemy)
 	return true
 
 # Tries to find a valid random spawn position
@@ -59,7 +77,8 @@ func _new_spawn_position() -> Vector2:
 	for i in range(0, max_attemps):
 		var angle := randf_range(0.0, 2*PI)
 		var length := randf_range(min_distance, max_distance)
-		var new_pos := Vector2.from_angle(angle).normalized() * length
+		var new_pos := marker.global_position
+		new_pos += Vector2.from_angle(angle).normalized() * length
 		if _is_valid_spawn_area(new_pos):
 			return new_pos
 	return Vector2.ZERO
@@ -71,7 +90,7 @@ func _is_valid_spawn_area(location: Vector2) -> bool:
 	raycast.position = location
 	for i in range(1, 8):
 		raycast.set_collision_mask_value(i, false)
-	raycast.set_collision_mask_value(8, true)
+	raycast.set_collision_mask_value(4, true)
 	raycast.hit_from_inside = true
 	raycast.target_position = Vector2.UP.normalized()
 	# Add it to the tree
@@ -82,3 +101,9 @@ func _is_valid_spawn_area(location: Vector2) -> bool:
 	# Destroy raycast
 	raycast.queue_free()
 	return valid
+
+# Called when an enemy dies
+func _enemy_died():
+	_alive_enemies -= 1
+	if _mob_cap_reached and _alive_enemies <= 0:
+		enemies_cleared.emit()

@@ -1,14 +1,16 @@
 class_name Gun
 extends Node2D
 
+# Nodes
 @export var muzzle: Marker2D
 @export var bullet : PackedScene
 
-var bullet_speed: float = 250.0
-var shooting_cooldown: float = 0.1
-var bullet_type: int = 4
-var bullet_target: int = 2
+# Exported variables
+@export var bullet_speed: float = 250.0
+@export var shooting_cooldown: float = 0.1
+@export var bullet_targets: Array[int] = [2]
 
+# Private variables
 var _direction: Vector2
 var _time_since_shoot: float
 
@@ -44,6 +46,6 @@ func _generate_bullet():
 	b.velocity *= bullet_speed
 	# The velocity is relative to its origin
 	b.velocity += owner.velocity
-	b.set_collision_layer_value(bullet_type, true)
-	b.set_collision_mask_value(bullet_target, true)
+	for target in bullet_targets:
+		b.set_collision_mask_value(target, true)
 	owner.owner.add_child(b)

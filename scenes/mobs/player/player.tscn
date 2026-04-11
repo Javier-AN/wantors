@@ -108,8 +108,8 @@ position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_gmlin")
 
 [node name="SoftCollision" type="Area2D" parent="." unique_id=1778716289]
-collision_layer = 256
-collision_mask = 256
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("3_lvxji")
 metadata/_custom_type_script = "uid://bycill6nappa"
 

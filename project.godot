@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PositionController="*uid://0pk52jh70y27"
 Utils="*uid://bf23jhcljbyj1"
 Constants="*uid://4xer0j3vvpxr"
+StatsController="*uid://bbqwv4beh50jq"
 
 [display]
 
@@ -80,13 +81,12 @@ move_down={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
-2d_physics/layer_3="DmgPlayer"
-2d_physics/layer_4="DmgEnemy"
+2d_physics/layer_3="Damage"
+2d_physics/layer_4="SpawnAreas"
 2d_physics/layer_5="Item"
 2d_physics/layer_6="LowSolid"
 2d_physics/layer_7="HighSolid"
-2d_physics/layer_8="SpawnArea"
-2d_physics/layer_9="SoftCollision"
+2d_physics/layer_8="SoftCollision"
 
 [physics]
 

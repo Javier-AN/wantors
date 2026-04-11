@@ -1,21 +1,27 @@
 [gd_scene format=3 uid="uid://bsj3y0f5xfi4w"]
 
-[ext_resource type="PackedScene" uid="uid://uxbhdggbb6r3" path="res://scenes/levels/level_1.tscn" id="1_iuonh"]
+[ext_resource type="PackedScene" uid="uid://uxbhdggbb6r3" path="res://scenes/sites/site_0.tscn" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://1qca362spwiq" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/mobs/player/player.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://pw5pgilouk8g" path="res://scenes/camera/camera.tscn" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/spawner/spawner.tscn" id="5_ow5a4"]
 
-[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("spawner")]
+[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("timer", "spawner")]
 y_sort_enabled = true
 script = ExtResource("1_k2fmo")
+timer = NodePath("Timer")
 spawner = NodePath("Spawner")
 
-[node name="Level1" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
+[node name="Timer" type="Timer" parent="." unique_id=1176805290]
+wait_time = 3.0
+autostart = true
 
-[node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
-position = Vector2(-84, 57)
+[node name="Site0" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
 
 [node name="Camera" parent="." unique_id=2127462412 instance=ExtResource("5_6q06x")]
 
 [node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]
+min_distance = 250.0
+
+[node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
+position = Vector2(-84, 57)

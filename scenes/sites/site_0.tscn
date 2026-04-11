@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cv74q76ak7f5u" path="res://textures/dungeon_tile_set.tres" id="1_ksju7"]
 
-[node name="Level1" type="Node2D" unique_id=1194568141]
+[node name="Site0" type="Node2D" unique_id=1194568141]
 y_sort_enabled = true
 scale = Vector2(2, 2)
 

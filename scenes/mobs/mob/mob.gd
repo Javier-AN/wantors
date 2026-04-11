@@ -1,17 +1,23 @@
 class_name Mob
 extends CharacterBody2D
 
-# Exports
+# Signals
+signal died
+
+# Nodes
 @export var animation: AnimatedSprite2D
 @export var soft_collision: SoftCollision
 
+# Exported variables
 @export var max_health: int = 20
 @export var speed: float = 120.0
 @export var damage_effect_time: float = 0.2
 @export var soft_collision_weight: float = 1.0
 
+# Public variables
+var health: int
+
 # Private variables
-var _health: int
 var _direction: Vector2 = Vector2.ZERO
 var _dead: bool = false
 var _timers: Dictionary = {}
@@ -19,7 +25,7 @@ var _timers: Dictionary = {}
 # Called when ready
 func _ready() -> void:
 	add_to_group("mobs")
-	_health = max_health
+	health = max_health
 
 # Called every tick
 func _physics_process(delta: float) -> void:
@@ -29,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	move_and_slide()
 
+# Updates the timers
 func _update_timers(delta):
 	for key in _timers:
 		_timers[key] += delta
@@ -50,8 +57,8 @@ func _update_animation():
 # Lowers health
 func take_hit(damage: int, push := Vector2.ZERO):
 	if not _dead:
-		_health -= damage
-		if _health > 0:
+		health -= damage
+		if health > 0:
 			_damage_effect(damage, push)
 		else:
 			_die()
@@ -65,3 +72,4 @@ func _damage_effect(_damage: int, _push := Vector2.ZERO):
 # Called when health reaches zero
 func _die():
 	_dead = true
+	died.emit()

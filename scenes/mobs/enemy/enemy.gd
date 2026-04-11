@@ -1,12 +1,16 @@
 class_name Enemy
 extends Mob
 
+# Nodes
 @export var sword: Area2D
 @export var detection_area: Area2D
+
+# Exported variables
 @export var attack_distance: float = 28.0
 @export var knockback_factor: float = 1
 
-var _active: bool = false
+# Private variables
+var _active: bool = true
 var _knockbacking: bool = false
 var _attacking: float = false
 var _tween: Tween
@@ -80,7 +84,7 @@ func _end_knockback():
 
 # Kills the enemy
 func _die():
-	_dead = true
+	super()
 	velocity = Vector2.ZERO
 	modulate = Constants.DAMAGE_COLOR
 	animation.play("die")

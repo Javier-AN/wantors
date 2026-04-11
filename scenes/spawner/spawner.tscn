@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dky3w4ribbshy" path="res://scenes/spawner/spawner.gd" id="1_eoeca"]
 [ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/mobs/enemy/enemy.tscn" id="2_wtxcb"]
+[ext_resource type="PackedScene" uid="uid://dd4xiolpr1jfe" path="res://scenes/mobs/big_enemy/big_enemy.tscn" id="3_uhn3r"]
 
-[node name="Spawner" type="Node2D" unique_id=1875293389]
+[node name="Spawner" type="Node2D" unique_id=1875293389 node_paths=PackedStringArray("marker")]
+y_sort_enabled = true
 script = ExtResource("1_eoeca")
-enemies = Array[PackedScene]([ExtResource("2_wtxcb")])
+marker = NodePath("Marker2D")
+enemies = Array[PackedScene]([ExtResource("2_wtxcb"), ExtResource("3_uhn3r")])
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1647003000]
