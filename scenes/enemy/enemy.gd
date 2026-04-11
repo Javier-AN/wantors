@@ -1,52 +1,47 @@
 class_name Enemy
-extends CharacterBody2D
+extends Mob
 
-@export var animation: AnimatedSprite2D
 @export var sword: Area2D
-
-var detection_distance: float = 150.0
-var attack_distance: float = 28.0
-var speed: float = 50.0
-var health: int = 25
-var knockback: float = 0.2
-var knockback_time = 0.2
+@export var detection_distance: float = 150.0
+@export var attack_distance: float = 28.0
+@export var knockback_factor: float = 1
 
 var _active: bool
 var _knockbacking: bool
-var _dead: bool
 var _attacking: float
 var _tween: Tween
 
 # Called when ready
 func _ready() -> void:
-	add_to_group("mobs")
+	super()
+	speed = 100.0
 	sword.attack_finished.connect(_on_attack_finished)
 
 # Called every tick
-func _physics_process(_delta: float) -> void:
-	if not (_dead or _knockbacking or _attacking):
-		_update_state()
-		_update_animation()
-	move_and_slide()
+func _physics_process(delta: float) -> void:
+	if _dead or _knockbacking or _attacking:
+		move_and_slide()
+	else:
+		super(delta)
 
-# Checks values and updates properties accordingly
-func _update_state():
+# Updates the direction vector
+func _update_direction():
 	var distance: Vector2 = PositionController.player_position - position
 	if _active:
+		sword.rotation = distance.angle() - PI
 		if distance.length() < attack_distance:
-			velocity = Vector2.ZERO
+			_direction = Vector2.ZERO
 			_attack()
 		else:
-			velocity = distance.normalized() * speed
-			sword.rotation = distance.angle() - PI
+			_direction = distance.normalized()
 	elif distance.length() < detection_distance:
 		_active = true
 
-# Changes the animation depending on the current state
+# Updates the sprite animation
 func _update_animation():
-	if velocity.length() > 0:
+	if _direction.length() > 0:
 		animation.play("run")
-		animation.flip_h = velocity.x < 0
+		animation.flip_h = _direction.x < 0
 	else:
 		animation.play("idle")
 
@@ -60,27 +55,23 @@ func _on_attack_finished():
 
 # Lowers health
 func take_hit(damage: int, push := Vector2.ZERO):
+	super(damage, push)
 	if not _dead:
 		_active = true
-		health -= damage
-		if health > 0:
-			_knockback(push)
-		else:
-			_die()
 
-# Shows damage effects
-func _knockback(push := Vector2.ZERO):
+# Performs damage effects
+func _damage_effect(_damage: int, push := Vector2.ZERO):
 	# Start effects
 	_knockbacking = true
-	animation.play("damage")
-	velocity = push * knockback
+	animation.play("idle")
+	velocity = push * knockback_factor
 	modulate = Constants.DAMAGE_COLOR
 	# End effects
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_property(self, "velocity", Vector2.ZERO, knockback_time)
-	_tween.tween_property(self, "modulate", Color.WHITE, knockback_time)
+	_tween.tween_property(self, "velocity", Vector2.ZERO, damage_effect_time)
+	_tween.tween_property(self, "modulate", Color.WHITE, damage_effect_time)
 	_tween.finished.connect(_end_knockback)
 
 func _end_knockback():

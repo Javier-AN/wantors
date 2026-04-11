@@ -152,20 +152,21 @@ size = Vector2(17, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wdo"]
 size = Vector2(17, 27)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=72088761 node_paths=PackedStringArray("animation", "sword")]
+[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sword", "animation")]
 y_sort_enabled = true
-collision_layer = 0
-collision_mask = 96
+collision_layer = 2
+collision_mask = 32
 script = ExtResource("1_a3pup")
-animation = NodePath("AnimatedSprite2D")
 sword = NodePath("Sword")
+animation = NodePath("AnimatedSprite2D")
+metadata/_custom_type_script = "uid://diqyn12j2tj3u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1814592448]
 sprite_frames = SubResource("SpriteFrames_40wdo")
 animation = &"damage"
 
 [node name="CollisionShapeSolids" type="CollisionShape2D" parent="." unique_id=1021458062]
-position = Vector2(0, -0.5)
+position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_4a83h")
 
 [node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=105531692]

@@ -3,26 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://uxbhdggbb6r3" path="res://scenes/levels/level_1.tscn" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://1qca362spwiq" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/player/player.tscn" id="2_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/enemy/enemy.tscn" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://pw5pgilouk8g" path="res://scenes/camera/camera.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/spawner/spawner.tscn" id="5_ow5a4"]
 
-[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("player")]
+[node name="Main" type="Node2D" unique_id=227915554 node_paths=PackedStringArray("spawner")]
 y_sort_enabled = true
 script = ExtResource("1_k2fmo")
-player = NodePath("Player")
+spawner = NodePath("Spawner")
 
 [node name="Level1" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
 position = Vector2(-84, 57)
 
-[node name="Enemy" parent="." unique_id=1937514818 instance=ExtResource("4_l3cfh")]
-position = Vector2(79, -110)
-
-[node name="Enemy2" parent="." unique_id=72088761 instance=ExtResource("4_l3cfh")]
-position = Vector2(266, -22)
-
-[node name="Enemy3" parent="." unique_id=1247877080 instance=ExtResource("4_l3cfh")]
-position = Vector2(259, -130)
-
 [node name="Camera" parent="." unique_id=2127462412 instance=ExtResource("5_6q06x")]
+
+[node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]

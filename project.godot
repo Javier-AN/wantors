@@ -79,12 +79,14 @@ move_down={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Enemies"
+2d_physics/layer_2="Enemy"
 2d_physics/layer_3="DmgPlayer"
-2d_physics/layer_4="DmgEnemies"
+2d_physics/layer_4="DmgEnemy"
 2d_physics/layer_5="Item"
-2d_physics/layer_6="Solid"
-2d_physics/layer_7="LowSolid"
+2d_physics/layer_6="LowSolid"
+2d_physics/layer_7="HighSolid"
+2d_physics/layer_8="SpawnArea"
+2d_physics/layer_9="SoftCollision"
 
 [physics]
 
