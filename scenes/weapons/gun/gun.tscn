@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c7ydp6uwgtdl8"]
 
 [ext_resource type="Texture2D" uid="uid://gvtsa1oxgndg" path="res://assets/images/gun.png" id="1_csbbp"]
-[ext_resource type="Script" uid="uid://c5vhqaxqre2aa" path="res://scenes/gun/gun.gd" id="1_fjnj2"]
-[ext_resource type="PackedScene" uid="uid://fwdlo1243wrf" path="res://scenes/bullet/bullet.tscn" id="2_eo2c1"]
+[ext_resource type="Script" uid="uid://c5vhqaxqre2aa" path="res://scenes/weapons/gun/gun.gd" id="1_fjnj2"]
+[ext_resource type="PackedScene" uid="uid://fwdlo1243wrf" path="res://scenes/weapons/bullet/bullet.tscn" id="2_eo2c1"]
 
 [node name="Gun" type="Node2D" unique_id=76791056 node_paths=PackedStringArray("muzzle")]
 y_sort_enabled = true

@@ -5,7 +5,7 @@ extends Node2D
 @export var bullet : PackedScene
 
 var bullet_speed: float = 250.0
-var shooting_cooldown: float = 0.5
+var shooting_cooldown: float = 0.1
 var bullet_type: int = 4
 var bullet_target: int = 2
 

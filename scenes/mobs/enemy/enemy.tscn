@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dkn134rp78x32"]
 
-[ext_resource type="Script" uid="uid://c4bnfhi5b4aor" path="res://scenes/enemy/enemy.gd" id="1_a3pup"]
+[ext_resource type="Script" uid="uid://c4bnfhi5b4aor" path="res://scenes/mobs/enemy/enemy.gd" id="1_a3pup"]
 [ext_resource type="Texture2D" uid="uid://li2kos36vmma" path="res://assets/images/enemy.png" id="2_a3pup"]
-[ext_resource type="PackedScene" uid="uid://b68rb1qah4qt6" path="res://scenes/sword/sword.tscn" id="3_40wdo"]
+[ext_resource type="PackedScene" uid="uid://b68rb1qah4qt6" path="res://scenes/weapons/sword/sword.tscn" id="3_40wdo"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/collisions/soft_collision/soft_collision.gd" id="3_tjssy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40wdo"]
 atlas = ExtResource("2_a3pup")
@@ -152,13 +153,20 @@ size = Vector2(17, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wdo"]
 size = Vector2(17, 27)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sword", "animation")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0tjr"]
+radius = 150.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sword", "detection_area", "animation", "soft_collision")]
 y_sort_enabled = true
-collision_layer = 2
+collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_a3pup")
 sword = NodePath("Sword")
+detection_area = NodePath("DetectionArea")
 animation = NodePath("AnimatedSprite2D")
+soft_collision = NodePath("SoftCollision")
+max_health = 10
+speed = 100.0
 metadata/_custom_type_script = "uid://diqyn12j2tj3u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1814592448]
@@ -169,6 +177,15 @@ animation = &"damage"
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_4a83h")
 
+[node name="SoftCollision" type="Area2D" parent="." unique_id=1991094395]
+position = Vector2(0.5, 9.5)
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("3_tjssy")
+
+[node name="CollisionShapeSoft" type="CollisionShape2D" parent="SoftCollision" unique_id=897512578]
+shape = SubResource("RectangleShape2D_4a83h")
+
 [node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=105531692]
 position = Vector2(0, 0.5)
 collision_layer = 2
@@ -177,6 +194,12 @@ collision_mask = 0
 [node name="CollisionShapeDamage" type="CollisionShape2D" parent="CollisionDamage" unique_id=1156815274]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_40wdo")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1839905109]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=119715075]
+shape = SubResource("CircleShape2D_t0tjr")
 
 [node name="Sword" parent="." unique_id=416846413 instance=ExtResource("3_40wdo")]
 rotation = 1.1205014

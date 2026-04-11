@@ -4,10 +4,9 @@ extends Area2D
 signal attack_finished
 
 @export var sprite: Sprite2D
-
-var damage: int = 5
-var attack_cooldown: float = 0.6
-var attack_time: float = 0.4
+@export var damage: int = 5
+@export var attack_cooldown: float = 0.6
+@export var attack_time: float = 0.4
 
 # Called when ready
 func _ready():

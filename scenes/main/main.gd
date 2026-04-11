@@ -11,4 +11,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		spawner.spawn_enemies(10)
+		spawner.reset_mob_count()
+		spawner.spawn_enemies(100, 0.0)

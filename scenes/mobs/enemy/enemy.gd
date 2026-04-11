@@ -2,20 +2,23 @@ class_name Enemy
 extends Mob
 
 @export var sword: Area2D
-@export var detection_distance: float = 150.0
+@export var detection_area: Area2D
 @export var attack_distance: float = 28.0
 @export var knockback_factor: float = 1
 
-var _active: bool
-var _knockbacking: bool
-var _attacking: float
+var _active: bool = false
+var _knockbacking: bool = false
+var _attacking: float = false
 var _tween: Tween
 
 # Called when ready
 func _ready() -> void:
 	super()
-	speed = 100.0
+	detection_area.body_entered.connect(_activate)
 	sword.attack_finished.connect(_on_attack_finished)
+
+func _activate(_body: Node2D) -> void:
+	_active = true
 
 # Called every tick
 func _physics_process(delta: float) -> void:
@@ -26,16 +29,14 @@ func _physics_process(delta: float) -> void:
 
 # Updates the direction vector
 func _update_direction():
-	var distance: Vector2 = PositionController.player_position - position
 	if _active:
+		var distance := PositionController.player_position - position
 		sword.rotation = distance.angle() - PI
 		if distance.length() < attack_distance:
 			_direction = Vector2.ZERO
 			_attack()
 		else:
 			_direction = distance.normalized()
-	elif distance.length() < detection_distance:
-		_active = true
 
 # Updates the sprite animation
 func _update_animation():

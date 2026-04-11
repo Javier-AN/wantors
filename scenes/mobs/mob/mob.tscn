@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8v33kuv7q6np"]
 
-[ext_resource type="Script" uid="uid://diqyn12j2tj3u" path="res://scenes/mob/mob.gd" id="1_a071u"]
+[ext_resource type="Script" uid="uid://diqyn12j2tj3u" path="res://scenes/mobs/mob/mob.gd" id="1_a071u"]
 
 [node name="Mob" type="CharacterBody2D" unique_id=1293143134]
 collision_layer = 0

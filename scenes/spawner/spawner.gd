@@ -1,11 +1,13 @@
 class_name Spawner
 extends Node2D
 
-@export var enemy: PackedScene
+@export var enemies: Array[PackedScene]
 @export var min_distance: float = 200.0
 @export var max_distance: float = 300.0
+@export var mob_cap: int = 100
+@export var max_attemps: int = 10
 
-var max_attemps: int = 10
+var _mob_count: int = 0
 
 # Called when ready
 func _ready() -> void:
@@ -16,41 +18,54 @@ func _ready() -> void:
 func _update_position(player_position: Vector2) -> void:
 	global_position = player_position
 
+func reset_mob_count() -> void:
+	_mob_count = 0
+
 # Spawns a group of enemies
-func spawn_enemies(generation_points: int) -> void:
-	while generation_points > 0:
-		var enemy_points := upgrade_chance(1, generation_points)
-		generation_points -= enemy_points
-		spawn_enemy(enemy_points)
+func spawn_enemies(amount: int, upgrade_chance: float = 0.0) -> void:
+	for i in range(amount):
+		if _mob_count >= mob_cap:
+			return
+		var enemy_type := _upgrade(0, upgrade_chance)
+		if spawn_enemy(enemy_type):
+			_mob_count += 1
 
-# Has a chance to upgrade the enemy value
-func upgrade_chance(enemy_points: int, level_points: int) -> int:
-	if randi_range(0, 100) < level_points:
-		return upgrade_chance(enemy_points + 1, level_points)
-	return enemy_points
+# Has a chance to upgrade the enemy type
+func _upgrade(enemy_type: int, upgrade_chance: float = 0.0) -> int:
+	# Check if max upgrade reached
+	if enemy_type == enemies.size() - 1:
+		return enemy_type
+	# Chance for upgrade
+	if randf_range(0, 2) < upgrade_chance:
+		return _upgrade(enemy_type + 1, upgrade_chance)
+	# No upgrade
+	return enemy_type
 
-# Spawns a single enemy of the given value in a random position
-func spawn_enemy(enemy_points: int) -> bool:
-	var enemy_position := new_spawn_position()
+# Spawns a single enemy independent to the mob cap
+func spawn_enemy(enemy_type: int = 0) -> bool:
+	# Tries to find a new spawn position near the player
+	var enemy_position := _new_spawn_position()
+	# If it fails, it returns false
 	if enemy_position.length() == 0:
 		return false
-	var new_enemy := enemy.instantiate()
-	new_enemy.global_position = enemy_position
-	# TODO: enemy points stablish the type of enemy to spawn 
-	new_enemy.health = enemy_points * 5
+	# If it success, creates an enemy of the given type in the position and returns true
+	var new_enemy := enemies[enemy_type].instantiate()
+	new_enemy.global_position = enemy_position + global_position
 	get_parent().add_child(new_enemy)
 	return true
 
-func new_spawn_position() -> Vector2:
+# Tries to find a valid random spawn position
+func _new_spawn_position() -> Vector2:
 	for i in range(0, max_attemps):
 		var angle := randf_range(0.0, 2*PI)
 		var length := randf_range(min_distance, max_distance)
 		var new_pos := Vector2.from_angle(angle).normalized() * length
-		if is_valid_spawn_area(new_pos):
-			return new_pos + global_position
+		if _is_valid_spawn_area(new_pos):
+			return new_pos
 	return Vector2.ZERO
 
-func is_valid_spawn_area(location: Vector2) -> bool:
+# Checks wether the given location is in a valid spawn area
+func _is_valid_spawn_area(location: Vector2) -> bool:
 	# Create a raycast in the given location
 	var raycast := RayCast2D.new()
 	raycast.position = location

@@ -8,7 +8,6 @@ var _facing: float
 # Called when ready
 func _ready() -> void:
 	super()
-	health = 100000
 	_timers["last_hit"] = 0.0
 	PositionController.update_position(global_position)
 
