@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ditgfur0bq1hb"]
 
 [ext_resource type="Texture2D" uid="uid://cwe1py1i72efq" path="res://assets/images/player.png" id="1_8afob"]
-[ext_resource type="Script" uid="uid://bou6d8xgklpvg" path="res://scenes/mobs/player/player.gd" id="1_dovo2"]
-[ext_resource type="PackedScene" uid="uid://c7ydp6uwgtdl8" path="res://scenes/weapons/gun/gun.tscn" id="3_gmlin"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/collisions/soft_collision/soft_collision.gd" id="3_lvxji"]
+[ext_resource type="Script" uid="uid://bou6d8xgklpvg" path="res://scenes/game/mobs/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://c7ydp6uwgtdl8" path="res://scenes/game/weapons/gun/gun.tscn" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/game/collisions/soft_collision/soft_collision.gd" id="3_lvxji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -97,7 +97,6 @@ animation = NodePath("AnimatedSprite2D")
 soft_collision = NodePath("SoftCollision")
 max_health = 1000
 damage_effect_time = 0.6
-metadata/_custom_type_script = "uid://diqyn12j2tj3u"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=476568386]
 sprite_frames = SubResource("SpriteFrames_je7p5")

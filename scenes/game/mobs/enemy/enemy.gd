@@ -21,6 +21,7 @@ func _ready() -> void:
 	detection_area.body_entered.connect(_activate)
 	sword.attack_finished.connect(_on_attack_finished)
 
+# Puts the enemy in active state
 func _activate(_body: Node2D) -> void:
 	_active = true
 
@@ -55,17 +56,18 @@ func _attack():
 	_attacking = true
 	sword.attack()
 
+# Called when the sword attack finishes
 func _on_attack_finished():
 	_attacking = false
 
-# Lowers health
+# Manages a received hit
 func take_hit(damage: int, push := Vector2.ZERO):
 	super(damage, push)
 	if not _dead:
 		_active = true
 
-# Performs damage effects
-func _damage_effect(_damage: int, push := Vector2.ZERO):
+# Performs damage effects such as knockbacking or showing visual clues
+func _do_damage_effects(_damage: int, push := Vector2.ZERO):
 	# Start effects
 	_knockbacking = true
 	animation.play("idle")
@@ -79,6 +81,7 @@ func _damage_effect(_damage: int, push := Vector2.ZERO):
 	_tween.tween_property(self, "modulate", Color.WHITE, damage_effect_time)
 	_tween.finished.connect(_end_knockback)
 
+# Puts the enemy in not-knockbaking state
 func _end_knockback():
 	_knockbacking = false
 

@@ -1,9 +1,9 @@
 class_name  Bullet
 extends Area2D
 
-var damage: int = 5
+var damage: int
 var velocity: Vector2
-var knockback_factor: float = 0.1
+var knockback_factor: float
 
 # Called when ready
 func _ready():

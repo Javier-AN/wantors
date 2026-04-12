@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://3r656dep7u22"]
 
-[ext_resource type="Script" uid="uid://dky3w4ribbshy" path="res://scenes/spawner/spawner.gd" id="1_eoeca"]
-[ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/mobs/enemy/enemy.tscn" id="2_wtxcb"]
-[ext_resource type="PackedScene" uid="uid://dd4xiolpr1jfe" path="res://scenes/mobs/big_enemy/big_enemy.tscn" id="3_uhn3r"]
+[ext_resource type="Script" uid="uid://dky3w4ribbshy" path="res://scenes/game/spawner/spawner.gd" id="1_eoeca"]
+[ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/game/mobs/enemy/enemy.tscn" id="2_wtxcb"]
+[ext_resource type="PackedScene" uid="uid://dd4xiolpr1jfe" path="res://scenes/game/mobs/big_enemy/big_enemy.tscn" id="3_uhn3r"]
 
 [node name="Spawner" type="Node2D" unique_id=1875293389 node_paths=PackedStringArray("marker")]
 y_sort_enabled = true
