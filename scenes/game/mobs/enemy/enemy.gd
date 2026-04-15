@@ -3,6 +3,7 @@ extends Mob
 
 # Nodes
 @export var sword: Area2D
+@export var damage_body: StaticBody2D
 @export var detection_area: Area2D
 
 # Exported variables
@@ -88,7 +89,11 @@ func _end_knockback():
 # Kills the enemy
 func _die():
 	super()
+	# First disable collisions
+	damage_body.queue_free()
+	# Then animate
 	velocity = Vector2.ZERO
 	modulate = Constants.DAMAGE_COLOR
 	animation.play("die")
+	# Finally erase
 	animation.animation_finished.connect(queue_free)
