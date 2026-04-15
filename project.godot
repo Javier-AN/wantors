@@ -21,6 +21,7 @@ PositionController="*uid://0pk52jh70y27"
 Utils="*uid://bf23jhcljbyj1"
 Constants="*uid://4xer0j3vvpxr"
 StatsController="*uid://bbqwv4beh50jq"
+StatsClass="*uid://cud877s40jd6t"
 
 [display]
 

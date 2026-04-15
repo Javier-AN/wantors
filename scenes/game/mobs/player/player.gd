@@ -18,23 +18,26 @@ func _ready() -> void:
 	StatsController.player_health_must_update.connect(_update_health)
 
 # Updates stat values
-func _update_stats(new_speed: float, new_damage_effect_time: float) -> void:
-	speed = new_speed
-	damage_effect_time = new_damage_effect_time
+func _update_stats(stats: StatsClass.MobStats) -> void:
+	speed = stats.speed
+	damage_effect_time = stats.damage_effect_time
+	max_health = stats.max_health
 	_global_update_stats()
+	_update_health(health)
 
 # Updates health
-func _update_health(new_health: int = health, new_max_health: int = max_health):
-	super(new_health, new_max_health)
+func _update_health(new_health: int):
+	super(new_health)
 	_global_update_health()
 
 # Tells global controller values were changed
 func _global_update_stats():
-	StatsController.update_player_stats(speed, damage_effect_time)
+	var stats := StatsClass.MobStats.new(speed, damage_effect_time, max_health)
+	StatsController.update_player_stats(stats)
 
 # Tells global controller value was changed
 func _global_update_health():
-	StatsController.update_player_health(health, max_health)
+	StatsController.update_player_health(health)
 
 # Called every tick
 func _physics_process(delta: float) -> void:

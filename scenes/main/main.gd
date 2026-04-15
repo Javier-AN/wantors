@@ -16,24 +16,11 @@ func _ready() -> void:
 	# TODO: spawner.mob_cap_reached.connect(_stop_timer)
 	spawner.enemies_cleared.connect(_level_up)
 
+# Called every tick
 func _physics_process(_delta: float) -> void:
 	# Test stats controller
 	if Input.is_action_just_pressed("ui_accept"):
-		var max_health := randi_range(400, 1000)
-		var speed := randf_range(30.0, 200.0)
-		speed = Utils.round_to_dec(speed, 2)
-		var det := randf_range(0.1, 4.0)
-		det = Utils.round_to_dec(det, 2)
-		var b_speed := randf_range(30.0, 200.0)
-		b_speed = Utils.round_to_dec(b_speed, 2)
-		var damage := randi_range(1, 50)
-		var kf := randf_range(0.1, 5.0)
-		kf = Utils.round_to_dec(kf, 2)
-		var cooldown := randf_range(0.01, 1.0)
-		cooldown = Utils.round_to_dec(cooldown, 2)
-		StatsController.change_player_max_health(max_health)
-		StatsController.change_player_stats(speed, det)
-		StatsController.change_gun_stats(b_speed, damage, kf, cooldown)
+		_randomize_stats()
 
 # Spawns a new horde of enemies
 func _spawn_horde():
@@ -54,3 +41,15 @@ func _level_up():
 	_level += 1
 	StatsController.heal_player(10)
 	_new_level()
+
+# Randomizes all the stats
+func _randomize_stats():
+	var s := Utils.round_to_dec(randf_range(30.0, 200.0), 2)
+	var det := Utils.round_to_dec(randf_range(0.1, 4.0), 2)
+	var mh := randi_range(400, 1000)
+	var bs := Utils.round_to_dec(randf_range(30.0, 200.0), 2)
+	var bd := randi_range(1, 50)
+	var bkf := Utils.round_to_dec(randf_range(0.1, 5.0), 2)
+	var sc := Utils.round_to_dec(randf_range(0.01, 1.0), 2)
+	var stats := StatsClass.Stats.new(StatsClass.MobStats.new(s, det, mh), StatsClass.GunStats.new(bs, bd, bkf, sc))
+	StatsController.change_stats(stats)

@@ -54,8 +54,7 @@ func _update_animation():
 	pass
 
 # Updates health
-func _update_health(new_health: int = health, new_max_health: int = max_health):
-	max_health = new_max_health
+func _update_health(new_health: int):
 	health = new_health
 	if health > max_health:
 		health = max_health

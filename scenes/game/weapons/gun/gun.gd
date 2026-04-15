@@ -22,16 +22,17 @@ func _ready() -> void:
 	StatsController.gun_stats_must_update.connect(_update_stats)
 
 # Updates stat values
-func _update_stats(new_bullet_speed: float, new_damage: int, new_knockback_factor: float, new_shooting_cooldown: float) -> void:
-	bullet_speed = new_bullet_speed
-	bullet_damage = new_damage
-	bullet_knockback_factor = new_knockback_factor
-	shooting_cooldown = new_shooting_cooldown
+func _update_stats(stats: StatsClass.GunStats) -> void:
+	bullet_speed = stats.bullet_speed
+	bullet_damage = stats.bullet_damage
+	bullet_knockback_factor = stats.bullet_knockback_factor
+	shooting_cooldown = stats.shooting_cooldown
 	_global_update_stats()
 
 # Tells global controller values were changed
 func _global_update_stats():
-	StatsController.update_gun_stats(bullet_speed, bullet_damage, bullet_knockback_factor, shooting_cooldown)
+	var stats := StatsClass.GunStats.new(bullet_speed, bullet_damage, bullet_knockback_factor, shooting_cooldown)
+	StatsController.update_gun_stats(stats)
 
 # Called every tick
 func _physics_process(delta: float) -> void:
