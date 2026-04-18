@@ -1,13 +1,17 @@
+class_name Main
 extends Node
+
 
 # Nodes
 @export var timer: Timer 
 @export var spawner: Spawner
 
+
 # Private variables
 var _level: int = 1
 var _horde_size: int = 15
 var _upgrade_chance: float = 0.0
+
 
 # Called when ready
 func _ready() -> void:
@@ -16,18 +20,21 @@ func _ready() -> void:
 	# TODO: spawner.mob_cap_reached.connect(_stop_timer)
 	spawner.enemies_cleared.connect(_level_up)
 
+
 # Called every tick
 func _physics_process(_delta: float) -> void:
 	# Test stats controller
 	if Input.is_action_just_pressed("ui_accept"):
 		_randomize_stats()
 
+
 # Spawns a new horde of enemies
-func _spawn_horde():
+func _spawn_horde() -> void:
 	spawner.spawn_enemies(_horde_size, _upgrade_chance)
 
+
 # Starts a new level
-func _new_level():
+func _new_level() -> void:
 	_horde_size = 15 + _level * 5
 	_upgrade_chance = _level * 0.05
 	if _upgrade_chance > 0.3:
@@ -36,14 +43,16 @@ func _new_level():
 	# TODO: restart Timer
 	spawner.reset_mob_count(0 + _level * 10)
 
+
 # Increases the level and starts a new one
-func _level_up():
+func _level_up() -> void:
 	_level += 1
-	StatsController.heal_player(10)
+	StatsController.fully_heal_player()
 	_new_level()
 
+
 # Randomizes all the stats
-func _randomize_stats():
+func _randomize_stats() -> void:
 	var s := Utils.round_to_dec(randf_range(30.0, 200.0), 2)
 	var det := Utils.round_to_dec(randf_range(0.1, 4.0), 2)
 	var mh := randi_range(400, 1000)

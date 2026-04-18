@@ -1,41 +1,65 @@
+## A node 2D that spawns enemies around the player.
+## Enemies can be spawned until a given mob cap. When the mob cap is reached,
+## a signal is emitted no more enemies can spawn.
+## After the mob cap is reached and all the enemies die, another signal is 
+## emitted so the mob count can be reset.
 class_name Spawner
 extends Node2D
 
-# Signals
+
+## Emitted when the number of spawns reaches the mob cap.
 signal mob_cap_reached
+## Emitted when all the spawned enemies have died.
 signal enemies_cleared
 
-# Nodes
-@export var marker: Marker2D
-@export var enemies: Array[PackedScene]
 
-# Exported variables
+## Keeps track of the player's position.
+@export var marker: Marker2D
+## Different types of enemies that can be spawned.
+@export var enemies: Array[PackedScene]
+## Minimum distance from the player at which an enemy can spawn.
 @export var min_distance: float = 200.0
+## Maximum distance from the player at which an enemy can spawn.
 @export var max_distance: float = 300.0
+## Maximum amount of mobs that can be spawned between resets.
 @export var mob_cap: int = 50
-@export var max_attemps: int = 10
+## Maxmium number of attempts to find a valid location to spawn an ememy.
+## If this number is reached an none of the locations were valid, the spawn is cancelled.
+@export var max_attempts: int = 10
+
 
 # Private variables
 var _mob_count: int = 0
 var _mob_cap_reached: bool = false
 var _alive_enemies: int = 0
 
+
 # Called when ready
 func _ready() -> void:
-	marker.global_position = PositionController.player_position
-	PositionController.position_updated.connect(_update_position)
+	_update_marker_position(PositionController.player_position)
+	PositionController.position_updated.connect(_update_marker_position)
 
-# Updates node position
-func _update_position(player_position: Vector2) -> void:
+
+# Updates marker position
+func _update_marker_position(player_position: Vector2) -> void:
 	marker.global_position = player_position
 
+
+## Resets the mob count to 0.
+##
+## If [param new_cap] is set, the mob cap is changed to its value.
 func reset_mob_count(new_cap: int = 0) -> void:
 	_mob_count = 0
 	_mob_cap_reached = false
 	if new_cap > 0:
 		mob_cap = new_cap
 
-# Spawns a group of enemies
+
+## Spawns a group of enemies.
+## 
+## [param amount] dictates the number of enemies that should try to spawn.
+## [param upgrade_chance] should be a number between 0.0 and 1.0, it stablishes
+## the chance of an enemy to become of a higher type.
 func spawn_enemies(amount: int, upgrade_chance: float = 0.0) -> void:
 	for i in range(amount):
 		if _mob_count >= mob_cap:
@@ -47,41 +71,53 @@ func spawn_enemies(amount: int, upgrade_chance: float = 0.0) -> void:
 			_mob_count += 1
 			_alive_enemies += 1
 
+
 # Has a chance to upgrade the enemy type
 func _upgrade(enemy_type: int, upgrade_chance: float = 0.0) -> int:
 	# Check if max upgrade reached
 	if enemy_type == enemies.size() - 1:
 		return enemy_type
 	# Chance for upgrade
-	if randf_range(0, 1) < upgrade_chance:
+	if randf_range(0.0, 1.0) < upgrade_chance:
 		return _upgrade(enemy_type + 1, upgrade_chance)
 	# No upgrade
 	return enemy_type
 
-# Spawns a single enemy independent to the mob cap
+
+## Tries to spawn a single enemy completely independent to the mob cap.
+## 
+## [param enemy_type] dictates the type of the spawned enemy.
+## Returns [code]true[/code] if the spawn is successful.
 func spawn_enemy(enemy_type: int = 0) -> bool:
-	# Tries to find a new spawn position near the player
+	# Tries to find a new valid spawn position
 	var enemy_position := _new_spawn_position()
 	# If it fails, it returns false
 	if enemy_position.length() == 0:
 		return false
-	# If it success, creates an enemy of the given type in the position and returns true
+	# If it success, spawns the enemy in the position and returns true
 	var new_enemy: Enemy = enemies[enemy_type].instantiate()
 	new_enemy.global_position = enemy_position
 	new_enemy.died.connect(_enemy_died)
 	add_child(new_enemy)
 	return true
 
+
 # Tries to find a valid random spawn position
 func _new_spawn_position() -> Vector2:
-	for i in range(0, max_attemps):
+	for i in range(0, max_attempts):
+		# Random angle
 		var angle := randf_range(0.0, 2*PI)
+		# Random valid distance
 		var length := randf_range(min_distance, max_distance)
+		# Build the position vector from the random values
 		var new_pos := marker.global_position
 		new_pos += Vector2.from_angle(angle).normalized() * length
+		# Check if its in a valid spawn area
 		if _is_valid_spawn_area(new_pos):
 			return new_pos
+	# If all attempts fail, return the ZERO vector
 	return Vector2.ZERO
+
 
 # Checks wether the given location is in a valid spawn area
 func _is_valid_spawn_area(location: Vector2) -> bool:
@@ -101,6 +137,7 @@ func _is_valid_spawn_area(location: Vector2) -> bool:
 	# Destroy raycast
 	raycast.queue_free()
 	return valid
+
 
 # Called when an enemy dies
 func _enemy_died():

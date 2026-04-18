@@ -159,19 +159,19 @@ size = Vector2(17, 27)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrqsh"]
 radius = 150.0
 
-[node name="BigEnemy" type="CharacterBody2D" unique_id=1212796352 node_paths=PackedStringArray("sword", "damage_body", "detection_area", "animation", "soft_collision")]
+[node name="BigEnemy" type="CharacterBody2D" unique_id=1212796352 node_paths=PackedStringArray("sprite", "sword", "damage_body", "detection_area", "soft_collision")]
 scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_3juu0")
+sprite = NodePath("AnimatedSprite2D")
 sword = NodePath("Sword")
 damage_body = NodePath("CollisionDamage")
 detection_area = NodePath("DetectionArea")
 attack_distance = 56.0
 knockback_factor = 0.2
-animation = NodePath("AnimatedSprite2D")
 soft_collision = NodePath("SoftCollision")
-max_health = 50
+max_health = 60
 speed = 35.0
 damage_effect_time = 0.1
 

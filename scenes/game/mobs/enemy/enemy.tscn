@@ -159,18 +159,21 @@ size = Vector2(17, 27)
 [sub_resource type="CircleShape2D" id="CircleShape2D_t0tjr"]
 radius = 150.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sword", "damage_body", "detection_area", "animation", "soft_collision")]
+[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sprite", "sword", "damage_body", "detection_area", "soft_collision")]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_a3pup")
+sprite = NodePath("AnimatedSprite2D")
 sword = NodePath("Sword")
 damage_body = NodePath("CollisionDamage")
 detection_area = NodePath("DetectionArea")
-animation = NodePath("AnimatedSprite2D")
+attack_distance = 28.0
+knockback_factor = 1.0
 soft_collision = NodePath("SoftCollision")
-max_health = 10
+max_health = 25
 speed = 100.0
+damage_effect_time = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1814592448]
 sprite_frames = SubResource("SpriteFrames_40wdo")

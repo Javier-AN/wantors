@@ -1,30 +1,35 @@
 class_name Enemy
 extends Mob
+## An AI controlled mob that follows the player around and attacks when close.
 
-# Nodes
+#region Public variables
+## Enemy sprite.
+@export var sprite: AnimatedSprite2D
+## Melee weapon carried by the enemy.
 @export var sword: Area2D
+## Hitbox for receicing damage.
 @export var damage_body: StaticBody2D
+## When a player enters this area, the enemy activates.
 @export var detection_area: Area2D
+## Distance from the player at which an attack is triggered.
+@export var attack_distance: float
+## Factor by which velocity is multiplied to apply knockback.
+@export var knockback_factor: float
+#endregion
 
-# Exported variables
-@export var attack_distance: float = 28.0
-@export var knockback_factor: float = 1
-
-# Private variables
+#region Private variables
 var _active: bool = true
 var _knockbacking: bool = false
 var _attacking: float = false
 var _tween: Tween
+#endregion
+
 
 # Called when ready
 func _ready() -> void:
-	super()
 	detection_area.body_entered.connect(_activate)
 	sword.attack_finished.connect(_on_attack_finished)
 
-# Puts the enemy in active state
-func _activate(_body: Node2D) -> void:
-	_active = true
 
 # Called every tick
 func _physics_process(delta: float) -> void:
@@ -32,6 +37,11 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		super(delta)
+
+
+# Puts the enemy in active state
+func _activate(_body: Node2D) -> void:
+	_active = true
 
 # Updates the direction vector
 func _update_direction():
@@ -44,34 +54,39 @@ func _update_direction():
 		else:
 			_direction = distance.normalized()
 
+
 # Updates the sprite animation
 func _update_animation():
 	if _direction.length() > 0:
-		animation.play("run")
-		animation.flip_h = _direction.x < 0
+		sprite.play("run")
+		sprite.flip_h = _direction.x < 0
 	else:
-		animation.play("idle")
+		sprite.play("idle")
+
 
 # Performs an attack
 func _attack():
 	_attacking = true
 	sword.attack()
 
+
 # Called when the sword attack finishes
 func _on_attack_finished():
 	_attacking = false
 
-# Manages a received hit
+
+# Inherited: Manages a received hit
 func take_hit(damage: int, push := Vector2.ZERO):
 	super(damage, push)
 	if not _dead:
 		_active = true
 
+
 # Performs damage effects such as knockbacking or showing visual clues
 func _do_damage_effects(_damage: int, push := Vector2.ZERO):
 	# Start effects
 	_knockbacking = true
-	animation.play("idle")
+	sprite.play("idle")
 	velocity = push * knockback_factor
 	modulate = Constants.DAMAGE_COLOR
 	# End effects
@@ -82,9 +97,11 @@ func _do_damage_effects(_damage: int, push := Vector2.ZERO):
 	_tween.tween_property(self, "modulate", Color.WHITE, damage_effect_time)
 	_tween.finished.connect(_end_knockback)
 
+
 # Puts the enemy in not-knockbaking state
 func _end_knockback():
 	_knockbacking = false
+
 
 # Kills the enemy
 func _die():
@@ -94,6 +111,6 @@ func _die():
 	# Then animate
 	velocity = Vector2.ZERO
 	modulate = Constants.DAMAGE_COLOR
-	animation.play("die")
+	sprite.play("die")
 	# Finally erase
-	animation.animation_finished.connect(queue_free)
+	sprite.animation_finished.connect(queue_free)

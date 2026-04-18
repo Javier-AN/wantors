@@ -1,25 +1,34 @@
+## A 2D node that generates bullets.
 class_name Gun
 extends Node2D
 
-# Nodes
-@export var muzzle: Marker2D
-@export var bullet : PackedScene
 
-# Exported variables
+## Position in which the bullets are generated.
+@export var muzzle: Marker2D
+## Bullet scene.
+@export var bullet : PackedScene
+## Minumum time between two bullet generations expressed in seconds.
 @export var shooting_cooldown: float = 0.1
+## Speed of the generated bullets.
 @export var bullet_speed: float = 250.0
+## Damage of the generated bullets.
 @export var bullet_damage: int = 5
+## Knockback factor of the generated bullets.
 @export var bullet_knockback_factor: float = 0.1
+## Collision mask values of the generated bullets.
 @export var bullet_targets: Array[int] = [2]
+
 
 # Private variables
 var _direction: Vector2
 var _time_since_shoot: float
 
+
 # Called when ready
 func _ready() -> void:
 	_global_update_stats()
 	StatsController.gun_stats_must_update.connect(_update_stats)
+
 
 # Updates stat values
 func _update_stats(stats: StatsClass.GunStats) -> void:
@@ -29,10 +38,12 @@ func _update_stats(stats: StatsClass.GunStats) -> void:
 	shooting_cooldown = stats.shooting_cooldown
 	_global_update_stats()
 
+
 # Tells global controller values were changed
 func _global_update_stats():
 	var stats := StatsClass.GunStats.new(bullet_speed, bullet_damage, bullet_knockback_factor, shooting_cooldown)
 	StatsController.update_gun_stats(stats)
+
 
 # Called every tick
 func _physics_process(delta: float) -> void:
@@ -40,15 +51,18 @@ func _physics_process(delta: float) -> void:
 	_update_angle()
 	_shoot(delta)
 
+
 # Reads input and updates the direction vector
 func _get_input():
 	_direction.x = Input.get_axis("attack_left", "attack_right")
 	_direction.y = Input.get_axis("attack_up", "attack_down")
 
+
 # Updates the angle
 func _update_angle():
 	if _direction.length() > 0:
 		rotation = _direction.angle()
+
 
 # Controls shooting
 func _shoot(delta):
@@ -56,6 +70,7 @@ func _shoot(delta):
 	if _direction.length() > 0 and _time_since_shoot >= shooting_cooldown:
 		_generate_bullet()
 		_time_since_shoot = 0
+
 
 # Generates a bullet and sets its properties
 func _generate_bullet():
