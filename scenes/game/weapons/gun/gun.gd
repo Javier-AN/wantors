@@ -41,7 +41,8 @@ func _update_stats(stats: StatsClass.GunStats) -> void:
 
 # Tells global controller values were changed
 func _global_update_stats():
-	var stats := StatsClass.GunStats.new(bullet_speed, bullet_damage, bullet_knockback_factor, shooting_cooldown)
+	var stats := StatsClass.GunStats.new(bullet_speed, bullet_damage,
+			bullet_knockback_factor, shooting_cooldown)
 	StatsController.update_gun_stats(stats)
 
 

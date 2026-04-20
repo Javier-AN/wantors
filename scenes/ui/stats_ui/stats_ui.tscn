@@ -2,27 +2,28 @@
 
 [ext_resource type="Script" uid="uid://b4b8in4usfre7" path="res://scenes/ui/stats_ui/stats_ui.gd" id="1_nopjh"]
 
-[node name="StatsUI" type="VBoxContainer" unique_id=162805035 node_paths=PackedStringArray("player_health_label", "player_speed_label", "player_det_label", "bullet_speed_label", "bullet_damage_label", "bullet_knockback_factor_label", "gun_shooting_cooldown_label")]
+[node name="StatsUI" type="VBoxContainer" unique_id=162805035 node_paths=PackedStringArray("text_labels", "player_health_label", "player_speed_label", "player_det_label", "bullet_speed_label", "bullet_damage_label", "bullet_knockback_factor_label", "gun_fire_rate_label")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nopjh")
+text_labels = [NodePath("PlayerHealth/PlayerHealthText"), NodePath("PlayerSpeed/PlayerSpeedText"), NodePath("PlayerDET/PlayerDETText"), NodePath("BulletSpeed/BulletSpeedText"), NodePath("BulletDamage/BulletDamageText"), NodePath("BulletKnockbackFactor/BulletKnockbackFactorText"), NodePath("GunFireRate/GunFireRateText")]
 player_health_label = NodePath("PlayerHealth/PlayerHealthValue")
 player_speed_label = NodePath("PlayerSpeed/PlayerSpeedValue")
 player_det_label = NodePath("PlayerDET/PlayerDETValue")
 bullet_speed_label = NodePath("BulletSpeed/BulletSpeedValue")
 bullet_damage_label = NodePath("BulletDamage/BulletDamageValue")
 bullet_knockback_factor_label = NodePath("BulletKnockbackFactor/BulletKnockbackFactorValue")
-gun_shooting_cooldown_label = NodePath("GunShootingCooldown/GunShootingCooldownValue")
+gun_fire_rate_label = NodePath("GunFireRate/GunFireRateValue")
 
 [node name="PlayerHealth" type="HBoxContainer" parent="." unique_id=335234431]
 layout_mode = 2
 
 [node name="PlayerHealthText" type="Label" parent="PlayerHealth" unique_id=168316464]
 layout_mode = 2
-text = "Health: "
+text = "HEALTH"
 
 [node name="PlayerHealthValue" type="Label" parent="PlayerHealth" unique_id=1236967600]
 layout_mode = 2
@@ -32,7 +33,7 @@ layout_mode = 2
 
 [node name="PlayerSpeedText" type="Label" parent="PlayerSpeed" unique_id=1513651916]
 layout_mode = 2
-text = "Speed: "
+text = "SPEED"
 
 [node name="PlayerSpeedValue" type="Label" parent="PlayerSpeed" unique_id=1679737917]
 layout_mode = 2
@@ -42,7 +43,7 @@ layout_mode = 2
 
 [node name="PlayerDETText" type="Label" parent="PlayerDET" unique_id=2023342636]
 layout_mode = 2
-text = "DET: "
+text = "DET"
 
 [node name="PlayerDETValue" type="Label" parent="PlayerDET" unique_id=1225892155]
 layout_mode = 2
@@ -52,7 +53,7 @@ layout_mode = 2
 
 [node name="BulletSpeedText" type="Label" parent="BulletSpeed" unique_id=1763094861]
 layout_mode = 2
-text = "Bullet speed: "
+text = "BULLET_SPEED"
 
 [node name="BulletSpeedValue" type="Label" parent="BulletSpeed" unique_id=875869497]
 layout_mode = 2
@@ -62,7 +63,7 @@ layout_mode = 2
 
 [node name="BulletDamageText" type="Label" parent="BulletDamage" unique_id=1208646644]
 layout_mode = 2
-text = "Damage: "
+text = "DAMAGE"
 
 [node name="BulletDamageValue" type="Label" parent="BulletDamage" unique_id=35842409]
 layout_mode = 2
@@ -72,17 +73,17 @@ layout_mode = 2
 
 [node name="BulletKnockbackFactorText" type="Label" parent="BulletKnockbackFactor" unique_id=1814817815]
 layout_mode = 2
-text = "Knockback: "
+text = "KNOCKBACK"
 
 [node name="BulletKnockbackFactorValue" type="Label" parent="BulletKnockbackFactor" unique_id=1945512512]
 layout_mode = 2
 
-[node name="GunShootingCooldown" type="HBoxContainer" parent="." unique_id=665185559]
+[node name="GunFireRate" type="HBoxContainer" parent="." unique_id=665185559]
 layout_mode = 2
 
-[node name="GunShootingCooldownText" type="Label" parent="GunShootingCooldown" unique_id=832530419]
+[node name="GunFireRateText" type="Label" parent="GunFireRate" unique_id=832530419]
 layout_mode = 2
-text = "Cooldown: "
+text = "FIRE_RATE"
 
-[node name="GunShootingCooldownValue" type="Label" parent="GunShootingCooldown" unique_id=270561025]
+[node name="GunFireRateValue" type="Label" parent="GunFireRate" unique_id=270561025]
 layout_mode = 2

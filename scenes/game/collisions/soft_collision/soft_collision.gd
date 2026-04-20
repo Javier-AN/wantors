@@ -3,11 +3,13 @@ class_name SoftCollision
 extends Area2D
 
 
-## When two soft collision nodes are too close, their weight difference decides how much each of them must be pushed away.
+## When two soft collision nodes are too close, their weight difference decides
+## how much each of them must be pushed away.
 @export var weight: float = 1.0
 
 
-## A velocity vector that describes the current push force that should be applied in order to repulse away from other soft collision nodes.
+## A velocity vector that describes the current push force that should be
+## applied in order to repulse away from other soft collision nodes.
 var push_vector: Vector2 = Vector2.ZERO
 
 

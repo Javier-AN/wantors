@@ -26,7 +26,8 @@ var stats: StatsClass.Stats
 
 # Called when ready
 func _ready() -> void:
-	stats = StatsClass.Stats.new(StatsClass.MobStats.new(0, 0, 0), StatsClass.GunStats.new(0, 0, 0, 0))
+	stats = StatsClass.Stats.new(StatsClass.MobStats.new(0, 0, 0),
+			StatsClass.GunStats.new(0, 0, 0, 0))
 
 
 #region Update functions

@@ -2,11 +2,10 @@ class_name Player
 extends Mob
 
 
-## Player sprite.
-@export var sprite: Node2D
 ## Player gun.
 @export var gun: Node2D
 
+@onready var sprite: AnimatedSprite2D = $PlayerSprite
 
 # Private variables
 var _facing: float

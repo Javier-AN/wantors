@@ -21,12 +21,12 @@ signal enemies_cleared
 @export var min_distance: float = 200.0
 ## Maximum distance from the player at which an enemy can spawn.
 @export var max_distance: float = 300.0
-## Maximum amount of mobs that can be spawned between resets.
-@export var mob_cap: int = 50
 ## Maxmium number of attempts to find a valid location to spawn an ememy.
-## If this number is reached an none of the locations were valid, the spawn is cancelled.
+## After failing this many attempts, the spawn is cancelled.
 @export var max_attempts: int = 10
 
+## Maximum amount of mobs that can be spawned between resets.
+var mob_cap: int = 50
 
 # Private variables
 var _mob_count: int = 0

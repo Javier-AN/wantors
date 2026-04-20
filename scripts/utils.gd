@@ -18,3 +18,15 @@ func round_to_dec(x: float, digits: int) -> float:
 ## [code]UPPERCASE[/code].
 func first_to_upper(string: String) -> String:
 	return string[0].to_upper() + string.substr(1,-1)
+
+
+## Returns an [code]Array[/code] with [param n] random elements from
+## [param array].
+func pick_randoms(array: Array, n: int) -> Array:
+	var pool := array.duplicate()
+	var picks := []
+	while picks.size() < n and pool.size() > 0:
+		var index := randi_range(0, pool.size() - 1)
+		picks.append(pool[index])
+		pool.remove_at(index)
+	return picks

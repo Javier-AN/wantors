@@ -27,8 +27,9 @@ func _physics_process(_delta: float) -> void:
 
 
 # Called when a collision is detected
-func _on_collision(body):
-	if body.get_parent().is_in_group("mobs"):
+func _on_collision(body: Node2D):
+	var parent := body.get_parent()
+	if parent is Mob:
 		body.get_parent().take_hit(damage)
 
 
