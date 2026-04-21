@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rausjglbfc53"]
 
-[ext_resource type="Script" uid="uid://0haqqhhiu2py" path="res://scenes/game/items/red_apple/red_apple.gd" id="1_n7e2p"]
+[ext_resource type="Script" uid="uid://0haqqhhiu2py" path="res://scenes/ui/items/red_apple/red_apple.gd" id="1_n7e2p"]
 [ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="2_q6hnb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6hnb"]

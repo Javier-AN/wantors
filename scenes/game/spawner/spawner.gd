@@ -1,20 +1,16 @@
+class_name Spawner
+extends Node2D
 ## A node 2D that spawns enemies around the player.
 ## Enemies can be spawned until a given mob cap. When the mob cap is reached,
 ## a signal is emitted no more enemies can spawn.
 ## After the mob cap is reached and all the enemies die, another signal is 
 ## emitted so the mob count can be reset.
-class_name Spawner
-extends Node2D
-
 
 ## Emitted when the number of spawns reaches the mob cap.
 signal mob_cap_reached
 ## Emitted when all the spawned enemies have died.
 signal enemies_cleared
 
-
-## Keeps track of the player's position.
-@export var marker: Marker2D
 ## Different types of enemies that can be spawned.
 @export var enemies: Array[PackedScene]
 ## Minimum distance from the player at which an enemy can spawn.
@@ -24,6 +20,9 @@ signal enemies_cleared
 ## Maxmium number of attempts to find a valid location to spawn an ememy.
 ## After failing this many attempts, the spawn is cancelled.
 @export var max_attempts: int = 10
+
+## Keeps track of the player's position.
+@onready var marker: Marker2D = $PlayerMarker
 
 ## Maximum amount of mobs that can be spawned between resets.
 var mob_cap: int = 50
@@ -97,7 +96,7 @@ func spawn_enemy(enemy_type: int = 0) -> bool:
 	# If it success, spawns the enemy in the position and returns true
 	var new_enemy: Enemy = enemies[enemy_type].instantiate()
 	new_enemy.global_position = enemy_position
-	new_enemy.died.connect(_enemy_died)
+	new_enemy.disappeared.connect(_enemy_died)
 	add_child(new_enemy)
 	return true
 

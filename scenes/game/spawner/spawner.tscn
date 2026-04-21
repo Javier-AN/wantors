@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dkn134rp78x32" path="res://scenes/game/mobs/enemy/enemy.tscn" id="2_wtxcb"]
 [ext_resource type="PackedScene" uid="uid://dd4xiolpr1jfe" path="res://scenes/game/mobs/big_enemy/big_enemy.tscn" id="3_uhn3r"]
 
-[node name="Spawner" type="Node2D" unique_id=1875293389 node_paths=PackedStringArray("marker")]
+[node name="Spawner" type="Node2D" unique_id=1875293389]
 y_sort_enabled = true
 script = ExtResource("1_eoeca")
-marker = NodePath("Marker2D")
 enemies = Array[PackedScene]([ExtResource("2_wtxcb"), ExtResource("3_uhn3r")])
+min_distance = null
+max_distance = null
+max_attempts = null
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1647003000]
+[node name="PlayerMarker" type="Marker2D" parent="." unique_id=1647003000]

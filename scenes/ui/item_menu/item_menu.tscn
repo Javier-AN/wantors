@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cq11cjhy6y321"]
 
 [ext_resource type="Script" uid="uid://ebndsn3bo1kd" path="res://scenes/ui/item_menu/item_menu.gd" id="1_hr181"]
-[ext_resource type="PackedScene" uid="uid://bmdamj5khrg5v" path="res://scenes/game/items/magazine/magazine.tscn" id="2_djghr"]
-[ext_resource type="PackedScene" uid="uid://rausjglbfc53" path="res://scenes/game/items/red_apple/red_apple.tscn" id="3_3vrdm"]
+[ext_resource type="PackedScene" uid="uid://bmdamj5khrg5v" path="res://scenes/ui/items/magazine/magazine.tscn" id="2_djghr"]
+[ext_resource type="PackedScene" uid="uid://rausjglbfc53" path="res://scenes/ui/items/red_apple/red_apple.tscn" id="3_3vrdm"]
+[ext_resource type="PackedScene" uid="uid://u7afll3kclb5" path="res://scenes/ui/items/gunpowder/gunpowder.tscn" id="4_8f62d"]
+[ext_resource type="PackedScene" uid="uid://bin8yk1de58u4" path="res://scenes/ui/items/acorn/acorn.tscn" id="5_l2kch"]
+[ext_resource type="PackedScene" uid="uid://d12hpdni86c51" path="res://scenes/ui/items/potion/potion.tscn" id="6_l2kch"]
+[ext_resource type="PackedScene" uid="uid://d3oumr7feqqei" path="res://scenes/ui/items/big_bullet/big_bullet.tscn" id="7_ljmf6"]
 
 [node name="ItemMenu" type="Control" unique_id=1850732347]
 z_index = 10
@@ -13,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hr181")
-item_pool = Array[PackedScene]([ExtResource("2_djghr"), ExtResource("3_3vrdm")])
+item_pool = Array[PackedScene]([ExtResource("2_djghr"), ExtResource("3_3vrdm"), ExtResource("4_8f62d"), ExtResource("5_l2kch"), ExtResource("6_l2kch"), ExtResource("7_ljmf6")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1851425143]
 layout_mode = 0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmdamj5khrg5v"]
 
-[ext_resource type="Script" uid="uid://3tw7rx2opkcl" path="res://scenes/game/items/magazine/magazine.gd" id="1_6buma"]
+[ext_resource type="Script" uid="uid://3tw7rx2opkcl" path="res://scenes/ui/items/magazine/magazine.gd" id="1_6buma"]
 [ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="2_7stxv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1bf7"]

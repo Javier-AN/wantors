@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3oumr7feqqei"]
+
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_8iba7"]
+[ext_resource type="Script" uid="uid://us4xu3yvcd5j" path="res://scenes/ui/items/big_bullet/big_bullet.gd" id="2_d08yo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1bf7"]
+atlas = ExtResource("1_8iba7")
+region = Rect2(0, 32, 32, 32)
+
+[node name="BigBullet" type="Button" unique_id=421153826]
+physics_interpolation_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+mouse_filter = 1
+icon = SubResource("AtlasTexture_f1bf7")
+script = ExtResource("2_d08yo")
+title = "BIG_BULLET_TITLE"
+subtitle = "BIG_BULLET_SUBTITLE"

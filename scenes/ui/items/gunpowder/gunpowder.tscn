@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://u7afll3kclb5"]
+
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_0m453"]
+[ext_resource type="Script" uid="uid://dvr2o1sj0a2b" path="res://scenes/ui/items/gunpowder/gunpowder.gd" id="2_rvvka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1bf7"]
+atlas = ExtResource("1_0m453")
+region = Rect2(32, 32, 32, 32)
+
+[node name="Gunpowder" type="Button" unique_id=421153826]
+physics_interpolation_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+mouse_filter = 1
+icon = SubResource("AtlasTexture_f1bf7")
+script = ExtResource("2_rvvka")
+title = "GUNPOWDER_TITLE"
+subtitle = "GUNPOWDER_SUBTITLE"

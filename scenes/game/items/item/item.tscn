@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://d4jgju1bdqikl"]
-
-[ext_resource type="Script" uid="uid://cg38ejkuuhcxp" path="res://scenes/game/items/item/item.gd" id="1_7nk8x"]
-
-[node name="Item" type="Button" unique_id=799742311]
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("1_7nk8x")

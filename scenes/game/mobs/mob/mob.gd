@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 ## Emitted when the mob health reaches zero.
 signal died
+## Emitted when the mob finishes its death animation.
+signal disappeared
 
 ## Soft collision body.
 @export var soft_collision: SoftCollision
@@ -86,3 +88,9 @@ func _do_damage_effects(_damage: int, _push := Vector2.ZERO):
 func _die():
 	_dead = true
 	died.emit()
+
+
+# Emits a signal and eliminates the node
+func _disappear():
+	disappeared.emit()
+	queue_free()
