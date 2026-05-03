@@ -98,6 +98,9 @@ max_health = 100
 speed = 120.0
 damage_effect_time = 0.6
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1930029373]
+zoom = Vector2(2, 2)
+
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=476568386]
 sprite_frames = SubResource("SpriteFrames_je7p5")
 animation = &"run"

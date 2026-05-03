@@ -159,15 +159,11 @@ size = Vector2(17, 27)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrqsh"]
 radius = 150.0
 
-[node name="BigEnemy" type="CharacterBody2D" unique_id=1212796352 node_paths=PackedStringArray("sprite", "sword", "damage_body", "detection_area", "soft_collision")]
+[node name="BigEnemy" type="CharacterBody2D" unique_id=1212796352 node_paths=PackedStringArray("soft_collision")]
 scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_3juu0")
-sprite = NodePath("AnimatedSprite2D")
-sword = NodePath("Sword")
-damage_body = NodePath("CollisionDamage")
-detection_area = NodePath("DetectionArea")
 attack_distance = 56.0
 knockback_factor = 0.2
 soft_collision = NodePath("SoftCollision")
@@ -175,11 +171,11 @@ max_health = 60
 speed = 35.0
 damage_effect_time = 0.1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=193447675]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=193447675]
 sprite_frames = SubResource("SpriteFrames_voq1o")
 animation = &"damage"
 
-[node name="CollisionShapeSolids" type="CollisionShape2D" parent="." unique_id=1845600749]
+[node name="SolidCollisionShape" type="CollisionShape2D" parent="." unique_id=1845600749]
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_mnlbq")
 
@@ -190,15 +186,15 @@ collision_mask = 128
 script = ExtResource("3_h12lt")
 weight = 2.5
 
-[node name="CollisionShapeSoft" type="CollisionShape2D" parent="SoftCollision" unique_id=960884018]
+[node name="SoftCollisionShape" type="CollisionShape2D" parent="SoftCollision" unique_id=960884018]
 shape = SubResource("CircleShape2D_px0vd")
 
-[node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=1527707869]
+[node name="DamageCollisionBody" type="StaticBody2D" parent="." unique_id=1527707869]
 position = Vector2(0, 0.5)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShapeDamage" type="CollisionShape2D" parent="CollisionDamage" unique_id=434330784]
+[node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=434330784]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_eq5t0")
 

@@ -2,21 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b4b8in4usfre7" path="res://scenes/ui/stats_ui/stats_ui.gd" id="1_nopjh"]
 
-[node name="StatsUI" type="VBoxContainer" unique_id=162805035 node_paths=PackedStringArray("text_labels", "player_health_label", "player_speed_label", "player_det_label", "bullet_speed_label", "bullet_damage_label", "bullet_knockback_factor_label", "gun_fire_rate_label")]
+[node name="StatsUI" type="VBoxContainer" unique_id=162805035]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nopjh")
-text_labels = [NodePath("PlayerHealth/PlayerHealthText"), NodePath("PlayerSpeed/PlayerSpeedText"), NodePath("PlayerDET/PlayerDETText"), NodePath("BulletSpeed/BulletSpeedText"), NodePath("BulletDamage/BulletDamageText"), NodePath("BulletKnockbackFactor/BulletKnockbackFactorText"), NodePath("GunFireRate/GunFireRateText")]
-player_health_label = NodePath("PlayerHealth/PlayerHealthValue")
-player_speed_label = NodePath("PlayerSpeed/PlayerSpeedValue")
-player_det_label = NodePath("PlayerDET/PlayerDETValue")
-bullet_speed_label = NodePath("BulletSpeed/BulletSpeedValue")
-bullet_damage_label = NodePath("BulletDamage/BulletDamageValue")
-bullet_knockback_factor_label = NodePath("BulletKnockbackFactor/BulletKnockbackFactorValue")
-gun_fire_rate_label = NodePath("GunFireRate/GunFireRateValue")
 
 [node name="PlayerHealth" type="HBoxContainer" parent="." unique_id=335234431]
 layout_mode = 2

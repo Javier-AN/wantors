@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bxxuermnef3tu"]
+
+[ext_resource type="Script" uid="uid://dlxxerbl7ctvy" path="res://save_controller.gd" id="1_wmbvj"]
+[ext_resource type="Resource" uid="uid://br3q5smmij78u" path="res://resources/game_data.tres" id="2_3m23f"]
+
+[node name="SaveController" type="Node" unique_id=151235442]
+script = ExtResource("1_wmbvj")
+game_data = ExtResource("2_3m23f")

@@ -7,13 +7,14 @@
 [node name="Gun" type="Node2D" unique_id=76791056 node_paths=PackedStringArray("muzzle")]
 y_sort_enabled = true
 script = ExtResource("1_fjnj2")
-muzzle = NodePath("Sprite2D/Muzzle")
+muzzle = NodePath("Muzzle")
 bullet = ExtResource("2_eo2c1")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=732400428]
+position = Vector2(13, 6.3108872e-30)
+scale = Vector2(0.8055555, 0.8055555)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=289484148]
 position = Vector2(6.9999995, 1.0587912e-22)
 scale = Vector2(0.8055555, 0.8055555)
 texture = ExtResource("1_csbbp")
-
-[node name="Muzzle" type="Marker2D" parent="Sprite2D" unique_id=732400428]
-position = Vector2(7.448276, -1.3143614e-22)

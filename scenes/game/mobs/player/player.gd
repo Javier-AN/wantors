@@ -51,7 +51,7 @@ func _global_update_health():
 func _physics_process(delta: float) -> void:
 	if not _dead:
 		super(delta)
-	if _direction.length() > 0:
+	if velocity.length() > 0:
 		PositionController.update_position(global_position)
 
 

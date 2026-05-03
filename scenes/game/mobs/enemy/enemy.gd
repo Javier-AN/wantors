@@ -2,19 +2,22 @@ class_name Enemy
 extends Mob
 ## An AI controlled mob that follows the player around and attacks when close.
 
-#region Public variables
-## Enemy sprite.
-@export var sprite: AnimatedSprite2D
-## Melee weapon carried by the enemy.
-@export var sword: Area2D
-## Hitbox for receicing damage.
-@export var damage_body: StaticBody2D
-## When a player enters this area, the enemy activates.
-@export var detection_area: Area2D
+#region Exported variables
 ## Distance from the player at which an attack is triggered.
 @export var attack_distance: float
 ## Factor by which velocity is multiplied to apply knockback.
 @export var knockback_factor: float
+#endregion
+
+#region Set on ready variables
+## Enemy sprite.
+@onready var sprite: AnimatedSprite2D = $Sprite
+## Melee weapon carried by the enemy.
+@onready var sword: Area2D = $Sword
+## Hitbox for receicing damage.
+@onready var damage_body: StaticBody2D = $DamageCollisionBody
+## When a player enters this area, the enemy activates.
+@onready var detection_area: Area2D = $DetectionArea
 #endregion
 
 #region Private variables
@@ -113,4 +116,4 @@ func _die():
 	modulate = Constants.DAMAGE_COLOR
 	sprite.play("die")
 	# Finally erase
-	sprite.animation_finished.connect(queue_free)
+	sprite.animation_finished.connect(_disappear)

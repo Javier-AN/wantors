@@ -3,21 +3,29 @@ extends Control
 
 
 ## Text label collection.
-@export var text_labels: Array[Label]
+@onready var text_labels: Array[Label] = [
+		$PlayerHealth/PlayerHealthText,
+		$PlayerSpeed/PlayerSpeedText,
+		$PlayerDET/PlayerDETText,
+		$BulletSpeed/BulletSpeedText,
+		$BulletDamage/BulletDamageText,
+		$BulletKnockbackFactor/BulletKnockbackFactorText,
+		$GunFireRate/GunFireRateText,
+	]
 ## Value label for player health.
-@export var player_health_label: Label
+@onready var player_health_label: Label = $PlayerHealth/PlayerHealthValue
 ## Value label for player speed.
-@export var player_speed_label: Label
+@onready var player_speed_label: Label = $PlayerSpeed/PlayerSpeedValue
 ## Value label for player damage effect time.
-@export var player_det_label: Label
+@onready var player_det_label: Label = $PlayerDET/PlayerDETValue
 ## Value label for bullet speed.
-@export var bullet_speed_label: Label
+@onready var bullet_speed_label: Label = $BulletSpeed/BulletSpeedValue
 ## Value label for bullet damage.
-@export var bullet_damage_label: Label
+@onready var bullet_damage_label: Label = $BulletDamage/BulletDamageValue
 ## Value label for bullet knockback factor.
-@export var bullet_knockback_factor_label: Label
+@onready var bullet_knockback_factor_label: Label = $BulletKnockbackFactor/BulletKnockbackFactorValue
 ## Value label for gun fire rate.
-@export var gun_fire_rate_label: Label
+@onready var gun_fire_rate_label: Label = $GunFireRate/GunFireRateValue
 
 
 # Called when ready

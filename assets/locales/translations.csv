@@ -1,4 +1,9 @@
 ﻿key,en,es,gl
+PLAY,Play,Jugar,Xogar
+ITEM_COLLECTION,Item collection,Colección de ítems,Colección de ítems
+SETTINGS,Settings,Opciones,Opcións
+EXIT,Exit,Salir,Saír
+,,,
 HEALTH,health,salud,saúde
 MAX_HEALTH,max health,saúde máxima,saúde máxima
 SPEED,speed,velocidad,velocidade

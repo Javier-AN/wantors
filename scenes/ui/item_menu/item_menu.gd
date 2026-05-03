@@ -4,7 +4,6 @@ extends Control
 signal item_chosen
 
 @export var number_of_items: int = 2
-@export var item_pool: Array[PackedScene]
 
 @onready var item_container: Container = $ItemContainer
 
@@ -18,9 +17,9 @@ func _ready() -> void:
 
 # Picks random items from the pool, instantiates them and adds them to the buttons
 func _pick_items() -> void:
-	var picks := Utils.pick_randoms(item_pool, number_of_items)
+	var picks := Utils.pick_randoms(ItemCollectionController.unlocked_items, number_of_items)
 	for pick in picks:
-		var item: Item = pick.instantiate()
+		var item: Item = ItemCollectionController.item_pool[pick].instantiate()
 		item_container.add_child(item)
 		item.effect_applied.connect(_self_destroy)
 

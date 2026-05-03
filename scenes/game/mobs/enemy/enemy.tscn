@@ -159,15 +159,11 @@ size = Vector2(17, 27)
 [sub_resource type="CircleShape2D" id="CircleShape2D_t0tjr"]
 radius = 150.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sprite", "sword", "damage_body", "detection_area", "soft_collision")]
+[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("soft_collision")]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_a3pup")
-sprite = NodePath("AnimatedSprite2D")
-sword = NodePath("Sword")
-damage_body = NodePath("CollisionDamage")
-detection_area = NodePath("DetectionArea")
 attack_distance = 28.0
 knockback_factor = 1.0
 soft_collision = NodePath("SoftCollision")
@@ -175,11 +171,11 @@ max_health = 25
 speed = 100.0
 damage_effect_time = 0.2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1814592448]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1814592448]
 sprite_frames = SubResource("SpriteFrames_40wdo")
 animation = &"die"
 
-[node name="CollisionShapeSolids" type="CollisionShape2D" parent="." unique_id=1021458062]
+[node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=1021458062]
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_4a83h")
 
@@ -189,22 +185,22 @@ collision_layer = 128
 collision_mask = 128
 script = ExtResource("3_tjssy")
 
-[node name="CollisionShapeSoft" type="CollisionShape2D" parent="SoftCollision" unique_id=897512578]
+[node name="SoftCollisionShape" type="CollisionShape2D" parent="SoftCollision" unique_id=897512578]
 shape = SubResource("CircleShape2D_w3ary")
 
-[node name="CollisionDamage" type="StaticBody2D" parent="." unique_id=105531692]
+[node name="DamageCollisionBody" type="StaticBody2D" parent="." unique_id=105531692]
 position = Vector2(0, 0.5)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShapeDamage" type="CollisionShape2D" parent="CollisionDamage" unique_id=1156815274]
+[node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=1156815274]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_40wdo")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1839905109]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=119715075]
+[node name="DetectionCollisionShape" type="CollisionShape2D" parent="DetectionArea" unique_id=119715075]
 shape = SubResource("CircleShape2D_t0tjr")
 
 [node name="Sword" parent="." unique_id=416846413 instance=ExtResource("3_40wdo")]
