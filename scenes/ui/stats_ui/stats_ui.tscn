@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8kbjxr6udo15"]
 
-[ext_resource type="Script" uid="uid://b4b8in4usfre7" path="res://scenes/ui/stats_ui/stats_ui.gd" id="1_nopjh"]
+[ext_resource type="Script" uid="uid://bdyigbdalye7b" path="res://scenes/ui/stats_ui/stats_container.gd" id="2_7mbva"]
+[ext_resource type="Script" uid="uid://bsci8qigbcnc6" path="res://scenes/ui/stats_ui/player_health_bar.gd" id="2_pt5m8"]
 
 [node name="StatsUI" type="VBoxContainer" unique_id=162805035]
 anchors_preset = 15
@@ -8,74 +9,102 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nopjh")
 
-[node name="PlayerHealth" type="HBoxContainer" parent="." unique_id=335234431]
+[node name="PlayerHealthBar" type="ProgressBar" parent="." unique_id=769372277]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+step = 1.0
+show_percentage = false
+script = ExtResource("2_pt5m8")
+
+[node name="PlayerHealthLabel" type="Label" parent="PlayerHealthBar" unique_id=1189981730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="StatsContainer" type="Control" parent="." unique_id=1392848835]
+layout_mode = 2
+script = ExtResource("2_7mbva")
+
+[node name="PlayerSpeed" type="HBoxContainer" parent="StatsContainer" unique_id=3194671]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 27.0
+
+[node name="PlayerSpeedText" type="Label" parent="StatsContainer/PlayerSpeed" unique_id=1513651916]
+layout_mode = 2
+text = "STATS_SPEED"
+
+[node name="PlayerSpeedValue" type="Label" parent="StatsContainer/PlayerSpeed" unique_id=1679737917]
 layout_mode = 2
 
-[node name="PlayerHealthText" type="Label" parent="PlayerHealth" unique_id=168316464]
-layout_mode = 2
-text = "HEALTH"
+[node name="PlayerDET" type="HBoxContainer" parent="StatsContainer" unique_id=523510573]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 1152.0
+offset_bottom = 54.0
 
-[node name="PlayerHealthValue" type="Label" parent="PlayerHealth" unique_id=1236967600]
+[node name="PlayerDETText" type="Label" parent="StatsContainer/PlayerDET" unique_id=2023342636]
 layout_mode = 2
+text = "STATS_DET"
 
-[node name="PlayerSpeed" type="HBoxContainer" parent="." unique_id=3194671]
-layout_mode = 2
-
-[node name="PlayerSpeedText" type="Label" parent="PlayerSpeed" unique_id=1513651916]
-layout_mode = 2
-text = "SPEED"
-
-[node name="PlayerSpeedValue" type="Label" parent="PlayerSpeed" unique_id=1679737917]
+[node name="PlayerDETValue" type="Label" parent="StatsContainer/PlayerDET" unique_id=1225892155]
 layout_mode = 2
 
-[node name="PlayerDET" type="HBoxContainer" parent="." unique_id=523510573]
+[node name="BulletSpeed" type="HBoxContainer" parent="StatsContainer" unique_id=32066900]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 1152.0
+offset_bottom = 81.0
+
+[node name="BulletSpeedText" type="Label" parent="StatsContainer/BulletSpeed" unique_id=1763094861]
+layout_mode = 2
+text = "STATS_BULLET_SPEED"
+
+[node name="BulletSpeedValue" type="Label" parent="StatsContainer/BulletSpeed" unique_id=875869497]
 layout_mode = 2
 
-[node name="PlayerDETText" type="Label" parent="PlayerDET" unique_id=2023342636]
-layout_mode = 2
-text = "DET"
+[node name="BulletDamage" type="HBoxContainer" parent="StatsContainer" unique_id=1640949526]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 1152.0
+offset_bottom = 108.0
 
-[node name="PlayerDETValue" type="Label" parent="PlayerDET" unique_id=1225892155]
+[node name="BulletDamageText" type="Label" parent="StatsContainer/BulletDamage" unique_id=1208646644]
 layout_mode = 2
+text = "STATS_DAMAGE"
 
-[node name="BulletSpeed" type="HBoxContainer" parent="." unique_id=32066900]
-layout_mode = 2
-
-[node name="BulletSpeedText" type="Label" parent="BulletSpeed" unique_id=1763094861]
-layout_mode = 2
-text = "BULLET_SPEED"
-
-[node name="BulletSpeedValue" type="Label" parent="BulletSpeed" unique_id=875869497]
+[node name="BulletDamageValue" type="Label" parent="StatsContainer/BulletDamage" unique_id=35842409]
 layout_mode = 2
 
-[node name="BulletDamage" type="HBoxContainer" parent="." unique_id=1640949526]
+[node name="BulletKnockbackFactor" type="HBoxContainer" parent="StatsContainer" unique_id=1223371479]
+layout_mode = 0
+offset_top = 112.0
+offset_right = 1152.0
+offset_bottom = 135.0
+
+[node name="BulletKnockbackFactorText" type="Label" parent="StatsContainer/BulletKnockbackFactor" unique_id=1814817815]
+layout_mode = 2
+text = "STATS_KNOCKBACK"
+
+[node name="BulletKnockbackFactorValue" type="Label" parent="StatsContainer/BulletKnockbackFactor" unique_id=1945512512]
 layout_mode = 2
 
-[node name="BulletDamageText" type="Label" parent="BulletDamage" unique_id=1208646644]
-layout_mode = 2
-text = "DAMAGE"
+[node name="GunFireRate" type="HBoxContainer" parent="StatsContainer" unique_id=665185559]
+layout_mode = 0
+offset_top = 139.0
+offset_right = 1152.0
+offset_bottom = 162.0
 
-[node name="BulletDamageValue" type="Label" parent="BulletDamage" unique_id=35842409]
+[node name="GunFireRateText" type="Label" parent="StatsContainer/GunFireRate" unique_id=832530419]
 layout_mode = 2
+text = "STATS_FIRE_RATE"
 
-[node name="BulletKnockbackFactor" type="HBoxContainer" parent="." unique_id=1223371479]
-layout_mode = 2
-
-[node name="BulletKnockbackFactorText" type="Label" parent="BulletKnockbackFactor" unique_id=1814817815]
-layout_mode = 2
-text = "KNOCKBACK"
-
-[node name="BulletKnockbackFactorValue" type="Label" parent="BulletKnockbackFactor" unique_id=1945512512]
-layout_mode = 2
-
-[node name="GunFireRate" type="HBoxContainer" parent="." unique_id=665185559]
-layout_mode = 2
-
-[node name="GunFireRateText" type="Label" parent="GunFireRate" unique_id=832530419]
-layout_mode = 2
-text = "FIRE_RATE"
-
-[node name="GunFireRateValue" type="Label" parent="GunFireRate" unique_id=270561025]
+[node name="GunFireRateValue" type="Label" parent="StatsContainer/GunFireRate" unique_id=270561025]
 layout_mode = 2

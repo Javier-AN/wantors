@@ -15,5 +15,5 @@ focus_mode = 0
 mouse_filter = 1
 icon = SubResource("AtlasTexture_f1bf7")
 script = ExtResource("2_rvvka")
-title = "GUNPOWDER_TITLE"
-subtitle = "GUNPOWDER_SUBTITLE"
+title = "ITEM_GUNPOWDER_TITLE"
+subtitle = "ITEM_GUNPOWDER_SUBTITLE"

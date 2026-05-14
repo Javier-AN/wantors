@@ -15,5 +15,5 @@ focus_mode = 0
 mouse_filter = 1
 icon = SubResource("AtlasTexture_q6hnb")
 script = ExtResource("1_n7e2p")
-title = "RED_APPLE_TITLE"
-subtitle = "RED_APPLE_SUBTITLE"
+title = "ITEM_RED_APPLE_TITLE"
+subtitle = "ITEM_RED_APPLE_SUBTITLE"

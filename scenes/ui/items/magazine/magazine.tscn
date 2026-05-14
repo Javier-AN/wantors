@@ -15,5 +15,5 @@ focus_mode = 0
 mouse_filter = 1
 icon = SubResource("AtlasTexture_f1bf7")
 script = ExtResource("1_6buma")
-title = "MAGAZINE_TITLE"
-subtitle = "MAGAZINE_SUBTITLE"
+title = "ITEM_MAGAZINE_TITLE"
+subtitle = "ITEM_MAGAZINE_SUBTITLE"

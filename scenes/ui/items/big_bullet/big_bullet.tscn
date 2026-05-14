@@ -15,5 +15,5 @@ focus_mode = 0
 mouse_filter = 1
 icon = SubResource("AtlasTexture_f1bf7")
 script = ExtResource("2_d08yo")
-title = "BIG_BULLET_TITLE"
-subtitle = "BIG_BULLET_SUBTITLE"
+title = "ITEM_BIG_BULLET_TITLE"
+subtitle = "ITEM_BIG_BULLET_SUBTITLE"

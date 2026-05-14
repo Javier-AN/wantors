@@ -41,7 +41,7 @@ func _spawn_horde() -> void:
 
 # Starts a new level
 func _new_level() -> void:
-	_level_label.text = str(_level)
+	_level_label.text = str(_level + 1)
 	# Adapt difficulty to new level
 	_horde_size = 5 + _level * 5
 	_upgrade_chance = _level * 0.05
@@ -80,7 +80,7 @@ func _level_up() -> void:
 # Called when the game ends
 func _end_game():
 	var transition := transition_scene.instantiate()
-	transition.message = tr(&"GOOD_JOB")
+	transition.message = tr(&"GAME_END")
 	transition.target = item_unlock
 	add_sibling(transition)
 	queue_free()

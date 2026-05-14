@@ -15,5 +15,5 @@ focus_mode = 0
 mouse_filter = 1
 icon = SubResource("AtlasTexture_f1bf7")
 script = ExtResource("2_qqqg6")
-title = "ACORN_TITLE"
-subtitle = "ACORN_SUBTITLE"
+title = "ITEM_ACORN_TITLE"
+subtitle = "ITEM_ACORN_SUBTITLE"

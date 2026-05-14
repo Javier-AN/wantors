@@ -1,10 +1,9 @@
-class_name StatsUI
+class_name StatsContainer
 extends Control
 
 
 ## Text label collection.
 @onready var text_labels: Array[Label] = [
-		$PlayerHealth/PlayerHealthText,
 		$PlayerSpeed/PlayerSpeedText,
 		$PlayerDET/PlayerDETText,
 		$BulletSpeed/BulletSpeedText,
@@ -12,8 +11,6 @@ extends Control
 		$BulletKnockbackFactor/BulletKnockbackFactorText,
 		$GunFireRate/GunFireRateText,
 	]
-## Value label for player health.
-@onready var player_health_label: Label = $PlayerHealth/PlayerHealthValue
 ## Value label for player speed.
 @onready var player_speed_label: Label = $PlayerSpeed/PlayerSpeedValue
 ## Value label for player damage effect time.
@@ -32,25 +29,17 @@ extends Control
 func _ready() -> void:
 	_prepare_text_labels()
 	# Set current values
-	_update_player_health(StatsController.player_health)
 	_update_player_stats(StatsController.stats.player_stats)
 	_update_gun_stats(StatsController.stats.gun_stats)
 	# Set update triggers
-	StatsController.player_health_updated.connect(_update_player_health)
 	StatsController.player_stats_updated.connect(_update_player_stats)
 	StatsController.gun_stats_updated.connect(_update_gun_stats)
 
 
-# Capitalizes labels text and adds a separator
+# Adds a separator to each label
 func _prepare_text_labels() -> void:
 	for tl in text_labels:
-		tl.text = Utils.first_to_upper(tr(tl.text)) + ": "
-
-
-# Updates value label for player health
-func _update_player_health(health: int) -> void:
-	var max_health := StatsController.stats.player_stats.max_health
-	player_health_label.text = "%d/%d" % [health, max_health]
+		tl.text = tr(tl.text) + ": "
 
 
 # Updates value labels for player stats

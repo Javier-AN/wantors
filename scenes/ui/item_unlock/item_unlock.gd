@@ -16,7 +16,7 @@ func _ready() -> void:
 		_label.text = tr(&"ITEM_UNLOCKED")
 		_show_item(index)
 	else:
-		_label.text = tr(&"ALL_ITEMS_UNLOCKED")
+		_label.text = tr(&"ITEM_ALL_UNLOCKED")
 	_ok_button.pressed.connect(_return_to_main_menu)
 
 

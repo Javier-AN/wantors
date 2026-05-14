@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://daikoxbl4mwpo" path="res://scenes/ui/main_menu/exit_button.gd" id="1_1ch07"]
 [ext_resource type="Script" uid="uid://uho85iywlwde" path="res://scenes/ui/main_menu/main_menu.gd" id="1_cmwxi"]
 [ext_resource type="Script" uid="uid://ckfqw8kaheibn" path="res://scenes/ui/main_menu/play_button.gd" id="1_e8t4i"]
-[ext_resource type="PackedScene" uid="uid://bxxuermnef3tu" path="res://scenes/game/save_controller/save_controller.tscn" id="2_r70wa"]
 
 [node name="MainMenu" type="Control" unique_id=514492351]
 layout_mode = 3
@@ -14,9 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmwxi")
 
-[node name="SaveController" parent="." unique_id=151235442 instance=ExtResource("2_r70wa")]
-
-[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=2132446142]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2132446142]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,20 +27,28 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="ButtonContainer" unique_id=940889282]
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1674283676]
 layout_mode = 2
-text = "PLAY"
+text = "WANTORS RESIST"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=86075870]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=940889282]
+layout_mode = 2
+text = "MAIN_MENU_PLAY_BUTTON"
 script = ExtResource("1_e8t4i")
 
-[node name="ItemCollectionButton" type="Button" parent="ButtonContainer" unique_id=2103045548]
+[node name="ItemCollectionButton" type="Button" parent="VBoxContainer" unique_id=2103045548]
 layout_mode = 2
-text = "ITEM_COLLECTION"
+text = "MAIN_MENU_ITEM_COLLECTION_BUTTON"
 
-[node name="SettingsButton" type="Button" parent="ButtonContainer" unique_id=1226039529]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1226039529]
 layout_mode = 2
-text = "SETTINGS"
+text = "MAIN_MENU_SETTINGS_BUTTON"
 
-[node name="ExitButton" type="Button" parent="ButtonContainer" unique_id=1439049047]
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1439049047]
 layout_mode = 2
-text = "EXIT"
+text = "MAIN_MENU_EXIT_BUTTON"
 script = ExtResource("1_1ch07")

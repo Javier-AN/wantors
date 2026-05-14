@@ -1,27 +1,42 @@
 ﻿key,en,es,gl
-PLAY,Play,Jugar,Xogar
-ITEM_COLLECTION,Item collection,Colección de ítems,Colección de ítems
-SETTINGS,Settings,Opciones,Opcións
-EXIT,Exit,Salir,Saír
-,,,
-HEALTH,health,salud,saúde
-MAX_HEALTH,max health,saúde máxima,saúde máxima
-SPEED,speed,velocidad,velocidade
-DET,invincibility,invulnerabilidade,invulnerabilidade
-BULLET_SPEED,bullet speed,velocidad de la bala,velocidade da bala
-DAMAGE,damage,daño,dano
-KNOCKBACK,knockback,retroceso,retroceso
-FIRE_RATE,fire rate,cadencia,cadencia
-,,,
-RED_APPLE_TITLE,Red apple,Manzana roja,Mazá vermella
-RED_APPLE_SUBTITLE,Keeps the doctor away!,¡Sana como una manzana!,Comeza o día con alegría!
-POTION_TITLE,Magic potion,Poción mágica,Poción máxica
-POTION_SUBTITLE,It won't help you find love...,No sirve para encontrar el amor...,Non sirve para atopar o amor...
-MAGAZINE_TITLE,Magazine,Cargador,Cargador
-MAGAZINE_SUBTITLE,Very dangerous!,¡Las carga el diablo!,Cargouna o demo!
-BIG_BULLET_TITLE,Big bullet,Bala grande,Bala grande
-BIG_BULLET_SUBTITLE,Make them bleed!,¡Haz que sangren!,Fainos sangrar!
-GUNPOWDER_TITLE,Gunpowder,Pólvora,Pólvora
-GUNPOWDER_SUBTITLE,Mom told you not to play with fire... but...,Mamá te dijo que no jugases con fuego... Peeero...,A túa nai díxoche que non xogaras con lume... Porén...
-ACORN_TITLE,Acorn,Bellota,Bellota
-ACORN_SUBTITLE,Strong as an oak!,¡Fuerte como un roble!,Forte coma un carballo!
+MAIN_MENU_PLAY_BUTTON,Play,Jugar,Xogar
+MAIN_MENU_ITEM_COLLECTION_BUTTON,Item collection,Colección de ítems,Colección de ítems
+MAIN_MENU_SETTINGS_BUTTON,Settings,Opciones,Opcións
+MAIN_MENU_EXIT_BUTTON,Exit,Salir,Saír
+
+SETTINGS_TITLE,Settings,Opciones,Opcións
+SETTINGS_SFX_VOLUME_LABEL,SFX volume,Volumen de los efectos,Volume dos efectos
+SETTINGS_MUSIC_VOLUME_LABEL,Music volume,Volumen de la música,Volume da música
+SETTINGS_LANGUAGE_LABEL,Language,Idioma,Lingua
+SETTINGS_EXTENDED_UI_LABEL,Show stats,Mostrar atributos,Mostrar atributos
+SETTINGS_BACK_BUTTON,Save and return,Guardar y volver,Gardar e voltar
+
+STATS_HEALTH,Health,Salud,Saúde
+STATS_MAX_HEALTH,Max health,Salud máxima,Saúde máxima
+STATS_SPEED,Speed,Velocidad,Velocidade
+STATS_DET,Invincibility,Invulnerabilidad,Invulnerabilidade
+STATS_BULLET_SPEED,Bullet speed,Velocidad de la bala,Velocidade da bala
+STATS_DAMAGE,Damage,Daño,Dano
+STATS_KNOCKBACK,Knockback,Retroceso,Retroceso
+STATS_FIRE_RATE,Fire rate,Cadencia,Cadencia
+
+ITEM_RED_APPLE_TITLE,Red apple,Manzana roja,Mazá vermella
+ITEM_RED_APPLE_SUBTITLE,Keeps the doctor away!,¡Sana como una manzana!,Comeza o día con alegría!
+ITEM_POTION_TITLE,Magic potion,Poción mágica,Poción máxica
+ITEM_POTION_SUBTITLE,It won't help you find love...,No sirve para encontrar el amor...,Non sirve para atopar o amor...
+ITEM_MAGAZINE_TITLE,Magazine,Cargador,Cargador
+ITEM_MAGAZINE_SUBTITLE,Very dangerous!,¡Lo carga el diablo!,Cargouno o demo!
+ITEM_BIG_BULLET_TITLE,Big bullet,Bala grande,Bala grande
+ITEM_BIG_BULLET_SUBTITLE,Make them bleed!,¡Haz que sangren!,Fainos sangrar!
+ITEM_GUNPOWDER_TITLE,Gunpowder,Pólvora,Pólvora
+ITEM_GUNPOWDER_SUBTITLE,Mom told you not to play with fire... but...,Mamá te dijo que no jugases con fuego... Peeero...,A túa nai díxoche que non xogaras con lume... Porén...
+ITEM_ACORN_TITLE,Acorn,Bellota,Bellota
+ITEM_ACORN_SUBTITLE,Strong as an oak!,¡Fuerte como un roble!,Forte coma un carballo!
+
+ITEM_SELECT,Choose an item,Elige un ítem,Elixe un ítem
+ITEM_UNLOCKED,New item unlocked!,¡Nuevo ítem desbloqueado!,Novo ítem desbloqueado!
+ITEM_ALL_UNLOCKED,All of the items are already unlocked,Todos los ítems están ya desbloqueados,Todos os ítems están xa desbloqueados
+
+GAME_LEVEL,Level,Nivel,Nivel
+GAME_START,YOU ARE A WANTOR. YOU MUST RESIST.,ERES UN WANTOR. DEBES RESISTIR.,ES UN WANTOR. DEBES RESISTIR.
+GAME_END,"GOOD JOB, WANTOR. KEEP RESISTING.","BUEN TRABAJO, WANTOR. SIGUE RESISTIENDO.","BO TRABALLO, WANTOR. SEGUE RESISTINDO."

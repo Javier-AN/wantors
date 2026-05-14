@@ -6,12 +6,12 @@ extends Button
 
 
 func _ready() -> void:
-	pressed.connect(_play, ConnectFlags.CONNECT_ONE_SHOT)
+	pressed.connect(_play, CONNECT_ONE_SHOT)
 
 
 func _play() -> void:
 	var transition := transition_scene.instantiate()
-	transition.message = &"YOU_MUST_RESIST"
+	transition.message = &"GAME_START"
 	transition.target = main_scene
-	get_parent().add_sibling(transition)
-	get_parent().queue_free()
+	get_parent().get_parent().add_sibling(transition)
+	get_parent().get_parent().queue_free()

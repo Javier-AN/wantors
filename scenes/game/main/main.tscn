@@ -38,7 +38,7 @@ grow_horizontal = 2
 
 [node name="LevelText" type="Label" parent="UIContainer/LevelContainer" unique_id=1716524280]
 layout_mode = 2
-text = "LEVEL"
+text = "GAME_LEVEL"
 
 [node name="LevelValue" type="Label" parent="UIContainer/LevelContainer" unique_id=339833077]
 layout_mode = 2
