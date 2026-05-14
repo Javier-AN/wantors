@@ -1,17 +1,16 @@
 class_name Main
 extends Node
 
-
 # Nodes
-@export var timer: Timer 
-@export var spawner: Spawner
-@export var item_menu: PackedScene
-@export var main_menu: PackedScene
-
-@onready var _save_controller : SaveController = $SaveController
+@onready var timer: Timer = $Timer
+@onready var spawner: Spawner = $Spawner
 @onready var _ui_container: CanvasLayer = $UIContainer
 @onready var _level_label: Label = $UIContainer/LevelContainer/LevelValue
-@onready var _unlocked_item_container: Container = $UIContainer/UnlockedItemContainer
+
+# Scenes
+@onready var item_menu: PackedScene = load("res://scenes/ui/item_menu/item_menu.tscn")
+@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message/transition_message.tscn")
+@onready var item_unlock: PackedScene = load("res://scenes/ui/item_unlock/item_unlock.tscn")
 
 # Private variables
 var _level: int = 0
@@ -31,7 +30,7 @@ func _ready() -> void:
 # Called every tick
 func _physics_process(_delta: float) -> void:
 	# ONLY FOR TESTING PURPOSES
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_home"):
 		_level_finished()
 
 
@@ -78,22 +77,12 @@ func _level_up() -> void:
 	_new_level()
 
 
-# Unlocks a new item and shows it
+# Called when the game ends
 func _end_game():
-	# Unlock new item
-	var unlocked := ItemCollectionController.unlock_random_item()
-	_save_controller.save_game_data()
-	# Show it
-	var unlocked_item: Item = ItemCollectionController.item_pool[unlocked].instantiate()
-	unlocked_item.effect_applied.connect(_return_to_main_menu)
-	_unlocked_item_container.add_child(unlocked_item)
-	_unlocked_item_container.visible = true
-
-
-# Changes the scene to the main menu
-func _return_to_main_menu():
-	var menu := main_menu.instantiate()
-	add_sibling(menu)
+	var transition := transition_scene.instantiate()
+	transition.message = tr(&"GOOD_JOB")
+	transition.target = item_unlock
+	add_sibling(transition)
 	queue_free()
 
 

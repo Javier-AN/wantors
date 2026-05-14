@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://fwdlo1243wrf" path="res://scenes/game/weapons/bullet/bullet.tscn" id="2_eo2c1"]
 
 [node name="Gun" type="Node2D" unique_id=76791056 node_paths=PackedStringArray("muzzle")]
+z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_fjnj2")
 muzzle = NodePath("Muzzle")

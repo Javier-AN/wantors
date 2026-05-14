@@ -4,25 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://uxbhdggbb6r3" path="res://scenes/game/sites/site_0/site_0.tscn" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://1qca362spwiq" path="res://scenes/game/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/game/mobs/player/player.tscn" id="2_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://cq11cjhy6y321" path="res://scenes/ui/item_menu/item_menu.tscn" id="2_yyfjg"]
-[ext_resource type="PackedScene" uid="uid://bhr1hfex75jv5" path="res://scenes/ui/main_menu/main_menu.tscn" id="3_jpied"]
-[ext_resource type="PackedScene" uid="uid://bxxuermnef3tu" path="res://scenes/game/save_controller/save_controller.tscn" id="4_lq55d"]
 [ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/game/spawner/spawner.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://b8kbjxr6udo15" path="res://scenes/ui/stats_ui/stats_ui.tscn" id="7_hujxm"]
 
-[node name="Main" type="Node2D" unique_id=119547804 node_paths=PackedStringArray("timer", "spawner")]
+[node name="Main" type="Node2D" unique_id=119547804]
 y_sort_enabled = true
 script = ExtResource("1_k2fmo")
-timer = NodePath("Timer")
-spawner = NodePath("Spawner")
-item_menu = ExtResource("2_yyfjg")
-main_menu = ExtResource("3_jpied")
 
 [node name="PauseController" type="Node" parent="." unique_id=1337615939]
 process_mode = 3
 script = ExtResource("1_6q06x")
-
-[node name="SaveController" parent="." unique_id=151235442 instance=ExtResource("4_lq55d")]
 
 [node name="Timer" type="Timer" parent="." unique_id=1176805290]
 wait_time = 3.0
@@ -53,21 +44,3 @@ text = "LEVEL"
 layout_mode = 2
 
 [node name="StatsUI" parent="UIContainer" unique_id=1014673922 instance=ExtResource("7_hujxm")]
-
-[node name="UnlockedItemContainer" type="VBoxContainer" parent="UIContainer" unique_id=713892526]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="UnlockedLabel" type="Label" parent="UIContainer/UnlockedItemContainer" unique_id=1235545762]
-layout_mode = 2
-text = "UNLOCKED_NEW_ITEM"

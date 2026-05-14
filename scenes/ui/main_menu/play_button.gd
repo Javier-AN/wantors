@@ -1,6 +1,7 @@
 extends Button
 
 
+@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message/transition_message.tscn")
 @onready var main_scene: PackedScene = load("res://scenes/game/main/main.tscn")
 
 
@@ -9,4 +10,8 @@ func _ready() -> void:
 
 
 func _play() -> void:
-	get_tree().change_scene_to_packed(main_scene)
+	var transition := transition_scene.instantiate()
+	transition.message = &"YOU_MUST_RESIST"
+	transition.target = main_scene
+	get_parent().add_sibling(transition)
+	get_parent().queue_free()

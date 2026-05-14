@@ -63,6 +63,7 @@ func _update_health(new_health: int):
 	if health > max_health:
 		health = max_health
 	if health <= 0:
+		health = 0
 		_die()
 
 
