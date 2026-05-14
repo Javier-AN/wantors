@@ -5,7 +5,7 @@ signal item_chosen
 
 @export var number_of_items: int = 2
 
-@onready var item_container: Container = $ItemContainer
+@onready var item_container: Container = $VBoxContainer/ItemContainer
 
 var picked_items: Array[Item]
 

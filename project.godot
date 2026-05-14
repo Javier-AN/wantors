@@ -22,6 +22,8 @@ Utils="*uid://bf23jhcljbyj1"
 Constants="*uid://4xer0j3vvpxr"
 StatsController="*uid://bbqwv4beh50jq"
 ItemCollectionController="*uid://1udhhkoytbjv"
+SaveController="*uid://hfp5qick1q05"
+PreferencesController="*uid://b1j7fy75x64yd"
 
 [display]
 

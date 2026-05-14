@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://daikoxbl4mwpo" path="res://scenes/ui/main_menu/exit_button.gd" id="1_1ch07"]
 [ext_resource type="Script" uid="uid://uho85iywlwde" path="res://scenes/ui/main_menu/main_menu.gd" id="1_cmwxi"]
 [ext_resource type="Script" uid="uid://ckfqw8kaheibn" path="res://scenes/ui/main_menu/play_button.gd" id="1_e8t4i"]
+[ext_resource type="Script" uid="uid://csrwwjibs8oqr" path="res://scenes/ui/main_menu/settings_button.gd" id="4_r70wa"]
 
 [node name="MainMenu" type="Control" unique_id=514492351]
 layout_mode = 3
@@ -47,6 +48,7 @@ text = "MAIN_MENU_ITEM_COLLECTION_BUTTON"
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1226039529]
 layout_mode = 2
 text = "MAIN_MENU_SETTINGS_BUTTON"
+script = ExtResource("4_r70wa")
 
 [node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1439049047]
 layout_mode = 2

@@ -3,7 +3,6 @@ extends Control
 
 @export var main_menu: PackedScene
 
-@onready var _save_controller: SaveController = $SaveController
 @onready var _label: Label = $VBoxContainer/Label
 @onready var _item_container: Control = $VBoxContainer/ItemContainer
 @onready var _ok_button: Button = $VBoxContainer/OkButton
@@ -22,7 +21,7 @@ func _ready() -> void:
 
 func _unlock_new_item() -> int:
 	var unlocked := ItemCollectionController.unlock_random_item()
-	_save_controller.save_game_data()
+	SaveController.save_game_data()
 	return unlocked
 
 

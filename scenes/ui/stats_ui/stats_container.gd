@@ -27,6 +27,7 @@ extends Control
 
 # Called when ready
 func _ready() -> void:
+	visible = PreferencesController.preferences.extended_ui
 	_prepare_text_labels()
 	# Set current values
 	_update_player_stats(StatsController.stats.player_stats)

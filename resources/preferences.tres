@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Preferences" format=3 uid="uid://chcp253endqwq"]
+
+[ext_resource type="Script" uid="uid://gcx16trc16cb" path="res://resources/preferences.gd" id="1_m2wkh"]
+
+[resource]
+script = ExtResource("1_m2wkh")
+sfx_volume = 100
+music_volume = 100
+metadata/_custom_type_script = "uid://gcx16trc16cb"

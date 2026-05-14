@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_f6hr2")
+unlocked_items = Array[int]([0, 1])
 metadata/_custom_type_script = "uid://85t2jcgbufwl"

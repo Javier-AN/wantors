@@ -13,14 +13,12 @@ grow_vertical = 2
 script = ExtResource("1_hr181")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1851425143]
-z_index = 1
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.070108764, 0.12963608, 0.19947207, 1)
 
-[node name="ItemContainer" type="HBoxContainer" parent="." unique_id=573717301]
-z_index = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1789416970]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,4 +31,13 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2140427693]
+layout_mode = 2
+text = "ITEM_SELECT"
+horizontal_alignment = 1
+
+[node name="ItemContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=573717301]
+layout_mode = 2
 alignment = 1

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bwha56swedj5r"]
+
+[ext_resource type="Script" uid="uid://c2vudgrv6qfjk" path="res://scenes/ui/settings_menu/sfx_volume_slider.gd" id="1_h0t3o"]
+[ext_resource type="Script" uid="uid://b6isqb1idy2wk" path="res://scenes/ui/settings_menu/language_selection.gd" id="1_qa56a"]
+[ext_resource type="Script" uid="uid://ng7hvjr5i01q" path="res://scenes/ui/settings_menu/back_button.gd" id="1_rfbkj"]
+[ext_resource type="Script" uid="uid://dnw0ghgfsyy68" path="res://scenes/ui/settings_menu/extended_ui_check_button.gd" id="2_225ns"]
+[ext_resource type="Script" uid="uid://ba8dkelfjlh5p" path="res://scenes/ui/settings_menu/music_volume_slider.gd" id="2_ying2"]
+
+[node name="SettingsMenu" type="Control" unique_id=1593735735]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1539509473]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -94.0
+offset_right = 144.5
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1347119072]
+layout_mode = 2
+text = "SETTINGS_TITLE"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1171037322]
+layout_mode = 2
+
+[node name="SFXVolumeLabel" type="Label" parent="VBoxContainer" unique_id=296359184]
+layout_mode = 2
+text = "SETTINGS_SFX_VOLUME_LABEL"
+horizontal_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer" unique_id=958765297]
+layout_mode = 2
+script = ExtResource("1_h0t3o")
+
+[node name="MusicVolumeLabel" type="Label" parent="VBoxContainer" unique_id=1449710206]
+layout_mode = 2
+text = "SETTINGS_MUSIC_VOLUME_LABEL"
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer" unique_id=64818451]
+layout_mode = 2
+script = ExtResource("2_ying2")
+
+[node name="LanguageSelectionContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2004347687]
+layout_mode = 2
+alignment = 1
+script = ExtResource("1_qa56a")
+
+[node name="PreviousLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=422869095]
+layout_mode = 2
+text = "<"
+
+[node name="LanguageLabel" type="Label" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1465275733]
+layout_mode = 2
+text = "SETTINGS_LANGUAGE_LABEL"
+vertical_alignment = 1
+
+[node name="NextLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1916228800]
+layout_mode = 2
+text = ">"
+
+[node name="ExtendedUICheckContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1424036355]
+layout_mode = 2
+alignment = 1
+
+[node name="ExtendedUILabel" type="Label" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=1423805663]
+layout_mode = 2
+text = "SETTINGS_EXTENDED_UI_LABEL"
+
+[node name="ExtendedUICheckButton" type="CheckButton" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=126764848]
+layout_mode = 2
+script = ExtResource("2_225ns")
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=995826746]
+layout_mode = 2
+text = "SETTINGS_BACK_BUTTON"
+script = ExtResource("1_rfbkj")
