@@ -30,3 +30,8 @@ func pick_randoms(array: Array, n: int) -> Array:
 		picks.append(pool[index])
 		pool.remove_at(index)
 	return picks
+
+
+## Returns [param file_name] without the [code].remap[/code] extension.
+func trim_remap(file_name: String) -> String:
+	return file_name.left(-6) if file_name.ends_with(".remap") else file_name

@@ -20,6 +20,7 @@ func _load_items_in_dir(dir_path):
 		_load_items_in_dir(dir_path + "/" + subdir_name)
 	# Iterate files
 	for file_name in dir.get_files():
+		file_name = Utils.trim_remap(file_name)
 		# If file is a scene, load it
 		if file_name.get_extension() == "tscn":
 			var item := load(dir_path + "/" + file_name)
