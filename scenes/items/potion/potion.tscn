@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d12hpdni86c51"]
+
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_mwcux"]
+[ext_resource type="Script" uid="uid://dyblxcb8fbvtn" path="res://scenes/items/potion/potion.gd" id="2_hdr6x"]
+[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_node/item_node.tscn" id="2_yj28c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h44h"]
+atlas = ExtResource("1_mwcux")
+region = Rect2(32, 0, 32, 32)
+
+[node name="Potion" type="MarginContainer" unique_id=1271005013]
+physics_interpolation_mode = 0
+offset_right = 350.0
+offset_bottom = 100.0
+script = ExtResource("2_hdr6x")
+
+[node name="ItemNode" parent="." unique_id=1156721269 instance=ExtResource("2_yj28c")]
+layout_mode = 2
+image = SubResource("AtlasTexture_7h44h")
+title = "ITEM_POTION_TITLE"
+subtitle = "ITEM_POTION_SUBTITLE"

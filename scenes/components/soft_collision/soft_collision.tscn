@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ma5q2asobxc1"]
 
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/game/collisions/soft_collision/soft_collision.gd" id="1_h50sj"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision/soft_collision.gd" id="1_h50sj"]
 
 [node name="SoftCollision" type="Area2D" unique_id=1570148502]
 collision_layer = 128

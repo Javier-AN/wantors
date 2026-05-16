@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4bnfhi5b4aor" path="res://scenes/game/mobs/enemy/enemy.gd" id="1_3juu0"]
 [ext_resource type="Texture2D" uid="uid://li2kos36vmma" path="res://assets/images/enemy.png" id="2_e7wko"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/game/collisions/soft_collision/soft_collision.gd" id="3_h12lt"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision/soft_collision.gd" id="3_h12lt"]
 [ext_resource type="PackedScene" uid="uid://b68rb1qah4qt6" path="res://scenes/game/weapons/sword/sword.tscn" id="4_syfaj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40wdo"]

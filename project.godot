@@ -24,9 +24,12 @@ StatsController="*uid://bbqwv4beh50jq"
 ItemCollectionController="*uid://1udhhkoytbjv"
 SaveController="*uid://hfp5qick1q05"
 PreferencesController="*uid://b1j7fy75x64yd"
+PauseController="*uid://c1873vvnpt3x8"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
 [input]

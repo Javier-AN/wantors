@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u7afll3kclb5"]
+
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_0m453"]
+[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_node/item_node.tscn" id="2_eg2e5"]
+[ext_resource type="Script" uid="uid://dvr2o1sj0a2b" path="res://scenes/items/gunpowder/gunpowder.gd" id="2_rvvka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjnl1"]
+atlas = ExtResource("1_0m453")
+region = Rect2(32, 32, 32, 32)
+
+[node name="Gunpowder" type="MarginContainer" unique_id=400989420]
+physics_interpolation_mode = 0
+offset_right = 350.0
+offset_bottom = 100.0
+script = ExtResource("2_rvvka")
+
+[node name="ItemNode" parent="." unique_id=1156721269 instance=ExtResource("2_eg2e5")]
+layout_mode = 2
+image = SubResource("AtlasTexture_sjnl1")
+title = "ITEM_GUNPOWDER_TITLE"
+subtitle = "ITEM_GUNPOWDER_SUBTITLE"

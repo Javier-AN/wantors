@@ -3,8 +3,7 @@ extends Mob
 
 
 ## Player gun.
-@export var gun: Node2D
-
+@onready var gun: Node2D = $Gun
 @onready var sprite: AnimatedSprite2D = $PlayerSprite
 
 # Private variables
@@ -90,4 +89,5 @@ func _die():
 	super()
 	sprite.play("idle")
 	modulate = Constants.DAMAGE_COLOR
-	gun.queue_free()
+	if gun:
+		gun.queue_free()

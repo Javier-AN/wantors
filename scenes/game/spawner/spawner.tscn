@@ -8,8 +8,5 @@
 y_sort_enabled = true
 script = ExtResource("1_eoeca")
 enemies = Array[PackedScene]([ExtResource("2_wtxcb"), ExtResource("3_uhn3r")])
-min_distance = null
-max_distance = null
-max_attempts = null
 
 [node name="PlayerMarker" type="Marker2D" parent="." unique_id=1647003000]

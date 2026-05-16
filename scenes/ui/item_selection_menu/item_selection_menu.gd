@@ -1,4 +1,4 @@
-class_name ItemMenu
+class_name ItemSelectionMenu
 extends Control
 
 signal item_chosen
@@ -12,6 +12,7 @@ var picked_items: Array[Item]
 
 # Called when ready
 func _ready() -> void:
+	PauseController.toggle(true)
 	_pick_items()
 
 
@@ -25,5 +26,6 @@ func _pick_items() -> void:
 
 
 func _self_destroy() -> void:
+	PauseController.toggle(false)
 	item_chosen.emit()
 	queue_free()

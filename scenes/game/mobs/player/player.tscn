@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cwe1py1i72efq" path="res://assets/images/player.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bou6d8xgklpvg" path="res://scenes/game/mobs/player/player.gd" id="1_dovo2"]
 [ext_resource type="PackedScene" uid="uid://c7ydp6uwgtdl8" path="res://scenes/game/weapons/gun/gun.tscn" id="3_gmlin"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/game/collisions/soft_collision/soft_collision.gd" id="3_lvxji"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision/soft_collision.gd" id="3_lvxji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -87,12 +87,11 @@ size = Vector2(16.5, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 size = Vector2(14, 27)
 
-[node name="Player" type="CharacterBody2D" unique_id=1506993550 node_paths=PackedStringArray("gun", "soft_collision")]
+[node name="Player" type="CharacterBody2D" unique_id=1506993550 node_paths=PackedStringArray("soft_collision")]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_dovo2")
-gun = NodePath("Gun")
 soft_collision = NodePath("SoftCollision")
 max_health = 100
 speed = 120.0

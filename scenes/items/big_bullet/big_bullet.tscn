@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d3oumr7feqqei"]
+
+[ext_resource type="Script" uid="uid://us4xu3yvcd5j" path="res://scenes/items/big_bullet/big_bullet.gd" id="2_d08yo"]
+[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_node/item_node.tscn" id="2_jvhuy"]
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="3_r4fuo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1egu"]
+atlas = ExtResource("3_r4fuo")
+region = Rect2(0, 32, 32, 32)
+
+[node name="BigBullet" type="MarginContainer" unique_id=2081190217]
+physics_interpolation_mode = 0
+offset_right = 350.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+script = ExtResource("2_d08yo")
+
+[node name="ItemNode" parent="." unique_id=1524685590 instance=ExtResource("2_jvhuy")]
+layout_mode = 2
+image = SubResource("AtlasTexture_e1egu")
+title = "ITEM_BIG_BULLET_TITLE"
+subtitle = "ITEM_BIG_BULLET_SUBTITLE"

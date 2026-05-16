@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bin8yk1de58u4"]
+
+[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_7r4vh"]
+[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_node/item_node.tscn" id="2_45hth"]
+[ext_resource type="Script" uid="uid://bfat2i88sd13i" path="res://scenes/items/acorn/acorn.gd" id="2_qqqg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa6j7"]
+atlas = ExtResource("1_7r4vh")
+region = Rect2(64, 32, 32, 32)
+
+[node name="Acorn" type="MarginContainer" unique_id=1587532360]
+physics_interpolation_mode = 0
+offset_right = 350.0
+offset_bottom = 100.0
+script = ExtResource("2_qqqg6")
+
+[node name="ItemNode" parent="." unique_id=1524685590 instance=ExtResource("2_45hth")]
+layout_mode = 2
+image = SubResource("AtlasTexture_wa6j7")
+title = "ITEM_ACORN_TITLE"
+subtitle = "ITEM_ACORN_SUBTITLE"

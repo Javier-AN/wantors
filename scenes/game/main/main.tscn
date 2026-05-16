@@ -19,7 +19,7 @@ wait_time = 3.0
 [node name="Site0" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
-position = Vector2(-84, 57)
+position = Vector2(-2, -1)
 
 [node name="UIContainer" type="CanvasLayer" parent="." unique_id=1425153929]
 

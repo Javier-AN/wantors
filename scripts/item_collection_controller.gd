@@ -3,7 +3,7 @@ extends Node
 var item_pool: Array[PackedScene]
 var unlocked_items: Array[int]
 
-var _items_dir_path: String = "res://scenes/ui/items"
+var _items_dir_path: String = "res://scenes/items"
 
 
 # Called on instantiation

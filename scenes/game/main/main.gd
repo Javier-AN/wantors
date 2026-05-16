@@ -8,7 +8,7 @@ extends Node
 @onready var _level_label: Label = $UIContainer/LevelContainer/LevelValue
 
 # Scenes
-@onready var item_menu: PackedScene = load("res://scenes/ui/item_menu/item_menu.tscn")
+@onready var item_selection_menu: PackedScene = load("res://scenes/ui/item_selection_menu/item_selection_menu.tscn")
 @onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message/transition_message.tscn")
 @onready var item_unlock: PackedScene = load("res://scenes/ui/item_unlock/item_unlock.tscn")
 
@@ -62,8 +62,9 @@ func _level_finished() -> void:
 
 # Shows item menu
 func _show_item_menu() -> void:
-	var menu: ItemMenu = item_menu.instantiate()
+	var menu: ItemSelectionMenu = item_selection_menu.instantiate()
 	_ui_container.add_child(menu)
+	_ui_container.move_child(menu, _ui_container.get_children().size() - 2)
 	menu.item_chosen.connect(_level_up)
 
 
