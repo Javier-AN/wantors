@@ -54,4 +54,4 @@ func _update_gun_stats(stats: StatsClass.GunStats) -> void:
 	bullet_speed_label.text = str(stats.bullet_speed)
 	bullet_damage_label.text = str(stats.bullet_damage)
 	bullet_knockback_factor_label.text = str(stats.bullet_knockback_factor)
-	gun_fire_rate_label.text = str(10 / stats.shooting_cooldown)
+	gun_fire_rate_label.text = str(Utils.round_to_dec(10 / stats.shooting_cooldown, 1))

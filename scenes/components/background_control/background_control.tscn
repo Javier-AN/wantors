@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cymlcmslutdit"]
+
+[node name="BackgroundControl" type="ColorRect" unique_id=866268576]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.070108764, 0.12963608, 0.19947207, 1)

@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c8v33kuv7q6np"]
-
-[node name="Mob" type="CharacterBody2D" unique_id=1293143134]
-collision_layer = 0
-collision_mask = 0

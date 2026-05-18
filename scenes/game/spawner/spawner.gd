@@ -21,9 +21,6 @@ signal enemies_cleared
 ## After failing this many attempts, the spawn is cancelled.
 @export var max_attempts: int = 10
 
-## Keeps track of the player's position.
-@onready var marker: Marker2D = $PlayerMarker
-
 ## Maximum amount of mobs that can be spawned between resets.
 var mob_cap: int = 50
 
@@ -31,6 +28,12 @@ var mob_cap: int = 50
 var _mob_count: int = 0
 var _mob_cap_reached: bool = false
 var _alive_enemies: int = 0
+
+## Keeps track of the player's position.
+@onready var marker: Marker2D = $PlayerMarker
+## Keeps track of the player's position.
+@onready var _enemy_container: Node2D = $EnemyContainer
+@onready var _spawn_area_detector_scene: PackedScene = load("res://scenes/components/spawn_area_detector/spawn_area_detector.tscn")
 
 
 # Called when ready
@@ -94,10 +97,10 @@ func spawn_enemy(enemy_type: int = 0) -> bool:
 	if enemy_position.length() == 0:
 		return false
 	# If it success, spawns the enemy in the position and returns true
-	var new_enemy: Enemy = enemies[enemy_type].instantiate()
+	var new_enemy: Creature = enemies[enemy_type].instantiate()
 	new_enemy.global_position = enemy_position
 	new_enemy.disappeared.connect(_enemy_died)
-	add_child(new_enemy)
+	_enemy_container.add_child(new_enemy)
 	return true
 
 
@@ -120,21 +123,16 @@ func _new_spawn_position() -> Vector2:
 
 # Checks wether the given location is in a valid spawn area
 func _is_valid_spawn_area(location: Vector2) -> bool:
-	# Create a raycast in the given location
-	var raycast := RayCast2D.new()
-	raycast.position = location
-	for i in range(1, 8):
-		raycast.set_collision_mask_value(i, false)
-	raycast.set_collision_mask_value(4, true)
-	raycast.hit_from_inside = true
-	raycast.target_position = Vector2.UP.normalized()
+	# Create a detector in the given location
+	var detector: RayCast2D = _spawn_area_detector_scene.instantiate()
+	detector.position = location
 	# Add it to the tree
-	add_child(raycast)
+	add_child(detector)
 	# Detect collisions with spawneable area
-	raycast.force_raycast_update()
-	var valid := raycast.is_colliding()
+	detector.force_raycast_update()
+	var valid := detector.is_colliding()
 	# Destroy raycast
-	raycast.queue_free()
+	detector.queue_free()
 	return valid
 
 

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ffrkxdpdwpe5"]
+
+[ext_resource type="Script" uid="uid://cspq15d5dtdpu" path="res://scenes/components/bullet_area/bullet_area.gd" id="1_3f80h"]
+[ext_resource type="Texture2D" uid="uid://prh01ileo6ua" path="res://assets/images/bullets.png" id="2_3f80h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dof6p"]
+atlas = ExtResource("2_3f80h")
+region = Rect2(0, 0, 9, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83itf"]
+size = Vector2(7.9999995, 9.523809)
+
+[node name="EnemyBullet" type="Area2D" unique_id=882962621]
+z_index = 1
+collision_layer = 0
+collision_mask = 33
+script = ExtResource("1_3f80h")
+metadata/_custom_type_script = "uid://cspq15d5dtdpu"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641579673]
+position = Vector2(-2, 0)
+texture = SubResource("AtlasTexture_dof6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955630396]
+rotation = -1.5707963
+scale = Vector2(0.5, -0.42)
+shape = SubResource("RectangleShape2D_83itf")

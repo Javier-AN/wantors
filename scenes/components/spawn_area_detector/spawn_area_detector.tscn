@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://mqf6vtodsh8q"]
+
+[node name="SpawnAreaDetector" type="RayCast2D" unique_id=1514182771]
+target_position = Vector2(0, -1)
+collision_mask = 16
+hit_from_inside = true

@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message/transition_message.tscn")
+@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message_screen/transition_message_screen.tscn")
 @onready var main_scene: PackedScene = load("res://scenes/game/main/main.tscn")
 
 

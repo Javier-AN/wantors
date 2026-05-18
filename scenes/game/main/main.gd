@@ -9,8 +9,8 @@ extends Node
 
 # Scenes
 @onready var item_selection_menu: PackedScene = load("res://scenes/ui/item_selection_menu/item_selection_menu.tscn")
-@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message/transition_message.tscn")
-@onready var item_unlock: PackedScene = load("res://scenes/ui/item_unlock/item_unlock.tscn")
+@onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message_screen/transition_message_screen.tscn")
+@onready var item_unlock: PackedScene = load("res://scenes/ui/item_unlock_screen/item_unlock_screen.tscn")
 
 # Private variables
 var _level: int = 0

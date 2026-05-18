@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u7afll3kclb5"]
 
 [ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="1_0m453"]
-[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_node/item_node.tscn" id="2_eg2e5"]
+[ext_resource type="PackedScene" uid="uid://d4jgju1bdqikl" path="res://scenes/components/item_control/item_control.tscn" id="2_eg2e5"]
 [ext_resource type="Script" uid="uid://dvr2o1sj0a2b" path="res://scenes/items/gunpowder/gunpowder.gd" id="2_rvvka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjnl1"]

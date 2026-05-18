@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlx4dlkasfu1r"]
 
 [ext_resource type="Script" uid="uid://cwx1mbp83k16u" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_kgchh"]
-[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_rect/background_rect.tscn" id="2_rbnsh"]
+[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_control/background_control.tscn" id="2_rbnsh"]
 
 [node name="PauseMenu" type="Control" unique_id=1022825127]
 process_mode = 3

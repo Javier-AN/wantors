@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fwdlo1243wrf"]
+
+[ext_resource type="Script" uid="uid://cspq15d5dtdpu" path="res://scenes/components/bullet_area/bullet_area.gd" id="1_t2phq"]
+
+[node name="BulletArea" type="Area2D" unique_id=432727492]
+z_index = 1
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_t2phq")
+metadata/_custom_type_script = "uid://k2v65hjthn5t"

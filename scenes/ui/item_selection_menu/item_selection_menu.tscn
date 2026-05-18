@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq11cjhy6y321"]
 
 [ext_resource type="Script" uid="uid://ebndsn3bo1kd" path="res://scenes/ui/item_selection_menu/item_selection_menu.gd" id="1_i3qnx"]
-[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_rect/background_rect.tscn" id="2_cqkuh"]
+[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_control/background_control.tscn" id="2_cqkuh"]
 
 [node name="ItemSelectionMenu" type="Control" unique_id=1850732347]
 process_mode = 3
