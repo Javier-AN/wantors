@@ -10,7 +10,9 @@ SETTINGS_MUSIC_VOLUME_LABEL,Music volume,Volumen de la música,Volume da música
 SETTINGS_LANGUAGE_LABEL,Language,Idioma,Lingua
 SETTINGS_EXTENDED_UI_LABEL,Show stats,Mostrar atributos,Mostrar atributos
 SETTINGS_BACK_BUTTON,Save and return,Guardar y volver,Gardar e voltar
-,,,
+
+COLLECTION_BACK,Back,Atrás,Atrás
+
 PAUSE_TITLE,Game is paused,El juego está en pausa,O xogo está pausado
 PAUSE_RESUME_BUTTON,Resume,Continuar,Continuar
 PAUSE_EXIT_BUTTON,Exit,Salir,Saír
@@ -18,7 +20,7 @@ PAUSE_EXIT_BUTTON,Exit,Salir,Saír
 STATS_HEALTH,Health,Salud,Saúde
 STATS_MAX_HEALTH,Max health,Salud máxima,Saúde máxima
 STATS_SPEED,Speed,Velocidad,Velocidade
-STATS_DET,Invincibility,Invulnerabilidad,Invulnerabilidade
+STATS_HIT_TIME,Invincibility,Invulnerabilidad,Invulnerabilidade
 STATS_BULLET_SPEED,Bullet speed,Velocidad de la bala,Velocidade da bala
 STATS_DAMAGE,Damage,Daño,Dano
 STATS_KNOCKBACK,Knockback,Retroceso,Retroceso

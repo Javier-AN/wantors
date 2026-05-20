@@ -28,6 +28,7 @@ var in_cooldown: bool
 
 # Called when ready
 func _ready() -> void:
+	_timer.timeout.connect(_end_cooldown)
 	add_child(_timer)
 	_bullet_container.top_level = true
 	add_child(_bullet_container)
@@ -39,7 +40,6 @@ func shoot():
 		_generate_bullet()
 		in_cooldown = true
 		_timer.start(shooting_cooldown)
-		_timer.timeout.connect(_end_cooldown)
 
 
 # Sets cooldown state to false.

@@ -36,13 +36,13 @@ func _update_animation():
 		_sprite.play("idle")
 
 
-# Performs damage effects such as knockbacking or showing visual clues.
-func _do_damage_effects(damage: int, push := Vector2.ZERO):
+# Called when a hit is taken.
+func _hit_taken(damage: int, push := Vector2.ZERO) -> void:
 	super(damage, push)
-	_sprite.play("idle")
+	_sprite.play("damage")
 
 
-# Kills the enemy
+# Called when health reaches zero.
 func _die():
 	super()
 	# First disable collisions
@@ -52,7 +52,6 @@ func _die():
 		_damage_body.queue_free()
 	# Then animate
 	velocity = Vector2.ZERO
-	modulate = Constants.DAMAGE_COLOR
 	_sprite.play("die")
 	# Finally erase
 	_sprite.animation_finished.connect(_disappear)

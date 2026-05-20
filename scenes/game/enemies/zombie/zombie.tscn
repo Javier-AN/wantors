@@ -160,7 +160,7 @@ size = Vector2(17, 27)
 radius = 9.5
 height = 28.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("soft_collision_area")]
+[node name="Enemy" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("soft_collision_area", "sprites")]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 4
@@ -169,7 +169,9 @@ knockback_factor = 1.0
 soft_collision_area = NodePath("SoftCollisionArea")
 speed = 50.0
 max_health = 10
-damage_effect_time = 0.1
+hit_time = 0.4
+hit_color = Color(1, 0.99215686, 1, 1)
+sprites = [NodePath("Sprite")]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1814592448]
 sprite_frames = SubResource("SpriteFrames_40wdo")

@@ -13,18 +13,33 @@ signal disappeared
 #region Variables
 ## Maximum health the mob can have.
 @export var max_health: int
-## Time the damage effects last, like knockback or invincibility. 
-@export var damage_effect_time: float
+## Time the hit effects last. 
+@export var hit_time: float
+## Color the sprites turn during a hit.
+@export var hit_color: Color = Constants.DAMAGE_COLOR
+## If set, they turn hit color during a hit. 
+@export var sprites: Array[CanvasItem]
 
 ## Indicates whether the enemy is dead.
 var dead: bool = false
 
 ## Current health.
 @onready var health: int = max_health
+# Hit timer.
+@onready var _hit_timer := Timer.new()
+# Solid color material.
+@onready var _solid_color_material: ShaderMaterial = load("res://textures/solid_color_material.tres").duplicate()
 #endregion
 
 
 #region Methods
+
+# Called when ready.
+func _ready() -> void:
+	_hit_timer.timeout.connect(_hit_ended)
+	add_child(_hit_timer)
+	_solid_color_material.set_shader_parameter("solid_color", hit_color)
+
 
 ## Manages a received hit.
 ## 
@@ -32,11 +47,12 @@ var dead: bool = false
 ## [param push] is the push vector of the hit.
 func take_hit(damage: int, push := Vector2.ZERO) -> void:
 	_update_health(health - damage)
+	_toggle_hit_color(true)
 	if not dead:
-		_do_damage_effects(damage, push)
+		_hit_taken(damage, push)
 
 
-# Updates health
+# Updates health.
 func _update_health(new_health: int) -> void:
 	if dead:
 		return
@@ -48,11 +64,14 @@ func _update_health(new_health: int) -> void:
 		_die()
 
 
-# Performs damage effects such as knockbacking or showing visual clues.
-func _do_damage_effects(_damage: int, _push := Vector2.ZERO) -> void:
-	modulate = Constants.DAMAGE_COLOR
-	var tween: Tween = create_tween()
-	tween.tween_property(self, "modulate", Color.WHITE, damage_effect_time)
+# Called when a hit is taken.
+func _hit_taken(_damage: int, _push := Vector2.ZERO) -> void:
+	_hit_timer.start(hit_time)
+
+
+# Called after the hit ends.
+func _hit_ended() -> void:
+	_toggle_hit_color(false)
 
 
 # Called when health reaches zero.
@@ -65,5 +84,14 @@ func _die() -> void:
 func _disappear() -> void:
 	disappeared.emit()
 	queue_free()
+
+
+# Toggles on or off the hit color effect.
+func _toggle_hit_color(active: bool) -> void:
+	if not sprites:
+		return
+	var value: ShaderMaterial = _solid_color_material if active else null
+	for sprite in sprites:
+		sprite.material = value
 
 #endregion

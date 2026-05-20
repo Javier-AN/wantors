@@ -18,21 +18,18 @@ func _physics_process(delta: float) -> void:
 		super(delta)
 
 
-# Performs damage effects such as knockbacking or showing visual clues
-func _do_damage_effects(_damage: int, push := Vector2.ZERO):
-	# Start effects
+# Called when a hit is taken.
+func _hit_taken(damage: int, push := Vector2.ZERO) -> void:
+	super(damage, push)
 	_knockbacking = true
-	velocity = push * knockback_factor
-	modulate = Constants.DAMAGE_COLOR
-	# End effects
 	if _tween:
 		_tween.kill()
+	velocity = push * knockback_factor
 	_tween = create_tween()
-	_tween.tween_property(self, "velocity", Vector2.ZERO, damage_effect_time)
-	_tween.tween_property(self, "modulate", Color.WHITE, damage_effect_time)
-	_tween.finished.connect(_end_knockback)
+	_tween.tween_property(self, "velocity", Vector2.ZERO, hit_time)
 
 
-# Puts the enemy in not-knockbaking state
-func _end_knockback():
+# Called when a hit ends.
+func _hit_ended() -> void:
+	super()
 	_knockbacking = false

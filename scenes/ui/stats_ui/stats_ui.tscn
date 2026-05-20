@@ -44,17 +44,17 @@ text = "STATS_SPEED"
 [node name="PlayerSpeedValue" type="Label" parent="StatsContainer/PlayerSpeed" unique_id=1679737917]
 layout_mode = 2
 
-[node name="PlayerDET" type="HBoxContainer" parent="StatsContainer" unique_id=523510573]
+[node name="PlayerHitTime" type="HBoxContainer" parent="StatsContainer" unique_id=523510573]
 layout_mode = 0
 offset_top = 31.0
 offset_right = 1152.0
 offset_bottom = 54.0
 
-[node name="PlayerDETText" type="Label" parent="StatsContainer/PlayerDET" unique_id=2023342636]
+[node name="PlayerHitTimeText" type="Label" parent="StatsContainer/PlayerHitTime" unique_id=2023342636]
 layout_mode = 2
-text = "STATS_DET"
+text = "STATS_HIT_TIME"
 
-[node name="PlayerDETValue" type="Label" parent="StatsContainer/PlayerDET" unique_id=1225892155]
+[node name="PlayerHitTimeValue" type="Label" parent="StatsContainer/PlayerHitTime" unique_id=1225892155]
 layout_mode = 2
 
 [node name="BulletSpeed" type="HBoxContainer" parent="StatsContainer" unique_id=32066900]

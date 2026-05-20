@@ -12,8 +12,6 @@ var _invulnerable: bool
 @onready var _gun: Node2D = $PlayerGun
 # Player sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
-# Invulnerability timer.
-@onready var _timer := Timer.new()
 #endregion
 
 
@@ -21,13 +19,13 @@ var _invulnerable: bool
 
 # Called when ready.
 func _ready() -> void:
-	add_child(_timer)
-	_timer.timeout.connect(_end_invulnerability)
+	super()
 	PositionController.update_position(global_position)
 	_global_update_stats()
 	_global_update_health()
 	StatsController.player_stats_must_update.connect(_update_stats)
 	StatsController.player_health_must_update.connect(_update_health)
+	_solid_color_material.set_shader_parameter("solid_color", Constants.DAMAGE_COLOR)
 
 
 #region Movement and animation
@@ -70,17 +68,18 @@ func take_hit(damage: int, push := Vector2.ZERO) -> void:
 	if not _invulnerable:
 		_invulnerable = true
 		super(damage, push)
-		_timer.start(damage_effect_time)
 
 
-func _end_invulnerability() -> void:
+# Called after the hit ends.
+func _hit_ended() -> void:
+	super()
 	_invulnerable = false
 
 
 # Updates self stat values.
 func _update_stats(stats: StatsClass.MobStats) -> void:
 	speed = stats.speed
-	damage_effect_time = stats.damage_effect_time
+	hit_time = stats.hit_time
 	max_health = stats.max_health
 	_global_update_stats()
 	_update_health(health)
@@ -94,7 +93,7 @@ func _update_health(new_health: int):
 
 # Tells global controller values were changed.
 func _global_update_stats():
-	var stats := StatsClass.MobStats.new(speed, damage_effect_time, max_health)
+	var stats := StatsClass.MobStats.new(speed, hit_time, max_health)
 	StatsController.update_player_stats(stats)
 
 
@@ -107,7 +106,6 @@ func _global_update_health():
 func _die():
 	super()
 	_sprite.play("idle")
-	modulate = Constants.DAMAGE_COLOR
 	if _gun:
 		_gun.queue_free()
 

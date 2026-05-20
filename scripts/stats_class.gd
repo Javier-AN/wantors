@@ -20,14 +20,14 @@ class MobStats:
 	
 	## Mob speed.
 	var speed: float
-	## Mob damage effect time.
-	var damage_effect_time: float
+	## Mob hit time.
+	var hit_time: float
 	## Mob health.
 	var max_health: int
 
 	func _init(s: float, det: float, mh: int):
 		speed = s
-		damage_effect_time = det
+		hit_time = det
 		max_health = mh
 
 

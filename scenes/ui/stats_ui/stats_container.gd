@@ -5,7 +5,7 @@ extends Control
 ## Text label collection.
 @onready var text_labels: Array[Label] = [
 		$PlayerSpeed/PlayerSpeedText,
-		$PlayerDET/PlayerDETText,
+		$PlayerHitTime/PlayerHitTimeText,
 		$BulletSpeed/BulletSpeedText,
 		$BulletDamage/BulletDamageText,
 		$BulletKnockbackFactor/BulletKnockbackFactorText,
@@ -14,7 +14,7 @@ extends Control
 ## Value label for player speed.
 @onready var player_speed_label: Label = $PlayerSpeed/PlayerSpeedValue
 ## Value label for player damage effect time.
-@onready var player_det_label: Label = $PlayerDET/PlayerDETValue
+@onready var player_hit_time_label: Label = $PlayerHitTime/PlayerHitTimeValue
 ## Value label for bullet speed.
 @onready var bullet_speed_label: Label = $BulletSpeed/BulletSpeedValue
 ## Value label for bullet damage.
@@ -46,7 +46,7 @@ func _prepare_text_labels() -> void:
 # Updates value labels for player stats
 func _update_player_stats(stats: StatsClass.MobStats) -> void:
 	player_speed_label.text = str(stats.speed)
-	player_det_label.text = str(stats.damage_effect_time)
+	player_hit_time_label.text = str(stats.hit_time)
 
 
 # Updates value labels for gun stats
