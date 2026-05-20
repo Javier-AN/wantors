@@ -12,3 +12,4 @@ script = ExtResource("1_2v5y3")
 
 [node name="Label" type="Label" parent="." unique_id=410806861]
 layout_mode = 2
+theme_type_variation = &"BoldLabel"

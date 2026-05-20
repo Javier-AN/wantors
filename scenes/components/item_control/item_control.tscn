@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://d4jgju1bdqikl"]
 
 [ext_resource type="Script" uid="uid://cg38ejkuuhcxp" path="res://scenes/components/item_control/item_control.gd" id="1_eltgw"]
-[ext_resource type="Texture2D" uid="uid://chnaycyq66fr6" path="res://assets/images/items.png" id="2_mkijh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lbdn"]
-atlas = ExtResource("2_mkijh")
-region = Rect2(32, 32, 32, 32)
 
 [node name="ItemControl" type="MarginContainer" unique_id=1156721269]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(350, 120)
 offset_right = 350.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
@@ -26,9 +21,12 @@ mouse_filter = 2
 [node name="TextureRect" type="TextureRect" parent="GlobalContainer" unique_id=187316164]
 layout_mode = 2
 mouse_filter = 2
-texture = SubResource("AtlasTexture_1lbdn")
 expand_mode = 2
 stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="GlobalContainer" unique_id=130230223]
+layout_mode = 2
+color = Color(0.003921569, 0.53333336, 0.64705884, 1)
 
 [node name="TextContainer" type="VBoxContainer" parent="GlobalContainer" unique_id=230783321]
 layout_mode = 2
@@ -38,10 +36,9 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="GlobalContainer/TextContainer" unique_id=1111953752]
 layout_mode = 2
-text = "Polvora"
+theme_type_variation = &"BoldLabel"
 
 [node name="SubtitleLabel" type="Label" parent="GlobalContainer/TextContainer" unique_id=1528107227]
 custom_minimum_size = Vector2(238, 0)
 layout_mode = 2
-text = "Vai estoupar!"
 autowrap_mode = 3

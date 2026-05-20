@@ -31,6 +31,7 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1347119072]
 layout_mode = 2
+theme_type_variation = &"TitleLabel"
 text = "SETTINGS_TITLE"
 horizontal_alignment = 1
 
@@ -39,6 +40,7 @@ layout_mode = 2
 
 [node name="SFXVolumeLabel" type="Label" parent="VBoxContainer" unique_id=296359184]
 layout_mode = 2
+theme_type_variation = &"MenuLabel"
 text = "SETTINGS_SFX_VOLUME_LABEL"
 horizontal_alignment = 1
 
@@ -48,6 +50,7 @@ script = ExtResource("1_h0t3o")
 
 [node name="MusicVolumeLabel" type="Label" parent="VBoxContainer" unique_id=1449710206]
 layout_mode = 2
+theme_type_variation = &"MenuLabel"
 text = "SETTINGS_MUSIC_VOLUME_LABEL"
 horizontal_alignment = 1
 
@@ -62,15 +65,18 @@ script = ExtResource("1_qa56a")
 
 [node name="PreviousLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=422869095]
 layout_mode = 2
+theme_type_variation = &"BoldButton"
 text = "<"
 
 [node name="LanguageLabel" type="Label" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1465275733]
 layout_mode = 2
+theme_type_variation = &"MenuLabel"
 text = "SETTINGS_LANGUAGE_LABEL"
 vertical_alignment = 1
 
 [node name="NextLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1916228800]
 layout_mode = 2
+theme_type_variation = &"BoldButton"
 text = ">"
 
 [node name="ExtendedUICheckContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1424036355]
@@ -79,6 +85,7 @@ alignment = 1
 
 [node name="ExtendedUILabel" type="Label" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=1423805663]
 layout_mode = 2
+theme_type_variation = &"MenuLabel"
 text = "SETTINGS_EXTENDED_UI_LABEL"
 
 [node name="ExtendedUICheckButton" type="CheckButton" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=126764848]

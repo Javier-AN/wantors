@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmdwx"]
 atlas = ExtResource("2_q6hnb")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 16, 16)
 
 [node name="RedApple" type="MarginContainer" unique_id=1891590843]
 physics_interpolation_mode = 0

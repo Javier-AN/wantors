@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjnl1"]
 atlas = ExtResource("1_0m453")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(16, 16, 16, 16)
 
 [node name="Gunpowder" type="MarginContainer" unique_id=400989420]
 physics_interpolation_mode = 0

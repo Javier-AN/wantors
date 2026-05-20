@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3myt"]
 atlas = ExtResource("2_7stxv")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(32, 0, 16, 16)
 
 [node name="Magazine" type="MarginContainer" unique_id=1714532353]
 physics_interpolation_mode = 0

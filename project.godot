@@ -13,6 +13,7 @@ config_version=5
 config/name="wantors"
 run/main_scene="uid://bhr1hfex75jv5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.14509805, 0.11764706, 0.23529412, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -31,6 +32,11 @@ PauseController="*uid://c1873vvnpt3x8"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://nji3ui210xhs"
+theme/custom_font="uid://c7lfoo51hxsug"
 
 [input]
 
@@ -113,4 +119,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.070108764, 0.12963608, 0.19947207, 1)
+environment/defaults/default_clear_color=Color(0.14509805, 0.11764706, 0.23529412, 1)

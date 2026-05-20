@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1egu"]
 atlas = ExtResource("3_r4fuo")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 16, 16, 16)
 
 [node name="BigBullet" type="MarginContainer" unique_id=2081190217]
 physics_interpolation_mode = 0

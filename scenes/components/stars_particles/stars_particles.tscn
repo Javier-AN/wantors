@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b6jgki7kmf2b2"]
+
+[ext_resource type="Material" uid="uid://di2geymd3a3c2" path="res://scenes/components/stars_particles/starts_particle_process_material.tres" id="1_yk482"]
+
+[node name="StarsParticles" type="GPUParticles2D" unique_id=355015193]
+z_index = -1
+amount = 500
+lifetime = 75.0
+preprocess = 75.0
+process_material = ExtResource("1_yk482")

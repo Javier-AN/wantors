@@ -19,6 +19,7 @@ func _ready() -> void:
 	button.disabled = disabled
 	button.size_flags_horizontal = SIZE_FILL
 	button.size_flags_vertical = SIZE_FILL
+	button.theme_type_variation = &"ItemButton"
 	add_child(button)
 	move_child(button, 0)
 	button.pressed.connect(_pressed)
