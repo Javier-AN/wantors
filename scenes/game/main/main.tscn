@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bsj3y0f5xfi4w"]
 
-[ext_resource type="PackedScene" uid="uid://uxbhdggbb6r3" path="res://scenes/game/sites/site_0/site_0.tscn" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://1qca362spwiq" path="res://scenes/game/main/main.gd" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://b6jgki7kmf2b2" path="res://scenes/components/stars_particles/stars_particles.tscn" id="2_bryd7"]
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/game/player/player.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://2cqrr8hwh6bj" path="res://scenes/game/sites/site_1.tscn" id="3_xomjg"]
 [ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/game/spawner/spawner.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://dlx4dlkasfu1r" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="6_xomjg"]
 [ext_resource type="PackedScene" uid="uid://b8kbjxr6udo15" path="res://scenes/ui/stats_ui/stats_ui.tscn" id="7_hujxm"]
@@ -14,9 +15,13 @@ script = ExtResource("1_k2fmo")
 [node name="Timer" type="Timer" parent="." unique_id=1176805290]
 wait_time = 3.0
 
-[node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]
+[node name="StarsParticles" parent="." unique_id=355015193 instance=ExtResource("2_bryd7")]
+position = Vector2(-1100, 0)
+visibility_rect = Rect2(0, -600, 2200, 1200)
 
-[node name="Site0" parent="." unique_id=1194568141 instance=ExtResource("1_iuonh")]
+[node name="Site1" parent="." unique_id=1194568141 instance=ExtResource("3_xomjg")]
+
+[node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
 position = Vector2(-2, -1)
