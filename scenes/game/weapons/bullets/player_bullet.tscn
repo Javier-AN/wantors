@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dgs35d4ehs7ww"]
+
+[ext_resource type="Script" uid="uid://bpn6pbql62jmp" path="res://scenes/game/weapons/bullets/bullet.gd" id="1_shobg"]
+[ext_resource type="Texture2D" uid="uid://b1b15kj1itib7" path="res://assets/images/player_bullet.png" id="2_wvjx5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dwtw"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(17, 26, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wty08"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(34, 26, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp0st"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(0, 52, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_havi0"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(17, 52, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgsme"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(0, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4dtt"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(17, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4bbe"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(34, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnnax"]
+atlas = ExtResource("2_wvjx5")
+region = Rect2(0, 26, 17, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wty08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dwtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wty08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp0st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_havi0")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgsme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4dtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4bbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnnax")
+}],
+"loop": true,
+"name": &"travel",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83itf"]
+size = Vector2(8, 12)
+
+[node name="PlayerBullet" type="Area2D" unique_id=1317690404]
+z_index = 1
+collision_layer = 0
+collision_mask = 34
+script = ExtResource("1_shobg")
+metadata/_custom_type_script = "uid://cspq15d5dtdpu"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624665082]
+position = Vector2(-5, 1)
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_wty08")
+animation = &"travel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955630396]
+rotation = -1.5707963
+scale = Vector2(0.5, -0.42)
+shape = SubResource("RectangleShape2D_83itf")

@@ -3,13 +3,11 @@ extends Mob
 ## A mob controlled by the player.
 
 #region Variables
-# Indicates the direction the player is looking at.
-var _facing: float
 # Indicates whether the player is invulnerable to damage.
 var _invulnerable: bool
 
 # Player gun.
-@onready var _gun: Node2D = $PlayerGun
+@onready var _gun: PlayerGun = $PlayerGun
 # Player sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
 #endregion
@@ -20,12 +18,12 @@ var _invulnerable: bool
 # Called when ready.
 func _ready() -> void:
 	super()
+	hit_color = Constants.DAMAGE_COLOR
 	PositionController.update_position(global_position)
 	_global_update_stats()
 	_global_update_health()
 	StatsController.player_stats_must_update.connect(_update_stats)
 	StatsController.player_health_must_update.connect(_update_health)
-	_solid_color_material.set_shader_parameter("solid_color", Constants.DAMAGE_COLOR)
 
 
 #region Movement and animation
@@ -42,13 +40,12 @@ func _update_direction():
 	_direction.x = Input.get_axis("move_left", "move_right")
 	_direction.y = Input.get_axis("move_up", "move_down")
 	_direction = _direction.limit_length()
-	_facing = Input.get_axis("attack_left", "attack_right")
 
 
 # Updates the sprite animation
 func _update_animation():
-	if _facing != 0:
-		_sprite.flip_h = _facing < 0
+	var facing_right := Utils.is_facing_right(_gun.direction.angle())
+	_sprite.flip_h = not facing_right
 	if _direction.length() > 0:
 		_sprite.play("run")
 		# Character velocity affects animation velocity

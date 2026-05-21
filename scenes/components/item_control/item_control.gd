@@ -9,7 +9,7 @@ extends Control
 ## Short catch phrase.
 @export var subtitle: String
 
-@onready var _texture_rect: TextureRect = $GlobalContainer/TextureRect
+@onready var _texture_rect: TextureRect = $GlobalContainer/PanelContainer/MarginContainer/TextureRect
 @onready var _title_label: Label = $GlobalContainer/TextContainer/TitleLabel
 @onready var _subtitle_label: Label = $GlobalContainer/TextContainer/SubtitleLabel
 

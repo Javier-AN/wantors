@@ -7,13 +7,6 @@ func is_facing_right(angle: float) -> bool:
 	return int(round(angle / PI)) % 2 == 0
 
 
-## Rounds [param x] to the nearest decimal number with a precision of
-## [param digits] decimal digits.
-func round_to_dec(x: float, digits: int) -> float:
-	var ten_factor: float = 10.0 ** digits
-	return round(x * ten_factor) / ten_factor
-
-
 ## Returns [param string] with its first character converted to
 ## [code]UPPERCASE[/code].
 func first_to_upper(string: String) -> String:

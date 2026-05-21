@@ -39,7 +39,7 @@ func _update_animation():
 # Called when a hit is taken.
 func _hit_taken(damage: int, push := Vector2.ZERO) -> void:
 	super(damage, push)
-	_sprite.play("damage")
+	_sprite.play("hit")
 
 
 # Called when health reaches zero.

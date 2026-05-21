@@ -6,47 +6,39 @@
 [ext_resource type="PackedScene" uid="uid://dub4gdmwrordq" path="res://scenes/game/weapons/player_gun/player_gun.tscn" id="4_abehh"]
 [ext_resource type="Texture2D" uid="uid://gvtsa1oxgndg" path="res://assets/images/gun.png" id="5_prej5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_prej5"]
 atlas = ExtResource("1_8afob")
-region = Rect2(0, 0, 17, 32)
+region = Rect2(0, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqfck"]
 atlas = ExtResource("1_8afob")
-region = Rect2(17, 0, 17, 32)
+region = Rect2(18, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmc11"]
 atlas = ExtResource("1_8afob")
-region = Rect2(34, 0, 17, 32)
+region = Rect2(36, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbv0"]
 atlas = ExtResource("1_8afob")
-region = Rect2(0, 32, 17, 32)
+region = Rect2(54, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_75vfm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bxg8"]
 atlas = ExtResource("1_8afob")
-region = Rect2(17, 32, 17, 32)
+region = Rect2(72, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywish"]
 atlas = ExtResource("1_8afob")
-region = Rect2(34, 32, 17, 32)
+region = Rect2(90, 0, 18, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qek5x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcwky"]
 atlas = ExtResource("1_8afob")
-region = Rect2(0, 64, 17, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5gtgg"]
-atlas = ExtResource("1_8afob")
-region = Rect2(17, 64, 17, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
-atlas = ExtResource("1_8afob")
-region = Rect2(34, 64, 17, 32)
+region = Rect2(108, 0, 18, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_je7p5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dovo2")
+"texture": SubResource("AtlasTexture_prej5")
 }],
 "loop": true,
 "name": &"idle",
@@ -54,28 +46,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gmlin")
+"texture": SubResource("AtlasTexture_dqfck")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lvxji")
+"texture": SubResource("AtlasTexture_gmc11")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p47bc")
+"texture": SubResource("AtlasTexture_gdbv0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_75vfm")
+"texture": SubResource("AtlasTexture_6bxg8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0owmy")
+"texture": SubResource("AtlasTexture_ywish")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qek5x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5gtgg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h17s1")
+"texture": SubResource("AtlasTexture_bcwky")
 }],
 "loop": true,
 "name": &"run",
@@ -90,6 +76,10 @@ radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 size = Vector2(14, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0dnl"]
+atlas = ExtResource("5_prej5")
+region = Rect2(0, 0, 13, 10)
 
 [node name="Player" type="CharacterBody2D" unique_id=1506993550 node_paths=PackedStringArray("sprites")]
 y_sort_enabled = true
@@ -106,7 +96,7 @@ zoom = Vector2(3.5, 3.5)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=476568386]
 sprite_frames = SubResource("SpriteFrames_je7p5")
-animation = &"idle"
+animation = &"run"
 
 [node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=461362418]
 position = Vector2(0.5, 9.5)
@@ -138,4 +128,4 @@ position = Vector2(12, 0)
 [node name="GunSprite" type="Sprite2D" parent="PlayerGun" unique_id=1474228396]
 position = Vector2(8, 0)
 scale = Vector2(0.8333333, 0.8333333)
-texture = ExtResource("5_prej5")
+texture = SubResource("AtlasTexture_i0dnl")

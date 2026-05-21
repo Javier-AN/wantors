@@ -16,6 +16,11 @@ func _on_collision(body: Node2D) -> void:
 	var parent := body.get_parent()
 	if parent is Creature:
 		hit(parent)
+	_self_destroy()
+
+
+# Destroys the node.
+func _self_destroy() -> void:
 	queue_free()
 
 

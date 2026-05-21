@@ -16,12 +16,14 @@ signal disappeared
 ## Time the hit effects last. 
 @export var hit_time: float
 ## Color the sprites turn during a hit.
-@export var hit_color: Color = Constants.DAMAGE_COLOR
+@export var hit_color: Color = Constants.HIT_COLOR
 ## If set, they turn hit color during a hit. 
 @export var sprites: Array[CanvasItem]
 
 ## Indicates whether the enemy is dead.
 var dead: bool = false
+# Hit tween.
+var _hit_tween: Tween
 
 ## Current health.
 @onready var health: int = max_health
@@ -38,7 +40,9 @@ var dead: bool = false
 func _ready() -> void:
 	_hit_timer.timeout.connect(_hit_ended)
 	add_child(_hit_timer)
-	_solid_color_material.set_shader_parameter("solid_color", hit_color)
+	_set_solid_color(Color.TRANSPARENT)
+	for sprite in sprites:
+		sprite.material = _solid_color_material
 
 
 ## Manages a received hit.
@@ -47,7 +51,7 @@ func _ready() -> void:
 ## [param push] is the push vector of the hit.
 func take_hit(damage: int, push := Vector2.ZERO) -> void:
 	_update_health(health - damage)
-	_toggle_hit_color(true)
+	_animate_hit_color()
 	if not dead:
 		_hit_taken(damage, push)
 
@@ -71,7 +75,7 @@ func _hit_taken(_damage: int, _push := Vector2.ZERO) -> void:
 
 # Called after the hit ends.
 func _hit_ended() -> void:
-	_toggle_hit_color(false)
+	pass
 
 
 # Called when health reaches zero.
@@ -88,10 +92,19 @@ func _disappear() -> void:
 
 # Toggles on or off the hit color effect.
 func _toggle_hit_color(active: bool) -> void:
-	if not sprites:
-		return
-	var value: ShaderMaterial = _solid_color_material if active else null
-	for sprite in sprites:
-		sprite.material = value
+	_set_solid_color(hit_color if active else Color.TRANSPARENT)
+
+
+# Animates the hit color.
+func _animate_hit_color() -> void:
+	if _hit_tween:
+		_hit_tween.kill()
+	_hit_tween = create_tween()
+	_hit_tween.tween_method(_set_solid_color, hit_color, Color(hit_color, 0.0), hit_time)
+
+
+# Sets the solid color parameter of the shader material.
+func _set_solid_color(value: Color):
+	_solid_color_material.set_shader_parameter("solid_color", value)
 
 #endregion

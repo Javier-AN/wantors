@@ -26,16 +26,16 @@ STATS_DAMAGE,Damage,Daño,Dano
 STATS_KNOCKBACK,Knockback,Retroceso,Retroceso
 STATS_FIRE_RATE,Fire rate,Cadencia,Cadencia
 
-ITEM_RED_APPLE_TITLE,Red apple,Manzana roja,Mazá vermella
+ITEM_RED_APPLE_TITLE,Apple,Manzana,Mazá
 ITEM_RED_APPLE_SUBTITLE,Keeps the doctor away!,¡Sana como una manzana!,Comeza o día con alegría!
-ITEM_POTION_TITLE,Magic potion,Poción mágica,Poción máxica
-ITEM_POTION_SUBTITLE,It won't help you find love...,No sirve para encontrar el amor...,Non sirve para atopar o amor...
+ITEM_POTION_TITLE,Potion,Pócima,Pócima
+ITEM_POTION_SUBTITLE,Won't help you find love...,No sirve para encontrar el amor...,Non sirve para atopar o amor...
 ITEM_MAGAZINE_TITLE,Magazine,Cargador,Cargador
 ITEM_MAGAZINE_SUBTITLE,Very dangerous!,¡Lo carga el diablo!,Cargouno o demo!
-ITEM_BIG_BULLET_TITLE,Big bullet,Bala grande,Bala grande
+ITEM_BIG_BULLET_TITLE,Big bullet,Gran bala,Gran bala
 ITEM_BIG_BULLET_SUBTITLE,Make them bleed!,¡Haz que sangren!,Fainos sangrar!
 ITEM_GUNPOWDER_TITLE,Gunpowder,Pólvora,Pólvora
-ITEM_GUNPOWDER_SUBTITLE,Mom told you not to play with fire... but...,Mamá te dijo que no jugases con fuego... Peeero...,A túa nai díxoche que non xogaras con lume... Porén...
+ITEM_GUNPOWDER_SUBTITLE,Don't play with fire!,¡No juegues con fuego!,Non xogues con lume!
 ITEM_ACORN_TITLE,Acorn,Bellota,Bellota
 ITEM_ACORN_SUBTITLE,Strong as an oak!,¡Fuerte como un roble!,Forte coma un carballo!
 

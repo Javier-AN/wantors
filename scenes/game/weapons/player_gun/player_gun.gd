@@ -2,8 +2,8 @@ class_name PlayerGun
 extends Gun
 ## A gun controlled by the player.
 
-# Private variables
-var _direction: Vector2
+## Direction the gun is facing. Automatically updated through input.
+var direction: Vector2
 
 
 #region Stats
@@ -35,13 +35,12 @@ func _global_update_stats():
 
 # Called every tick
 func _physics_process(_delta: float) -> void:
-	_get_input()
-	if _direction.length() > 0:
-		rotation = _direction.angle()
+	if direction.length() > 0:
+		rotation = direction.angle()
 		shoot()
 
 
 # Reads input and updates the direction vector
-func _get_input():
-	_direction.x = Input.get_axis("attack_left", "attack_right")
-	_direction.y = Input.get_axis("attack_up", "attack_down")
+func _input(_event: InputEvent) -> void:
+	direction.x = Input.get_axis("attack_left", "attack_right")
+	direction.y = Input.get_axis("attack_up", "attack_down")

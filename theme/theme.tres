@@ -7,7 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://c8f0sn7flptrt" path="res://theme/buttons/button_hover_style_box_flat.tres" id="5_viyyk"]
 [ext_resource type="StyleBox" uid="uid://b68kttrur256r" path="res://theme/buttons/button_normal_style_box_flat.tres" id="6_id4dl"]
 [ext_resource type="StyleBox" uid="uid://juf8dqr5whrl" path="res://theme/buttons/button_pressed_style_box_flat.tres" id="7_w3cml"]
-[ext_resource type="Texture2D" uid="uid://dxk2jijtra3pl" path="res://assets/images/checkbutton.png" id="8_oi4s6"]
+[ext_resource type="Texture2D" uid="uid://dxk2jijtra3pl" path="res://assets/images/check_button.png" id="8_oi4s6"]
 [ext_resource type="StyleBox" uid="uid://diotfm8hb8m15" path="res://theme/empty_style_box_flat.tres" id="9_imp4c"]
 [ext_resource type="Texture2D" uid="uid://dmlmv41lrmlvw" path="res://assets/images/empty.png" id="10_g773b"]
 [ext_resource type="FontFile" uid="uid://c28w7k35sc7pv" path="res://assets/fonts/pixeloperator8bold.ttf" id="11_d81ev"]

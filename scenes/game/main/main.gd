@@ -90,13 +90,13 @@ func _end_game():
 ## Randomizes all the stats.
 ## @experimental Temporally avaliable, only for testing purpuses.
 func randomize_stats() -> void:
-	var s := Utils.round_to_dec(randf_range(30.0, 200.0), 2)
-	var det := Utils.round_to_dec(randf_range(0.1, 4.0), 2)
-	var mh := randi_range(400, 1000)
-	var bs := Utils.round_to_dec(randf_range(30.0, 200.0), 2)
-	var bd := randi_range(1, 50)
-	var bkf := Utils.round_to_dec(randf_range(0.1, 5.0), 2)
-	var sc := Utils.round_to_dec(randf_range(0.01, 1.0), 2)
+	var s = snapped(randf_range(30.0, 200.0), 0.01)
+	var det = snapped(randf_range(0.1, 4.0), 0.01)
+	var mh = randi_range(400, 1000)
+	var bs = snapped(randf_range(30.0, 200.0), 0.01)
+	var bd = randi_range(1, 50)
+	var bkf = snapped(randf_range(0.1, 5.0), 0.01)
+	var sc = snapped(randf_range(0.01, 1.0), 0.01)
 	var stats := StatsClass.Stats.new(StatsClass.MobStats.new(s, det, mh),
 			StatsClass.GunStats.new(bs, bd, bkf, sc))
 	StatsController.change_stats(stats)

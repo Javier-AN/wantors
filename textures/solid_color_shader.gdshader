@@ -4,5 +4,5 @@ uniform vec4 solid_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 void fragment() {
     vec4 tex = texture(TEXTURE, UV);
-    COLOR = vec4(solid_color.rgb, tex.a);
+    COLOR = mix(tex, vec4(solid_color.rgb, tex.a), solid_color.a);
 }

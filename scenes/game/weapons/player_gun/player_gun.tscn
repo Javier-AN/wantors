@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dub4gdmwrordq"]
 
 [ext_resource type="Script" uid="uid://beed4kns1ch7d" path="res://scenes/game/weapons/player_gun/player_gun.gd" id="1_lnhu7"]
-[ext_resource type="PackedScene" uid="uid://dgs35d4ehs7ww" path="res://scenes/game/weapons/player_bullet/player_bullet.tscn" id="2_yo3n2"]
+[ext_resource type="PackedScene" uid="uid://dgs35d4ehs7ww" path="res://scenes/game/weapons/bullets/player_bullet.tscn" id="2_yo3n2"]
 
 [node name="PlayerGun" type="Node2D" unique_id=1026290943 node_paths=PackedStringArray("muzzle")]
 z_index = 2
