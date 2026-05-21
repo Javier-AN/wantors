@@ -8,11 +8,12 @@
 atlas = ExtResource("1_7r4vh")
 region = Rect2(16, 0, 16, 16)
 
-[node name="Acorn" type="MarginContainer" unique_id=1587532360]
+[node name="Acorn" type="MarginContainer" unique_id=1587532360 node_paths=PackedStringArray("item_control")]
 physics_interpolation_mode = 0
 offset_right = 350.0
 offset_bottom = 100.0
 script = ExtResource("2_qqqg6")
+item_control = NodePath("ItemNode")
 
 [node name="ItemNode" parent="." unique_id=1524685590 instance=ExtResource("2_45hth")]
 layout_mode = 2

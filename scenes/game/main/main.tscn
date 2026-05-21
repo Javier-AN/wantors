@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/game/player/player.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://2cqrr8hwh6bj" path="res://scenes/game/sites/site_1.tscn" id="3_xomjg"]
 [ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/game/spawner/spawner.tscn" id="5_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://df6wne60chj4y" path="res://scenes/ui/player_health_bar/player_health_bar.tscn" id="6_lq55d"]
 [ext_resource type="PackedScene" uid="uid://dlx4dlkasfu1r" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="6_xomjg"]
 [ext_resource type="PackedScene" uid="uid://b8kbjxr6udo15" path="res://scenes/ui/stats_ui/stats_ui.tscn" id="7_hujxm"]
 
@@ -29,21 +30,42 @@ position = Vector2(-2, -1)
 [node name="UIContainer" type="CanvasLayer" parent="." unique_id=1425153929]
 
 [node name="LevelContainer" type="HBoxContainer" parent="UIContainer" unique_id=1878770820]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -25.5
-offset_right = 25.5
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 100.0
 grow_horizontal = 2
+theme_override_constants/separation = 35
+alignment = 1
 
 [node name="LevelText" type="Label" parent="UIContainer/LevelContainer" unique_id=1716524280]
 layout_mode = 2
+theme_type_variation = &"BoldLabel"
 text = "GAME_LEVEL"
 
 [node name="LevelValue" type="Label" parent="UIContainer/LevelContainer" unique_id=339833077]
 layout_mode = 2
+theme_type_variation = &"BoldLabel"
+
+[node name="PlayerHealthBar" parent="UIContainer" unique_id=783831132 instance=ExtResource("6_lq55d")]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -30.0
+grow_vertical = 0
 
 [node name="StatsUI" parent="UIContainer" unique_id=1014673922 instance=ExtResource("7_hujxm")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 331.0
+offset_bottom = 196.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PauseMenu" parent="UIContainer" unique_id=1022825127 instance=ExtResource("6_xomjg")]

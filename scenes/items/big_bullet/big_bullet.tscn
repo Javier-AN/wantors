@@ -8,12 +8,13 @@
 atlas = ExtResource("3_r4fuo")
 region = Rect2(0, 16, 16, 16)
 
-[node name="BigBullet" type="MarginContainer" unique_id=2081190217]
+[node name="BigBullet" type="MarginContainer" unique_id=2081190217 node_paths=PackedStringArray("item_control")]
 physics_interpolation_mode = 0
 offset_right = 350.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 script = ExtResource("2_d08yo")
+item_control = NodePath("ItemNode")
 
 [node name="ItemNode" parent="." unique_id=1524685590 instance=ExtResource("2_jvhuy")]
 layout_mode = 2

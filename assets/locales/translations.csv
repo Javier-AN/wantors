@@ -11,6 +11,7 @@ SETTINGS_LANGUAGE_LABEL,Language,Idioma,Lingua
 SETTINGS_EXTENDED_UI_LABEL,Show stats,Mostrar atributos,Mostrar atributos
 SETTINGS_BACK_BUTTON,Save and return,Guardar y volver,Gardar e voltar
 
+COLLECTION_TITLE,Collection,Colección,Colección
 COLLECTION_BACK,Back,Atrás,Atrás
 
 PAUSE_TITLE,Game is paused,El juego está en pausa,O xogo está pausado
@@ -43,6 +44,6 @@ ITEM_SELECT,Choose an item,Elige un ítem,Elixe un ítem
 ITEM_UNLOCKED,New item unlocked!,¡Nuevo ítem desbloqueado!,Novo ítem desbloqueado!
 ITEM_ALL_UNLOCKED,All of the items are already unlocked,Todos los ítems están ya desbloqueados,Todos os ítems están xa desbloqueados
 
-GAME_LEVEL,Level,Nivel,Nivel
+GAME_LEVEL,LEVEL,NIVEL,NIVEL
 GAME_START,YOU ARE A WANTOR. YOU MUST RESIST.,ERES UN WANTOR. DEBES RESISTIR.,ES UN WANTOR. DEBES RESISTIR.
 GAME_END,"GOOD JOB, WANTOR. KEEP RESISTING.","BUEN TRABAJO, WANTOR. SIGUE RESISTIENDO.","BO TRABALLO, WANTOR. SEGUE RESISTINDO."

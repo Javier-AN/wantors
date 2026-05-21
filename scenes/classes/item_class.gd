@@ -3,26 +3,35 @@ class_name Item
 extends Control
 ## A choosable item that modifies player stats.
 
+## Emitted when the effect is applied.
 signal effect_applied
+## Emitted when the button is pressed.
 signal pressed
 
-var disabled: bool:
+## Item control.
+@export var item_control: ItemControl
+## If true, the item will be a button. If false, it will be a panel.
+@export var clickable: bool = true:
 	set(value):
-		disabled = value
-		if button:
-			button.disabled = value
+		clickable = value
+		if _button:
+			_button.mouse_filter = MOUSE_FILTER_STOP if clickable else MOUSE_FILTER_IGNORE
+## Indicates if the item is locked.
+@export var locked: bool = false:
+	set(value):
+		locked = value
+		if _button:
+			_button.disabled = value
+		if item_control:
+			item_control.locked = value
 
-@onready var button = Button.new()
+# Button.
+@onready var _button: Button
 
 
+# Called when ready.
 func _ready() -> void:
-	button.disabled = disabled
-	button.size_flags_horizontal = SIZE_FILL
-	button.size_flags_vertical = SIZE_FILL
-	button.theme_type_variation = &"ItemButton"
-	add_child(button)
-	move_child(button, 0)
-	button.pressed.connect(_pressed)
+	_create_button()
 
 
 ## Generates an explanation of the effect the item has.
@@ -33,6 +42,19 @@ func _ready() -> void:
 @abstract func transform_stats(stats: StatsClass.Stats) -> StatsClass.Stats
 
 
+# Creates a button as the first child.
+func _create_button() -> void:
+	_button = Button.new()
+	_button.disabled = locked
+	_button.mouse_filter = MOUSE_FILTER_STOP if clickable else MOUSE_FILTER_IGNORE
+	_button.size_flags_horizontal = SIZE_FILL
+	_button.size_flags_vertical = SIZE_FILL
+	_button.pressed.connect(_pressed)
+	add_child(_button)
+	move_child(_button, 0)
+
+
+# Called when the button is pressed.
 func _pressed() -> void:
 	pressed.emit()
 	apply_effect()

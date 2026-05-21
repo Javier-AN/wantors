@@ -6,27 +6,17 @@
 [ext_resource type="Script" uid="uid://dnw0ghgfsyy68" path="res://scenes/ui/settings_menu/extended_ui_check_button.gd" id="2_225ns"]
 [ext_resource type="Script" uid="uid://ba8dkelfjlh5p" path="res://scenes/ui/settings_menu/music_volume_slider.gd" id="2_ying2"]
 
-[node name="SettingsMenu" type="Control" unique_id=1593735735]
-layout_mode = 3
+[node name="SettingsMenu" type="MarginContainer" unique_id=516747370]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 450
+theme_override_constants/margin_right = 450
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1539509473]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.5
-offset_top = -94.0
-offset_right = 144.5
-offset_bottom = 94.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 alignment = 1
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1347119072]
@@ -35,7 +25,7 @@ theme_type_variation = &"TitleLabel"
 text = "SETTINGS_TITLE"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1171037322]
+[node name="HSeparatorTop" type="HSeparator" parent="VBoxContainer" unique_id=1171037322]
 layout_mode = 2
 
 [node name="SFXVolumeLabel" type="Label" parent="VBoxContainer" unique_id=296359184]
@@ -60,8 +50,14 @@ script = ExtResource("2_ying2")
 
 [node name="LanguageSelectionContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2004347687]
 layout_mode = 2
-alignment = 1
 script = ExtResource("1_qa56a")
+
+[node name="LanguageTextLabel" type="Label" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1500935389]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MenuLabel"
+text = "SETTINGS_LANGUAGE_LABEL"
+vertical_alignment = 1
 
 [node name="PreviousLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=422869095]
 layout_mode = 2
@@ -70,8 +66,10 @@ text = "<"
 
 [node name="LanguageLabel" type="Label" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1465275733]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_type_variation = &"MenuLabel"
-text = "SETTINGS_LANGUAGE_LABEL"
+text = "X"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextLanguageButton" type="Button" parent="VBoxContainer/LanguageSelectionContainer" unique_id=1916228800]
@@ -81,16 +79,20 @@ text = ">"
 
 [node name="ExtendedUICheckContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1424036355]
 layout_mode = 2
-alignment = 1
 
 [node name="ExtendedUILabel" type="Label" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=1423805663]
+custom_minimum_size = Vector2(650, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_type_variation = &"MenuLabel"
 text = "SETTINGS_EXTENDED_UI_LABEL"
 
 [node name="ExtendedUICheckButton" type="CheckButton" parent="VBoxContainer/ExtendedUICheckContainer" unique_id=126764848]
 layout_mode = 2
 script = ExtResource("2_225ns")
+
+[node name="HSeparatorBottom" type="HSeparator" parent="VBoxContainer" unique_id=1566099768]
+layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=995826746]
 layout_mode = 2

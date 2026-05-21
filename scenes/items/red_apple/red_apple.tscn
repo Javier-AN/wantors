@@ -8,11 +8,12 @@
 atlas = ExtResource("2_q6hnb")
 region = Rect2(0, 0, 16, 16)
 
-[node name="RedApple" type="MarginContainer" unique_id=1891590843]
+[node name="RedApple" type="MarginContainer" unique_id=1891590843 node_paths=PackedStringArray("item_control")]
 physics_interpolation_mode = 0
 offset_right = 350.0
 offset_bottom = 100.0
 script = ExtResource("1_n7e2p")
+item_control = NodePath("ItemNode")
 
 [node name="ItemNode" parent="." unique_id=1156721269 instance=ExtResource("2_60783")]
 layout_mode = 2

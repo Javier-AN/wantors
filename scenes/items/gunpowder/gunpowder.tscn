@@ -8,11 +8,12 @@
 atlas = ExtResource("1_0m453")
 region = Rect2(16, 16, 16, 16)
 
-[node name="Gunpowder" type="MarginContainer" unique_id=400989420]
+[node name="Gunpowder" type="MarginContainer" unique_id=400989420 node_paths=PackedStringArray("item_control")]
 physics_interpolation_mode = 0
 offset_right = 350.0
 offset_bottom = 100.0
 script = ExtResource("2_rvvka")
+item_control = NodePath("ItemNode")
 
 [node name="ItemNode" parent="." unique_id=1156721269 instance=ExtResource("2_eg2e5")]
 layout_mode = 2

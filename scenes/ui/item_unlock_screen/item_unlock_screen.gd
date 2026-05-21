@@ -27,7 +27,8 @@ func _unlock_new_item() -> int:
 
 func _show_item(index: int) -> void:
 	var item: Item = ItemCollectionController.item_pool[index].instantiate()
-	item.disabled = true
+	item.clickable = false
+	item.locked = false
 	_item_container.add_child(item)
 	_item_container.visible = true
 

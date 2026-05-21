@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d4jgju1bdqikl"]
 
 [ext_resource type="Script" uid="uid://cg38ejkuuhcxp" path="res://scenes/components/item_control/item_control.gd" id="1_eltgw"]
-[ext_resource type="StyleBox" uid="uid://y8dgf8slh0xw" path="res://theme/buttons/item_icon_style_box_flat.tres" id="2_os1xy"]
 
 [node name="ItemControl" type="MarginContainer" unique_id=1156721269]
 custom_minimum_size = Vector2(550, 120)
@@ -21,10 +20,11 @@ mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="GlobalContainer" unique_id=1406518307]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_os1xy")
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GlobalContainer/PanelContainer" unique_id=1315741684]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10

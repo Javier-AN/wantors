@@ -1,4 +1,4 @@
-class_name StatsContainer
+class_name StatsUI
 extends Control
 
 

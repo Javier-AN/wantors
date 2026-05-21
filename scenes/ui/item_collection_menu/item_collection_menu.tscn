@@ -25,10 +25,22 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TitleLabel" type="Label" parent="GlobalContainer" unique_id=236139776]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "COLLECTION_TITLE"
+horizontal_alignment = 1
+
+[node name="HSeparatorTop" type="HSeparator" parent="GlobalContainer" unique_id=449476187]
+layout_mode = 2
+
 [node name="PairsContainer" type="GridContainer" parent="GlobalContainer" unique_id=1680258397]
 layout_mode = 2
 columns = 2
 script = ExtResource("1_idf8y")
+
+[node name="HSeparatorBottom" type="HSeparator" parent="GlobalContainer" unique_id=1600905525]
+layout_mode = 2
 
 [node name="BackButton" type="Button" parent="GlobalContainer" unique_id=1039977974]
 layout_mode = 2

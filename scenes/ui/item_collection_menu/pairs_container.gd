@@ -11,5 +11,6 @@ func _display_items() -> void:
 	var unlocked_items = ItemCollectionController.unlocked_items
 	for i in range(item_pool.size()):
 		var item: Item = item_pool[i].instantiate()
-		item.disabled = not i in unlocked_items
+		item.clickable = false
+		item.locked = not i in unlocked_items
 		add_child(item)
