@@ -1,5 +1,10 @@
 extends Node
 
+signal paused
+signal unpaused
+signal pause_menu_closed
+signal pause_menu_opened
+
 ## Indicates wether the game is paused for a reason other than the pause menu.
 var game_paused: bool
 ## Indicates if the pause menu is visible.
@@ -18,7 +23,14 @@ func toggle(value: bool = not game_paused) -> void:
 ## A certain state can be forced with [param value].
 ## This function should only be called by the pause menu.
 func toggle_menu(value: bool = not pause_menu_visible) -> void:
-	pause_menu_visible = value
+	if value:
+		if not pause_menu_visible:
+			pause_menu_visible = true
+			pause_menu_opened.emit()
+	else:
+		if pause_menu_visible:
+			pause_menu_visible = false
+			pause_menu_closed.emit()
 	_update()
 
 
@@ -31,4 +43,11 @@ func force_quit() -> void:
 
 
 func _update() -> void:
-	get_tree().paused = game_paused or pause_menu_visible
+	if game_paused or pause_menu_visible:
+		if not get_tree().paused:
+			get_tree().paused = true
+			paused.emit()
+	else:
+		if get_tree().paused:
+			get_tree().paused = false
+			unpaused.emit()

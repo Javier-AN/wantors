@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y3go2kaknlkm"]
 
 [ext_resource type="Script" uid="uid://cf4ppml8e3ete" path="res://scenes/ui/item_collection_menu/pairs_container.gd" id="1_idf8y"]
-[ext_resource type="Script" uid="uid://cxbdubj6oxp4p" path="res://scenes/ui/item_collection_menu/back_button.gd" id="2_sofvq"]
+[ext_resource type="Script" uid="uid://phdv8tgmqugg" path="res://scenes/ui/item_collection_menu/item_collection_menu.gd" id="1_sofvq"]
 
 [node name="ItemCollectionMenu" type="Control" unique_id=567753353]
 layout_mode = 3
@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sofvq")
 
 [node name="GlobalContainer" type="VBoxContainer" parent="." unique_id=1893839234]
 layout_mode = 1
@@ -45,4 +46,3 @@ layout_mode = 2
 [node name="BackButton" type="Button" parent="GlobalContainer" unique_id=1039977974]
 layout_mode = 2
 text = "COLLECTION_BACK"
-script = ExtResource("2_sofvq")

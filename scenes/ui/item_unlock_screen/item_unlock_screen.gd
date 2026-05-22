@@ -17,6 +17,7 @@ func _ready() -> void:
 	else:
 		_label.text = tr(&"ITEM_ALL_UNLOCKED")
 	_ok_button.pressed.connect(_return_to_main_menu)
+	_ok_button.grab_focus.call_deferred()
 
 
 func _unlock_new_item() -> int:

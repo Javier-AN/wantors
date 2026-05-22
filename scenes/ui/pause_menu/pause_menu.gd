@@ -18,6 +18,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		PauseController.toggle_menu()
 		visible = PauseController.pause_menu_visible
+		_resume_button.grab_focus.call_deferred()
+	elif event.is_action_pressed("ui_cancel"):
+		_resume()
 
 
 # Unpauses the game.

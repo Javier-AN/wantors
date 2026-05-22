@@ -13,7 +13,7 @@ func save_game_data():
 
 
 func load_game_data():
-	if false and ResourceLoader.exists(_game_data_path):
+	if ResourceLoader.exists(_game_data_path):
 		_game_data = load(_game_data_path)
 	ItemCollectionController.unlocked_items = _game_data.unlocked_items
 
