@@ -8,7 +8,6 @@ extends Control
 		$PlayerHitTime/PlayerHitTimeText,
 		$BulletSpeed/BulletSpeedText,
 		$BulletDamage/BulletDamageText,
-		$BulletKnockbackFactor/BulletKnockbackFactorText,
 		$GunFireRate/GunFireRateText,
 	]
 ## Value label for player speed.
@@ -19,8 +18,6 @@ extends Control
 @onready var bullet_speed_label: Label = $BulletSpeed/BulletSpeedValue
 ## Value label for bullet damage.
 @onready var bullet_damage_label: Label = $BulletDamage/BulletDamageValue
-## Value label for bullet knockback factor.
-@onready var bullet_knockback_factor_label: Label = $BulletKnockbackFactor/BulletKnockbackFactorValue
 ## Value label for gun fire rate.
 @onready var gun_fire_rate_label: Label = $GunFireRate/GunFireRateValue
 
@@ -53,5 +50,4 @@ func _update_player_stats(stats: StatsClass.MobStats) -> void:
 func _update_gun_stats(stats: StatsClass.GunStats) -> void:
 	bullet_speed_label.text = str(stats.bullet_speed)
 	bullet_damage_label.text = str(stats.bullet_damage)
-	bullet_knockback_factor_label.text = str(stats.bullet_knockback_factor)
 	gun_fire_rate_label.text = str(snapped(10 / stats.shooting_cooldown, 0.1))

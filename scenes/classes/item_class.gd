@@ -15,13 +15,15 @@ signal pressed
 	set(value):
 		clickable = value
 		if _button:
-			_button.mouse_filter = MOUSE_FILTER_STOP if clickable else MOUSE_FILTER_IGNORE
+			_update_button_mouse_filter()
 ## Indicates if the item is locked.
 @export var locked: bool = false:
 	set(value):
 		locked = value
+		mouse_filter = MOUSE_FILTER_IGNORE if locked else MOUSE_FILTER_STOP
 		if _button:
 			_button.disabled = value
+			_update_button_mouse_filter()
 		if item_control:
 			item_control.locked = value
 
@@ -32,6 +34,7 @@ signal pressed
 # Called when ready.
 func _ready() -> void:
 	_create_button()
+	tooltip_text = get_description()
 
 
 ## Generates an explanation of the effect the item has.
@@ -46,12 +49,16 @@ func _ready() -> void:
 func _create_button() -> void:
 	_button = Button.new()
 	_button.disabled = locked
-	_button.mouse_filter = MOUSE_FILTER_STOP if clickable else MOUSE_FILTER_IGNORE
+	_update_button_mouse_filter()
 	_button.size_flags_horizontal = SIZE_FILL
 	_button.size_flags_vertical = SIZE_FILL
 	_button.pressed.connect(_pressed)
 	add_child(_button)
 	move_child(_button, 0)
+
+
+func _update_button_mouse_filter():
+	_button.mouse_filter = MOUSE_FILTER_PASS if clickable else MOUSE_FILTER_IGNORE
 
 
 # Called when the button is pressed.

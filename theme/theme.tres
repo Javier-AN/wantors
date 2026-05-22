@@ -16,6 +16,7 @@
 [ext_resource type="StyleBox" uid="uid://cjapf2ss6ngy7" path="res://theme/style_boxes/item_icon_style_box_flat.tres" id="13_mm6bo"]
 [ext_resource type="StyleBox" uid="uid://v45ujm56kdh1" path="res://theme/style_boxes/progress_bar_fill_style_box_flat.tres" id="13_p4hxb"]
 [ext_resource type="StyleBox" uid="uid://y8dgf8slh0xw" path="res://theme/style_boxes/item_icon_locked_style_box_flat.tres" id="14_jjfh6"]
+[ext_resource type="StyleBox" uid="uid://c63abq8222ql" path="res://theme/style_boxes/tooltip_style_box_flat.tres" id="17_5p4dt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plbg5"]
 atlas = ExtResource("8_oi4s6")
@@ -76,4 +77,5 @@ ProgressBar/styles/fill = ExtResource("13_p4hxb")
 TitleLabel/base_type = &"Label"
 TitleLabel/font_sizes/font_size = 80
 TitleLabel/fonts/font = ExtResource("11_d81ev")
+TooltipPanel/styles/panel = ExtResource("17_5p4dt")
 VBoxContainer/constants/separation = 30

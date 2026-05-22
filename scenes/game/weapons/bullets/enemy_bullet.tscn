@@ -75,19 +75,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83itf"]
 size = Vector2(8, 12)
 
-[node name="EnemyBullet" type="Area2D" unique_id=882962621]
-z_index = 1
+[node name="EnemyBullet" type="Area2D" unique_id=217601908]
+z_index = -3
 collision_layer = 0
 collision_mask = 33
 script = ExtResource("1_3f80h")
 metadata/_custom_type_script = "uid://cspq15d5dtdpu"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=503299095]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=503299095]
 position = Vector2(-5, 1)
 sprite_frames = SubResource("SpriteFrames_nwmqn")
 animation = &"travel"
+frame_progress = 0.9189898
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955630396]
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=955630396]
 rotation = -1.5707963
 scale = Vector2(0.5, -0.42)
 shape = SubResource("RectangleShape2D_83itf")

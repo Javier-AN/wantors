@@ -2,13 +2,13 @@ class_name Acorn
 extends Item
 
 
-const BULLET_KNOCKBACK_FACTOR_FACTOR: float = 1.2
+const HIT_TIME_PLUS: float = 0.2
 
 
 func get_description() -> String: 
-	return "%s: x%f" % [tr(&"BULLET_KNOCKBACK_FACTOR"), BULLET_KNOCKBACK_FACTOR_FACTOR]
+	return "%s: +%.1f" % [tr(&"STATS_HIT_TIME"), HIT_TIME_PLUS]
 
 
 func transform_stats(stats: StatsClass.Stats) -> StatsClass.Stats:
-	stats.gun_stats.bullet_knockback_factor *= BULLET_KNOCKBACK_FACTOR_FACTOR
+	stats.player_stats.hit_time += HIT_TIME_PLUS
 	return stats

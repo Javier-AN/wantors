@@ -155,17 +155,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a83h"]
-size = Vector2(17, 13)
+size = Vector2(26, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2tort"]
 radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wdo"]
-size = Vector2(17, 27)
+size = Vector2(18, 54)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flbma"]
 radius = 9.5
-height = 28.0
+height = 26.0
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("soft_collision_area", "sprites")]
 y_sort_enabled = true
@@ -174,45 +174,47 @@ collision_mask = 4
 script = ExtResource("1_cuqfc")
 knockback_factor = 1.0
 soft_collision_area = NodePath("SoftCollisionArea")
-speed = 50.0
+speed = 75.0
 max_health = 10
 hit_time = 0.4
 sprites = [NodePath("Sprite")]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1814592448]
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_40wdo")
 animation = &"run"
 
 [node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=1021458062]
-position = Vector2(0.5, 9.5)
+position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_4a83h")
 
 [node name="SoftCollisionArea" type="Area2D" parent="." unique_id=1991094395]
-position = Vector2(0.5, 9.5)
+position = Vector2(0, 24.5)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_hdtn6")
 
 [node name="SoftCollisionShape" type="CollisionShape2D" parent="SoftCollisionArea" unique_id=897512578]
-position = Vector2(-0.5, -4)
+position = Vector2(0, -15.5)
 shape = SubResource("CircleShape2D_2tort")
 
 [node name="DamageCollisionBody" type="StaticBody2D" parent="." unique_id=105531692]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, 15.5)
 collision_layer = 2
 collision_mask = 0
 
 [node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=1156815274]
-position = Vector2(0.5, -1)
+position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_40wdo")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=824666618]
-position = Vector2(0, 1)
+position = Vector2(-0.5, 16)
 collision_layer = 0
 script = ExtResource("4_ge328")
 damage = 5
 metadata/_custom_type_script = "uid://4y8pwsc7gkm2"
 
 [node name="AttackCollisionShape" type="CollisionShape2D" parent="AttackArea" unique_id=793272274]
-position = Vector2(0.5, -2)
+position = Vector2(0.5, -14)
 shape = SubResource("CapsuleShape2D_flbma")

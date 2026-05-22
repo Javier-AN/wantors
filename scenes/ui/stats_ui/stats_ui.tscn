@@ -51,16 +51,6 @@ text = "STATS_DAMAGE"
 [node name="BulletDamageValue" type="Label" parent="BulletDamage" unique_id=35842409]
 layout_mode = 2
 
-[node name="BulletKnockbackFactor" type="HBoxContainer" parent="." unique_id=1223371479]
-layout_mode = 2
-
-[node name="BulletKnockbackFactorText" type="Label" parent="BulletKnockbackFactor" unique_id=1814817815]
-layout_mode = 2
-text = "STATS_KNOCKBACK"
-
-[node name="BulletKnockbackFactorValue" type="Label" parent="BulletKnockbackFactor" unique_id=1945512512]
-layout_mode = 2
-
 [node name="GunFireRate" type="HBoxContainer" parent="." unique_id=665185559]
 layout_mode = 2
 

@@ -41,6 +41,7 @@ ITEM_ACORN_TITLE,Acorn,Bellota,Bellota
 ITEM_ACORN_SUBTITLE,Strong as an oak!,¡Fuerte como un roble!,Forte coma un carballo!
 
 ITEM_SELECT,Choose an item,Elige un ítem,Elixe un ítem
+ITEM_LOCKED,Locked,Bloqueado,Broqueado
 ITEM_UNLOCKED,New item unlocked!,¡Nuevo ítem desbloqueado!,Novo ítem desbloqueado!
 ITEM_ALL_UNLOCKED,All of the items are already unlocked,Todos los ítems están ya desbloqueados,Todos os ítems están xa desbloqueados
 

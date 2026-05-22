@@ -2,11 +2,11 @@ class_name Potion
 extends Item
 
 
-const SPEED_PLUS: float = 10.0
+const SPEED_PLUS: float = 20.0
 
 
 func get_description() -> String: 
-	return "%s: +%f" % [tr(&"SPEED"), SPEED_PLUS]
+	return "%s: +%.f" % [tr(&"STATS_SPEED"), SPEED_PLUS]
 
 
 func transform_stats(stats: StatsClass.Stats) -> StatsClass.Stats:

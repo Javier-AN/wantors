@@ -3,7 +3,9 @@ extends Gun
 ## A gun controlled by the player.
 
 ## Direction the gun is facing. Automatically updated through input.
-var direction: Vector2
+var direction := Vector2.ZERO
+## Indicates if the gun is facing right. Automatically updated through input.
+var facing_right: bool = true
 
 
 #region Stats
@@ -36,6 +38,7 @@ func _global_update_stats():
 # Called every tick
 func _physics_process(_delta: float) -> void:
 	if direction.length() > 0:
+		facing_right = direction.x >= 0
 		rotation = direction.angle()
 		shoot()
 

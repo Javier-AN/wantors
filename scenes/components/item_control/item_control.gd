@@ -12,8 +12,8 @@ extends Control
 @export var locked: bool:
 	set(value):
 		locked = value
-		if _panel_container:
-			_update_panel()
+		if _subtitle_label and _panel_container:
+			_update()
 
 @onready var _texture_rect: TextureRect = $GlobalContainer/PanelContainer/MarginContainer/TextureRect
 @onready var _title_label: Label = $GlobalContainer/TextContainer/TitleLabel
@@ -24,9 +24,9 @@ extends Control
 func _ready() -> void:
 	_texture_rect.texture = image
 	_title_label.text = title
-	_subtitle_label.text = subtitle
-	_update_panel()
+	_update()
 
 
-func _update_panel() -> void:
+func _update() -> void:
+	_subtitle_label.text = tr(&"ITEM_LOCKED") if locked else subtitle
 	_panel_container.theme_type_variation = &"LockedItemPanel" if locked else &"ItemPanel"

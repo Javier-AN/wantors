@@ -8,31 +8,31 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prej5"]
 atlas = ExtResource("1_8afob")
-region = Rect2(0, 0, 18, 32)
+region = Rect2(0, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqfck"]
 atlas = ExtResource("1_8afob")
-region = Rect2(18, 0, 18, 32)
+region = Rect2(19, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmc11"]
 atlas = ExtResource("1_8afob")
-region = Rect2(36, 0, 18, 32)
+region = Rect2(38, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdbv0"]
 atlas = ExtResource("1_8afob")
-region = Rect2(54, 0, 18, 32)
+region = Rect2(57, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bxg8"]
 atlas = ExtResource("1_8afob")
-region = Rect2(72, 0, 18, 32)
+region = Rect2(76, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywish"]
 atlas = ExtResource("1_8afob")
-region = Rect2(90, 0, 18, 32)
+region = Rect2(95, 0, 19, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcwky"]
 atlas = ExtResource("1_8afob")
-region = Rect2(108, 0, 18, 32)
+region = Rect2(114, 0, 19, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_je7p5"]
 animations = [{
@@ -40,7 +40,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_prej5")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 0.0
 }, {
@@ -65,67 +65,100 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pbj1"]
-size = Vector2(17, 13)
+size = Vector2(34, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pbj1"]
-radius = 5.0
+radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
-size = Vector2(14, 27)
+size = Vector2(18, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0dnl"]
 atlas = ExtResource("5_prej5")
-region = Rect2(0, 0, 13, 10)
+region = Rect2(13, 0, 13, 12)
 
-[node name="Player" type="CharacterBody2D" unique_id=1506993550 node_paths=PackedStringArray("sprites")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxkrj"]
+atlas = ExtResource("5_prej5")
+region = Rect2(0, 0, 13, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_prej5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0dnl")
+}],
+"loop": false,
+"name": &"left",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxkrj")
+}],
+"loop": false,
+"name": &"right",
+"speed": 0.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1506993550 node_paths=PackedStringArray("soft_collision_area", "sprites")]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_dovo2")
-speed = 60.0
+soft_collision_area = NodePath("SoftCollisionArea")
+speed = 90.0
 max_health = 100
 hit_time = 0.4
 sprites = [NodePath("Sprite"), NodePath("PlayerGun/GunSprite")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1930029373]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(0, 19)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=476568386]
+position = Vector2(0, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_je7p5")
 animation = &"run"
+frame_progress = 0.0253941
 
 [node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=461362418]
-position = Vector2(0.5, 9.5)
+position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_0pbj1")
 
 [node name="SoftCollisionArea" type="Area2D" parent="." unique_id=1778716289]
+position = Vector2(0, 19)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_lvxji")
 metadata/_custom_type_script = "uid://bycill6nappa"
 
 [node name="SoftCollisionShape" type="CollisionShape2D" parent="SoftCollisionArea" unique_id=1187666724]
-position = Vector2(0, 6)
+position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_0pbj1")
 
 [node name="DamageCollisionBody" type="StaticBody2D" parent="." unique_id=1060278804]
+position = Vector2(0, 19)
 collision_mask = 0
 
 [node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=1392449761]
-position = Vector2(0, -0.5)
+position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_fm80t")
 
 [node name="PlayerGun" parent="." unique_id=1026290943 node_paths=PackedStringArray("muzzle") instance=ExtResource("4_abehh")]
+y_sort_enabled = false
+position = Vector2(0, -3)
+scale = Vector2(2, 2)
 muzzle = NodePath("GunMuzzle")
 
-[node name="GunMuzzle" type="Marker2D" parent="PlayerGun" unique_id=991716505]
+[node name="GunMuzzle" type="Marker2D" parent="PlayerGun" unique_id=1616912414]
 position = Vector2(12, 0)
 
-[node name="GunSprite" type="Sprite2D" parent="PlayerGun" unique_id=1474228396]
-position = Vector2(8, 0)
-scale = Vector2(0.8333333, 0.8333333)
-texture = SubResource("AtlasTexture_i0dnl")
+[node name="GunSprite" type="AnimatedSprite2D" parent="PlayerGun" unique_id=496845377]
+position = Vector2(8.5, 0)
+sprite_frames = SubResource("SpriteFrames_prej5")
+animation = &"right"

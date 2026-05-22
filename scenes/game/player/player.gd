@@ -10,6 +10,8 @@ var _invulnerable: bool
 @onready var _gun: PlayerGun = $PlayerGun
 # Player sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
+# Gun sprite.
+@onready var _gun_sprite: AnimatedSprite2D = $PlayerGun/GunSprite
 #endregion
 
 
@@ -44,8 +46,14 @@ func _update_direction():
 
 # Updates the sprite animation
 func _update_animation():
-	var facing_right := Utils.is_facing_right(_gun.direction.angle())
-	_sprite.flip_h = not facing_right
+	if _gun.facing_right:
+		_sprite.flip_h = false
+		_gun_sprite.play("right")
+		_gun.z_index = 1
+	else:
+		_sprite.flip_h = true
+		_gun_sprite.play("left")
+		_gun.z_index = -1
 	if _direction.length() > 0:
 		_sprite.play("run")
 		# Character velocity affects animation velocity

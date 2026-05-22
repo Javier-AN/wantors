@@ -2,11 +2,11 @@ class_name Gunpowder
 extends Item
 
 
-const BULLET_SPEED_PLUS: float = 25.0
+const BULLET_SPEED_PLUS: float = 30.0
 
 
 func get_description() -> String: 
-	return "%s: +%f" % [tr(&"BULLET_SPEED"), BULLET_SPEED_PLUS]
+	return "%s: +%.f" % [tr(&"STATS_BULLET_SPEED"), BULLET_SPEED_PLUS]
 
 
 func transform_stats(stats: StatsClass.Stats) -> StatsClass.Stats:

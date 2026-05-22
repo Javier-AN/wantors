@@ -25,7 +25,6 @@ visibility_rect = Rect2(0, -600, 2200, 1200)
 [node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
-position = Vector2(-2, -1)
 
 [node name="UIContainer" type="CanvasLayer" parent="." unique_id=1425153929]
 
