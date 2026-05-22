@@ -14,21 +14,21 @@ signal pressed
 @export var clickable: bool = true:
 	set(value):
 		clickable = value
-		if _button:
+		if button:
 			_update_button_mouse_filter()
 ## Indicates if the item is locked.
 @export var locked: bool = false:
 	set(value):
 		locked = value
 		mouse_filter = MOUSE_FILTER_IGNORE if locked else MOUSE_FILTER_STOP
-		if _button:
-			_button.disabled = value
+		if button:
+			button.disabled = value
 			_update_button_mouse_filter()
 		if item_control:
 			item_control.locked = value
 
-# Button.
-@onready var _button: Button
+## Button.
+@onready var button: Button
 
 
 # Called when ready.
@@ -47,18 +47,18 @@ func _ready() -> void:
 
 # Creates a button as the first child.
 func _create_button() -> void:
-	_button = Button.new()
-	_button.disabled = locked
+	button = Button.new()
+	button.disabled = locked
 	_update_button_mouse_filter()
-	_button.size_flags_horizontal = SIZE_FILL
-	_button.size_flags_vertical = SIZE_FILL
-	_button.pressed.connect(_pressed)
-	add_child(_button)
-	move_child(_button, 0)
+	button.size_flags_horizontal = SIZE_FILL
+	button.size_flags_vertical = SIZE_FILL
+	button.pressed.connect(_pressed)
+	add_child(button)
+	move_child(button, 0)
 
 
 func _update_button_mouse_filter():
-	_button.mouse_filter = MOUSE_FILTER_PASS if clickable else MOUSE_FILTER_IGNORE
+	button.mouse_filter = MOUSE_FILTER_PASS if clickable else MOUSE_FILTER_IGNORE
 
 
 # Called when the button is pressed.

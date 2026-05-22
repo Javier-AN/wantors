@@ -15,14 +15,14 @@ extends Node2D
 @export var bullet_damage: int = 5
 ## Knockback factor of the generated bullets.
 @export var bullet_knockback_factor: float = 0.1
+## Node that functions as parent for the bullets.
+@export var bullet_container: Node2D
 
 ## Indicates whether the gun is in cooldown state.
 var in_cooldown: bool
 
 # Shooting cooldown timer.
 @onready var _timer := Timer.new()
-# Static node which functions as parent for bullets.
-@onready var _bullet_container := Node2D.new()
 #endregion
 
 
@@ -30,8 +30,10 @@ var in_cooldown: bool
 func _ready() -> void:
 	_timer.timeout.connect(_end_cooldown)
 	add_child(_timer)
-	_bullet_container.top_level = true
-	add_child(_bullet_container)
+	if not bullet_container:
+		bullet_container = Node2D.new()
+		bullet_container.top_level = true
+		add_child(bullet_container)
 
 
 ## Shoots a bullet.
@@ -60,4 +62,4 @@ func _generate_bullet():
 	bullet.damage = bullet_damage
 	bullet.knockback_factor = bullet_knockback_factor
 	# Add bullet to tree
-	_bullet_container.add_child(bullet)
+	bullet_container.add_child(bullet)

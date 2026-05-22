@@ -14,7 +14,7 @@ y_sort_enabled = true
 script = ExtResource("1_k2fmo")
 
 [node name="Timer" type="Timer" parent="." unique_id=1176805290]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="StarsParticles" parent="." unique_id=355015193 instance=ExtResource("2_bryd7")]
 position = Vector2(-1100, 0)
@@ -25,6 +25,14 @@ visibility_rect = Rect2(0, -600, 2200, 1200)
 [node name="Spawner" parent="." unique_id=1875293389 instance=ExtResource("5_ow5a4")]
 
 [node name="Player" parent="." unique_id=466900491 instance=ExtResource("2_k2fmo")]
+
+[node name="BulletContainer" type="Node2D" parent="." unique_id=1256626878]
+
+[node name="Player" type="Node2D" parent="BulletContainer" unique_id=1785841185]
+top_level = true
+
+[node name="Enemy" type="Node2D" parent="BulletContainer" unique_id=90828150]
+top_level = true
 
 [node name="UIContainer" type="CanvasLayer" parent="." unique_id=1425153929]
 

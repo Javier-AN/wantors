@@ -8,10 +8,13 @@ var _upgrade_chance: float
 
 @onready var _final_level: int = 2 + ItemCollectionController.unlocked_items.size()
 
+@onready var player: Player = $Player
 @onready var timer: Timer = $Timer
 @onready var spawner: Spawner = $Spawner
 @onready var _ui_container: CanvasLayer = $UIContainer
 @onready var _level_label: Label = $UIContainer/LevelContainer/LevelValue
+@onready var _bullet_container_player: Node2D = $BulletContainer/Player
+@onready var _bullet_container_enemy: Node2D = $BulletContainer/Enemy
 
 @onready var item_selection_menu: PackedScene = load("res://scenes/ui/item_selection_menu/item_selection_menu.tscn")
 @onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message_screen/transition_message_screen.tscn")
@@ -21,6 +24,10 @@ var _upgrade_chance: float
 
 # Called when ready
 func _ready() -> void:
+	BulletController.container_player = _bullet_container_player
+	BulletController.container_enemy = _bullet_container_enemy
+	player.gun.bullet_container.queue_free()
+	player.gun.bullet_container = _bullet_container_player
 	timer.timeout.connect(_spawn_horde)
 	spawner.mob_cap_reached.connect(timer.stop)
 	spawner.enemies_cleared.connect(_level_finished)
@@ -43,7 +50,7 @@ func _spawn_horde() -> void:
 func _new_level() -> void:
 	_level_label.text = str(_level + 1)
 	# Adapt difficulty to new level
-	_horde_size = 5 + _level * 5
+	_horde_size = 5 + _level
 	_upgrade_chance = _level * 0.1
 	if _upgrade_chance > 0.6:
 		_upgrade_chance = 0.6
@@ -54,6 +61,7 @@ func _new_level() -> void:
 
 # Called when the stage is cleared
 func _level_finished() -> void:
+	BulletController.clear()
 	if _level < _final_level:
 		_show_item_menu()
 	else:

@@ -6,8 +6,8 @@ extends Mob
 # Indicates whether the player is invulnerable to damage.
 var _invulnerable: bool
 
-# Player gun.
-@onready var _gun: PlayerGun = $PlayerGun
+## Player gun.
+@onready var gun: PlayerGun = $PlayerGun
 # Player sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
 # Gun sprite.
@@ -46,14 +46,14 @@ func _update_direction():
 
 # Updates the sprite animation
 func _update_animation():
-	if _gun.facing_right:
+	if gun.facing_right:
 		_sprite.flip_h = false
 		_gun_sprite.play("right")
-		_gun.z_index = 1
+		gun.z_index = 1
 	else:
 		_sprite.flip_h = true
 		_gun_sprite.play("left")
-		_gun.z_index = -1
+		gun.z_index = -1
 	if _direction.length() > 0:
 		_sprite.play("run")
 		# Character velocity affects animation velocity
@@ -111,8 +111,8 @@ func _global_update_health():
 func _die():
 	super()
 	_sprite.play("idle")
-	if _gun:
-		_gun.queue_free()
+	if gun:
+		gun.queue_free()
 
 #endregion
 
