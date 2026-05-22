@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://prh01ileo6ua"
-path="res://.godot/imported/bullets.png-3086514185e15fa5bd141d46f4393989.ctex"
+uid="uid://c5nromwlwksah"
+path="res://.godot/imported/rock_gun.png-999911295215a7e9e9efe1fa7610a611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bullets.png"
-dest_files=["res://.godot/imported/bullets.png-3086514185e15fa5bd141d46f4393989.ctex"]
+source_file="res://assets/images/rock_gun.png"
+dest_files=["res://.godot/imported/rock_gun.png-999911295215a7e9e9efe1fa7610a611.ctex"]
 
 [params]
 

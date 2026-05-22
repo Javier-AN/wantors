@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwlg0dlnwv7ub"]
+
+[ext_resource type="Script" uid="uid://y2wbn0mve62m" path="res://scenes/game/weapons/enemy_gun/enemy_gun.gd" id="1_7a0ng"]
+[ext_resource type="PackedScene" uid="uid://ffrkxdpdwpe5" path="res://scenes/game/weapons/bullets/enemy_bullet.tscn" id="2_7a0ng"]
+
+[node name="EnemyGun" type="Node2D" unique_id=1026290943]
+y_sort_enabled = true
+script = ExtResource("1_7a0ng")
+bullet_scene = ExtResource("2_7a0ng")
+shooting_cooldown = 3.0
+bullet_speed = 60.0
+bullet_knockback_factor = 0.0
+metadata/_custom_type_script = "uid://c5vhqaxqre2aa"

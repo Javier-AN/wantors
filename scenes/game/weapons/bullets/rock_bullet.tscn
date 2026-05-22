@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://fmq3rb4at11w"]
+
+[ext_resource type="Script" uid="uid://bpn6pbql62jmp" path="res://scenes/game/weapons/bullets/bullet.gd" id="1_4p0t7"]
+[ext_resource type="Texture2D" uid="uid://5dcbrebbm43v" path="res://assets/images/rock_bullet.png" id="2_4p0t7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rec3d"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(17, 26, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epyvl"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(34, 26, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5mtg"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(0, 52, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsasv"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(17, 52, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnu30"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(0, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0cu0"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(17, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ioe"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(34, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d062j"]
+atlas = ExtResource("2_4p0t7")
+region = Rect2(0, 26, 17, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwmqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rec3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epyvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5mtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsasv")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnu30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0cu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ioe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d062j")
+}],
+"loop": true,
+"name": &"travel",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83itf"]
+size = Vector2(8, 12)
+
+[node name="RocketBullet" type="Area2D" unique_id=555841963]
+z_index = -3
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 33
+script = ExtResource("1_4p0t7")
+metadata/_custom_type_script = "uid://cspq15d5dtdpu"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=503299095]
+position = Vector2(-5, 1)
+sprite_frames = SubResource("SpriteFrames_nwmqn")
+animation = &"travel"
+frame_progress = 0.28737363
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=955630396]
+rotation = -1.5707963
+scale = Vector2(0.5, -0.42)
+shape = SubResource("RectangleShape2D_83itf")

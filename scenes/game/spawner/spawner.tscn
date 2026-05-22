@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dky3w4ribbshy" path="res://scenes/game/spawner/spawner.gd" id="1_eoeca"]
 [ext_resource type="PackedScene" uid="uid://co10vrs6liu7n" path="res://scenes/game/enemies/zombie/zombie.tscn" id="2_da1l1"]
+[ext_resource type="PackedScene" uid="uid://dcued05cxra6p" path="res://scenes/game/enemies/turret/turret.tscn" id="3_lyitf"]
 
 [node name="Spawner" type="Node2D" unique_id=1875293389]
 y_sort_enabled = true
 script = ExtResource("1_eoeca")
-enemies = Array[PackedScene]([ExtResource("2_da1l1")])
+enemies = Array[PackedScene]([ExtResource("2_da1l1"), ExtResource("3_lyitf")])
 
 [node name="PlayerMarker" type="Marker2D" parent="." unique_id=1647003000]
 

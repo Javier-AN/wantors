@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dcued05cxra6p"]
+
+[ext_resource type="Script" uid="uid://ddqohh2wfestw" path="res://scenes/game/enemies/turret/turret.gd" id="1_21sts"]
+[ext_resource type="Texture2D" uid="uid://brvwq3ywdqg3y" path="res://assets/images/turret_enemy.png" id="3_16tiy"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision_area/soft_collision_area.gd" id="3_riv4i"]
+[ext_resource type="PackedScene" uid="uid://bwlg0dlnwv7ub" path="res://scenes/game/weapons/enemy_gun/enemy_gun.tscn" id="4_16tiy"]
+[ext_resource type="PackedScene" uid="uid://fmq3rb4at11w" path="res://scenes/game/weapons/bullets/rock_bullet.tscn" id="5_x66dg"]
+[ext_resource type="Texture2D" uid="uid://c5nromwlwksah" path="res://assets/images/rock_gun.png" id="6_igshu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyck8"]
+atlas = ExtResource("3_16tiy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16tiy"]
+atlas = ExtResource("3_16tiy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x66dg"]
+atlas = ExtResource("3_16tiy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40wdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyck8")
+}],
+"loop": false,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16tiy")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x66dg")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_numyy"]
+radius = 10.998324
+height = 27.995735
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16tiy"]
+radius = 13.0
+height = 31.999998
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40wdo"]
+size = Vector2(18, 44)
+
+[node name="Turret" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sprites")]
+y_sort_enabled = true
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("1_21sts")
+max_health = 25
+hit_time = 0.4
+sprites = [NodePath("Sprite"), NodePath("Gun/GunSprite")]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1814592448]
+position = Vector2(0, 6)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_40wdo")
+animation = &"die"
+
+[node name="BulletsCollisionShape" type="CollisionShape2D" parent="." unique_id=1021458062]
+position = Vector2(0, 27)
+rotation = 1.5882496
+shape = SubResource("CapsuleShape2D_numyy")
+
+[node name="SoftCollisionArea" type="Area2D" parent="." unique_id=1991094395]
+visible = false
+position = Vector2(0, -6.5)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_riv4i")
+weight = 2.0
+
+[node name="SoftCollisionShape" type="CollisionShape2D" parent="SoftCollisionArea" unique_id=897512578]
+position = Vector2(0, -16.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_16tiy")
+
+[node name="DamageCollisionBody" type="StaticBody2D" parent="." unique_id=105531692]
+position = Vector2(-0.5, 22.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=1156815274]
+position = Vector2(1.5, -26.5)
+shape = SubResource("RectangleShape2D_40wdo")
+
+[node name="Gun" parent="." unique_id=1026290943 node_paths=PackedStringArray("muzzle") instance=ExtResource("4_16tiy")]
+position = Vector2(9, -4)
+scale = Vector2(2, 2)
+muzzle = NodePath("GunMuzzle")
+bullet_scene = ExtResource("5_x66dg")
+
+[node name="GunMuzzle" type="Marker2D" parent="Gun" unique_id=355125042]
+position = Vector2(4.5, 0)
+
+[node name="GunSprite" type="Sprite2D" parent="Gun" unique_id=2125395672]
+z_index = 1
+texture = ExtResource("6_igshu")
