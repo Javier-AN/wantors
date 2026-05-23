@@ -40,14 +40,17 @@ func force_quit() -> void:
 	game_paused = false
 	pause_menu_visible = false
 	_update()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _update() -> void:
 	if game_paused or pause_menu_visible:
 		if not get_tree().paused:
 			get_tree().paused = true
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			paused.emit()
 	else:
 		if get_tree().paused:
 			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			unpaused.emit()

@@ -29,6 +29,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=741154108]
 layout_mode = 2
+theme_type_variation = &"MenuLabel"
 text = "ITEM_UNLOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1

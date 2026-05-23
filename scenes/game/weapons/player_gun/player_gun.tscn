@@ -8,5 +8,5 @@ y_sort_enabled = true
 script = ExtResource("1_lnhu7")
 bullet_scene = ExtResource("2_yo3n2")
 shooting_cooldown = 0.6
-bullet_speed = 170.0
+bullet_speed = 190.0
 metadata/_custom_type_script = "uid://c5vhqaxqre2aa"

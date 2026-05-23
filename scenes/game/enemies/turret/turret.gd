@@ -15,6 +15,7 @@ extends Creature
 # Called when ready.
 func _ready() -> void:
 	super()
+	_sprite.play("idle")
 	if _flipped:
 		scale = Vector2(-scale.x, scale.y)
 
@@ -33,6 +34,12 @@ func _hit_taken(damage: int, push := Vector2.ZERO) -> void:
 	_sprite.play("hit")
 
 
+# Called when a hit ends.
+func _hit_ended() -> void:
+	if not dead:
+		_sprite.play("idle")
+
+
 # Called when health reaches zero.
 func _die():
 	super()
@@ -42,7 +49,6 @@ func _die():
 	if _gun:
 		_gun.queue_free()
 	# Then animate
-	velocity = Vector2.ZERO
 	_sprite.play("die")
 	# Finally erase
 	_sprite.animation_finished.connect(_disappear)

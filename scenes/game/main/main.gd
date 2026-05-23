@@ -25,6 +25,7 @@ var _upgrade_chance: float
 
 # Called when ready
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	BulletController.container_player = _bullet_container_player
 	BulletController.container_enemy = _bullet_container_enemy
 	player.gun.bullet_container.queue_free()
@@ -54,8 +55,8 @@ func _new_level() -> void:
 	# Adapt difficulty to new level
 	_horde_size = 5 + _level
 	_upgrade_chance = _level * 0.1
-	if _upgrade_chance > 0.6:
-		_upgrade_chance = 0.6
+	if _upgrade_chance > 0.4:
+		_upgrade_chance = 0.4
 	# Start the spawner
 	spawner.reset_mob_count(5 + _level * 10)
 	timer.start()
@@ -82,6 +83,8 @@ func _show_item_menu() -> void:
 func _level_up() -> void:
 	# Upgrade difficulty
 	_level += 1
+	# Heal the player
+	StatsController.heal_player(10)
 	# Starts the new level
 	_new_level()
 
@@ -91,6 +94,7 @@ func _end_game():
 	var transition := transition_scene.instantiate()
 	transition.message = tr(&"GAME_END")
 	transition.target = item_unlock
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	add_sibling(transition)
 	queue_free()
 
@@ -100,6 +104,7 @@ func _player_died():
 	var transition := transition_scene.instantiate()
 	transition.message = tr(&"GAME_DEATH")
 	transition.target = main_menu
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	add_sibling(transition)
 	queue_free()
 

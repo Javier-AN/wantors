@@ -15,6 +15,6 @@ func _ready() -> void:
 func _update_player_health(health: int) -> void:
 	var max_health := StatsController.stats.player_stats.max_health
 	_label.text = "%d/%d" % [health, max_health]
-	custom_minimum_size = Vector2(max_health * 5, custom_minimum_size.y)
+	custom_minimum_size = Vector2(max_health * 8, custom_minimum_size.y)
 	max_value = max_health
 	value = health

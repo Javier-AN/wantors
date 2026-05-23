@@ -200,7 +200,7 @@ collision_mask = 4
 script = ExtResource("1_dovo2")
 soft_collision_area = NodePath("SoftCollisionArea")
 speed = 90.0
-max_health = 10
+max_health = 50
 hit_time = 0.4
 sprites = [NodePath("Sprite"), NodePath("PlayerGun/GunSprite")]
 
