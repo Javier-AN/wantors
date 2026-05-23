@@ -8,45 +8,85 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prej5"]
 atlas = ExtResource("1_8afob")
-region = Rect2(0, 0, 19, 32)
+region = Rect2(0, 0, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqfck"]
 atlas = ExtResource("1_8afob")
-region = Rect2(19, 0, 19, 32)
+region = Rect2(66, 32, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmc11"]
 atlas = ExtResource("1_8afob")
-region = Rect2(38, 0, 19, 32)
+region = Rect2(66, 32, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdbv0"]
 atlas = ExtResource("1_8afob")
-region = Rect2(57, 0, 19, 32)
+region = Rect2(0, 64, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bxg8"]
 atlas = ExtResource("1_8afob")
-region = Rect2(76, 0, 19, 32)
+region = Rect2(22, 64, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywish"]
 atlas = ExtResource("1_8afob")
-region = Rect2(95, 0, 19, 32)
+region = Rect2(44, 64, 22, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcwky"]
 atlas = ExtResource("1_8afob")
-region = Rect2(114, 0, 19, 32)
+region = Rect2(44, 64, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkur"]
+atlas = ExtResource("1_8afob")
+region = Rect2(44, 64, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvpd5"]
+atlas = ExtResource("1_8afob")
+region = Rect2(44, 64, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5vmf"]
+atlas = ExtResource("1_8afob")
+region = Rect2(0, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34lq7"]
+atlas = ExtResource("1_8afob")
+region = Rect2(22, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs005"]
+atlas = ExtResource("1_8afob")
+region = Rect2(44, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g11kp"]
+atlas = ExtResource("1_8afob")
+region = Rect2(66, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7er3"]
+atlas = ExtResource("1_8afob")
+region = Rect2(0, 32, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deim3"]
+atlas = ExtResource("1_8afob")
+region = Rect2(22, 32, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5pre"]
+atlas = ExtResource("1_8afob")
+region = Rect2(44, 32, 22, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_je7p5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_prej5")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 0.0
 }, {
-"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prej5")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqfck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqfck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmc11")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gmc11")
@@ -62,6 +102,55 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bcwky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvpd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywish")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcwky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvpd5")
+}],
+"loop": false,
+"name": &"die",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5vmf")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34lq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs005")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g11kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7er3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deim3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5pre")
 }],
 "loop": true,
 "name": &"run",
@@ -111,7 +200,7 @@ collision_mask = 4
 script = ExtResource("1_dovo2")
 soft_collision_area = NodePath("SoftCollisionArea")
 speed = 90.0
-max_health = 100
+max_health = 10
 hit_time = 0.4
 sprites = [NodePath("Sprite"), NodePath("PlayerGun/GunSprite")]
 
@@ -123,8 +212,9 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(0, 3)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_je7p5")
-animation = &"run"
-frame_progress = 0.0253941
+animation = &"die"
+frame = 15
+frame_progress = 1.0
 
 [node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=461362418]
 position = Vector2(0, 23)

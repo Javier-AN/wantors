@@ -16,6 +16,7 @@ var _upgrade_chance: float
 @onready var _bullet_container_player: Node2D = $BulletContainer/Player
 @onready var _bullet_container_enemy: Node2D = $BulletContainer/Enemy
 
+@onready var main_menu: PackedScene = load("res://scenes/ui/main_menu/main_menu.tscn")
 @onready var item_selection_menu: PackedScene = load("res://scenes/ui/item_selection_menu/item_selection_menu.tscn")
 @onready var transition_scene: PackedScene = load("res://scenes/ui/transition_message_screen/transition_message_screen.tscn")
 @onready var item_unlock: PackedScene = load("res://scenes/ui/item_unlock_screen/item_unlock_screen.tscn")
@@ -28,6 +29,7 @@ func _ready() -> void:
 	BulletController.container_enemy = _bullet_container_enemy
 	player.gun.bullet_container.queue_free()
 	player.gun.bullet_container = _bullet_container_player
+	player.disappeared.connect(_player_died)
 	timer.timeout.connect(_spawn_horde)
 	spawner.mob_cap_reached.connect(timer.stop)
 	spawner.enemies_cleared.connect(_level_finished)
@@ -89,6 +91,15 @@ func _end_game():
 	var transition := transition_scene.instantiate()
 	transition.message = tr(&"GAME_END")
 	transition.target = item_unlock
+	add_sibling(transition)
+	queue_free()
+
+
+# Called when the player dies
+func _player_died():
+	var transition := transition_scene.instantiate()
+	transition.message = tr(&"GAME_DEATH")
+	transition.target = main_menu
 	add_sibling(transition)
 	queue_free()
 

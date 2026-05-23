@@ -12,6 +12,8 @@ var _invulnerable: bool
 @onready var _sprite: AnimatedSprite2D = $Sprite
 # Gun sprite.
 @onready var _gun_sprite: AnimatedSprite2D = $PlayerGun/GunSprite
+# Damage collision body.
+@onready var _damage_collision: StaticBody2D = $DamageCollisionBody
 #endregion
 
 
@@ -110,9 +112,12 @@ func _global_update_health():
 # Called when health reaches zero.
 func _die():
 	super()
-	_sprite.play("idle")
 	if gun:
 		gun.queue_free()
+	if _damage_collision:
+		_damage_collision.queue_free()
+	_sprite.play("die")
+	_sprite.animation_finished.connect(_disappear)
 
 #endregion
 
