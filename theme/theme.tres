@@ -26,8 +26,6 @@ region = Rect2(0, 32, 64, 32)
 atlas = ExtResource("8_oi4s6")
 region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw8fc"]
-
 [resource]
 BoldButton/base_type = &"Button"
 BoldButton/font_sizes/font_size = 50
@@ -44,9 +42,10 @@ Button/styles/hover = ExtResource("5_p4hxb")
 Button/styles/hover_pressed = ExtResource("5_p4hxb")
 Button/styles/normal = ExtResource("6_iwsu2")
 Button/styles/pressed = ExtResource("7_mm6bo")
+CheckButton/font_sizes/font_size = 40
+CheckButton/fonts/font = ExtResource("2_nxnlh")
 CheckButton/icons/checked = SubResource("AtlasTexture_plbg5")
 CheckButton/icons/unchecked = SubResource("AtlasTexture_7g0pt")
-CheckButton/styles/focus = SubResource("StyleBoxFlat_yw8fc")
 CheckButton/styles/hover = ExtResource("9_jjfh6")
 CheckButton/styles/hover_pressed = ExtResource("9_jjfh6")
 CheckButton/styles/normal = ExtResource("9_jjfh6")

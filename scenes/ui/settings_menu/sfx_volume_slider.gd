@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _value_changed(new_value: float) -> void:
-	PreferencesController.set_sfx_volume(int(new_value))
+	PreferencesController.set_sfx_volume(new_value)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dnmc32gq4wg5t"
+path="res://.godot/imported/Jester_s Distraction.ogg-34bf0a74673657cf6eb85b72dff07710.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Jester_s Distraction.ogg"
+dest_files=["res://.godot/imported/Jester_s Distraction.ogg-34bf0a74673657cf6eb85b72dff07710.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

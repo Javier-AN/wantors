@@ -3,9 +3,10 @@ extends Control
 
 @export var main_menu: PackedScene
 
-@onready var _label: Label = $VBoxContainer/Label
-@onready var _item_container: Control = $VBoxContainer/ItemContainer
-@onready var _ok_button: Button = $VBoxContainer/OkButton
+@onready var _label: Label = $GlobalContainer/Label
+@onready var _item_container: Control = $GlobalContainer/ItemContainer
+@onready var _ok_button: Button = $GlobalContainer/OkButton
+@onready var _separator: HSeparator = $GlobalContainer/HSeparatorBottom
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,7 @@ func _ready() -> void:
 		_show_item(index)
 	else:
 		_label.text = tr(&"ITEM_ALL_UNLOCKED")
+		_separator.visible = false
 	_ok_button.pressed.connect(_return_to_main_menu)
 	_ok_button.grab_focus.call_deferred()
 

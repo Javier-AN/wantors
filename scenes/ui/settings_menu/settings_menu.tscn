@@ -12,8 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 450
-theme_override_constants/margin_right = 450
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
 script = ExtResource("1_ijx8i")
 
 [node name="GlobalContainer" type="VBoxContainer" parent="." unique_id=1539509473]
@@ -37,6 +37,8 @@ horizontal_alignment = 1
 
 [node name="SFXVolumeSlider" type="HSlider" parent="GlobalContainer" unique_id=958765297]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 script = ExtResource("1_h0t3o")
 
 [node name="MusicVolumeLabel" type="Label" parent="GlobalContainer" unique_id=1449710206]
@@ -48,6 +50,8 @@ horizontal_alignment = 1
 [node name="MusicVolumeSlider" type="HSlider" parent="GlobalContainer" unique_id=64818451]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../LanguageSelectionContainer/NextLanguageButton")
+max_value = 1.0
+step = 0.01
 script = ExtResource("2_ying2")
 
 [node name="LanguageSelectionContainer" type="HBoxContainer" parent="GlobalContainer" unique_id=2004347687]
@@ -66,7 +70,7 @@ layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../../MusicVolumeSlider")
 focus_neighbor_right = NodePath("../NextLanguageButton")
-focus_neighbor_bottom = NodePath("../../ExtendedUICheckContainer/ExtendedUICheckButton")
+focus_neighbor_bottom = NodePath("../../ExtendedUICheckButton")
 theme_type_variation = &"BoldButton"
 text = "<"
 
@@ -83,22 +87,14 @@ layout_mode = 2
 focus_neighbor_left = NodePath("../PreviousLanguageButton")
 focus_neighbor_top = NodePath("../../MusicVolumeSlider")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../ExtendedUICheckContainer/ExtendedUICheckButton")
+focus_neighbor_bottom = NodePath("../../ExtendedUICheckButton")
 theme_type_variation = &"BoldButton"
 text = ">"
 
-[node name="ExtendedUICheckContainer" type="HBoxContainer" parent="GlobalContainer" unique_id=1424036355]
+[node name="ExtendedUICheckButton" type="CheckButton" parent="GlobalContainer" unique_id=126764848]
 layout_mode = 2
-
-[node name="ExtendedUILabel" type="Label" parent="GlobalContainer/ExtendedUICheckContainer" unique_id=1423805663]
-custom_minimum_size = Vector2(650, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_type_variation = &"MenuLabel"
+focus_neighbor_top = NodePath("../LanguageSelectionContainer/NextLanguageButton")
 text = "SETTINGS_EXTENDED_UI_LABEL"
-
-[node name="ExtendedUICheckButton" type="CheckButton" parent="GlobalContainer/ExtendedUICheckContainer" unique_id=126764848]
-layout_mode = 2
 script = ExtResource("2_225ns")
 
 [node name="HSeparatorBottom" type="HSeparator" parent="GlobalContainer" unique_id=1566099768]

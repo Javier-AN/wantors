@@ -45,6 +45,9 @@ theme_type_variation = &"MenuLabel"
 text = "ITEM_SELECT"
 horizontal_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1632216560]
+layout_mode = 2
+
 [node name="ItemContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=573717301]
 layout_mode = 2
 alignment = 1

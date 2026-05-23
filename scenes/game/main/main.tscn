@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1qca362spwiq" path="res://scenes/game/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://b6jgki7kmf2b2" path="res://scenes/components/stars_particles/stars_particles.tscn" id="2_bryd7"]
+[ext_resource type="AudioStream" uid="uid://dhughu6y27an5" path="res://assets/music/Neon Trail.ogg" id="2_jpied"]
 [ext_resource type="PackedScene" uid="uid://ditgfur0bq1hb" path="res://scenes/game/player/player.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://2cqrr8hwh6bj" path="res://scenes/game/sites/site_1.tscn" id="3_xomjg"]
 [ext_resource type="PackedScene" uid="uid://3r656dep7u22" path="res://scenes/game/spawner/spawner.tscn" id="5_ow5a4"]
@@ -15,6 +16,14 @@ script = ExtResource("1_k2fmo")
 
 [node name="Timer" type="Timer" parent="." unique_id=1176805290]
 wait_time = 4.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1500429731]
+process_mode = 3
+stream = ExtResource("2_jpied")
+autoplay = true
+bus = &"Music"
+area_mask = 0
+parameters/looping = true
 
 [node name="StarsParticles" parent="." unique_id=355015193 instance=ExtResource("2_bryd7")]
 position = Vector2(-1100, 0)
