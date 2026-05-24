@@ -4,6 +4,8 @@ extends CharacterBody2D
 ## A character body 2D that has health and can die.
 
 #region Signals
+## Emitted when the mob takes a hit.
+signal hit
 ## Emitted when the mob health reaches zero.
 signal died
 ## Emitted when the mob finishes its death animation.
@@ -70,6 +72,7 @@ func _update_health(new_health: int) -> void:
 
 # Called when a hit is taken.
 func _hit_taken(_damage: int, _push := Vector2.ZERO) -> void:
+	hit.emit()
 	_hit_timer.start(hit_time)
 
 

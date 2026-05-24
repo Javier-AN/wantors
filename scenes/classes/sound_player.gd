@@ -1,8 +1,10 @@
+@abstract
+class_name SoundPlayer
 extends Node
 ## Credit to mrcdk.
 ## https://forum.godotengine.org/t/best-proper-way-to-do-ui-sounds-hover-click/39081/2
 
-var playback:AudioStreamPlaybackPolyphonic
+var playback: AudioStreamPlaybackPolyphonic
 
 
 func _enter_tree() -> void:
@@ -13,7 +15,7 @@ func _enter_tree() -> void:
 
 	# Create a polyphonic stream so we can play sounds directly from it
 	var stream = AudioStreamPolyphonic.new()
-	stream.polyphony = 1
+	stream.polyphony = 32
 	player.stream = stream
 	player.play()
 	# Get the polyphonic playback stream to play sounds
@@ -22,18 +24,9 @@ func _enter_tree() -> void:
 	get_tree().node_added.connect(_on_node_added)
 
 
-func _on_node_added(node:Node) -> void:
-	if node is Button:
-		# If the added node is a button we connect to its mouse_entered and pressed signals
-		# and play a sound
-		node.mouse_entered.connect(_play_hover)
-		node.focus_entered.connect(_play_hover)
-		node.pressed.connect(_play_pressed)
+@abstract func _on_node_added(node:Node) -> void
 
 
-func _play_hover() -> void:
-	playback.play_stream(preload("res://assets/sfx/cursor.ogg"))
-
-
-func _play_pressed() -> void:
-	playback.play_stream(preload("res://assets/sfx/select.ogg"))
+## Plays [param sound].
+func play(sound: Resource):
+	playback.play_stream(sound)

@@ -2,6 +2,9 @@ class_name Gun
 extends Node2D
 ## A 2D node that generates bullets in the direction it is pointing.
 
+## Emitted when the gun is shot.
+signal shot
+
 #region Variables
 ## Position in which the bullets are generated.
 @export var muzzle: Marker2D
@@ -39,6 +42,7 @@ func _ready() -> void:
 ## Shoots a bullet.
 func shoot():
 	if not in_cooldown and muzzle:
+		shot.emit()
 		_generate_bullet()
 		in_cooldown = true
 		_timer.start(shooting_cooldown)

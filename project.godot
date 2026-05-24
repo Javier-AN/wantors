@@ -31,7 +31,8 @@ SaveController="*uid://hfp5qick1q05"
 PreferencesController="*uid://b1j7fy75x64yd"
 PauseController="*uid://c1873vvnpt3x8"
 BulletController="*uid://cefpfw25o44pn"
-UiSoundController="*uid://cowdhvxpumh5h"
+UiSoundPlayer="*uid://cowdhvxpumh5h"
+SfxSoundPlayer="*uid://o5yddfk1ngjs"
 
 [display]
 
