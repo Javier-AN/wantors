@@ -1,8 +1,8 @@
 class_name PauseMenu
 extends Control
 
-@onready var _resume_button: Button = $VBoxContainer/ResumeButton
-@onready var _exit_button: Button = $VBoxContainer/ExitButton
+@onready var _resume_button: Button = $GlobalContainer/ResumeButton
+@onready var _exit_button: Button = $GlobalContainer/ExitButton
 @onready var menu_scene: PackedScene = load("res://scenes/ui/main_menu/main_menu.tscn")
 
 

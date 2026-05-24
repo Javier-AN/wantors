@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://coldl4h0n58d1"]
 
 [ext_resource type="Script" uid="uid://by5j4w7rlm51t" path="res://scenes/ui/transition_message_screen/transition_message_screen.gd" id="1_2v5y3"]
+[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_control/background_control.tscn" id="2_7t5ix"]
 
 [node name="TransitionMessage" type="CenterContainer" unique_id=1994749828]
 anchors_preset = 15
@@ -9,6 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2v5y3")
+
+[node name="BackgroundControl" parent="." unique_id=2108533997 instance=ExtResource("2_7t5ix")]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="." unique_id=410806861]
 layout_mode = 2

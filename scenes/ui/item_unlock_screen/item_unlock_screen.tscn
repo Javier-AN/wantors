@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://kubeq2hmbqna" path="res://scenes/ui/item_unlock_screen/item_unlock_screen.gd" id="1_xofrp"]
 [ext_resource type="PackedScene" uid="uid://bhr1hfex75jv5" path="res://scenes/ui/main_menu/main_menu.tscn" id="2_ndag6"]
 [ext_resource type="AudioStream" uid="uid://dnmc32gq4wg5t" path="res://assets/music/Jester_s Distraction.ogg" id="3_wx7k7"]
+[ext_resource type="PackedScene" uid="uid://cymlcmslutdit" path="res://scenes/components/background_control/background_control.tscn" id="4_04glr"]
 
 [node name="ItemUnlockScreen" type="Control" unique_id=1143623645]
 layout_mode = 3
@@ -20,6 +21,10 @@ autoplay = true
 bus = &"Music"
 area_mask = 0
 parameters/looping = true
+
+[node name="BackgroundControl" parent="." unique_id=2108533997 instance=ExtResource("4_04glr")]
+z_index = -2
+layout_mode = 1
 
 [node name="GlobalContainer" type="VBoxContainer" parent="." unique_id=1849938282]
 layout_mode = 1

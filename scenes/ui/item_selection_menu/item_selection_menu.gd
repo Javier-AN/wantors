@@ -8,8 +8,7 @@ signal item_chosen
 var picked_items: Array[Item]
 var _first_item: Item
 
-@onready var item_container: Container = $VBoxContainer/ItemContainer
-
+@onready var item_container: Container = $GlobalContainer/ItemContainer
 
 
 # Called when ready
