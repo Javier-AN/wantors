@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	super(delta)
 	if velocity.length() > 0:
 		PositionController.update_position(global_position)
+		PositionController.update_direction(_direction)
 
 
 # Reads input and updates the direction vectors
@@ -44,9 +45,7 @@ func _update_direction():
 	_direction.x = Input.get_axis("move_left", "move_right")
 	_direction.y = Input.get_axis("move_up", "move_down")
 	_direction = _direction.limit_length()
-	PositionController.update_direction(_direction)
 	
-
 
 # Updates the sprite animation
 func _update_animation():

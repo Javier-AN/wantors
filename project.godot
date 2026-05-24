@@ -14,7 +14,9 @@ config/name="wantors"
 run/main_scene="uid://bhr1hfex75jv5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.14509805, 0.11764706, 0.23529412, 1)
-config/icon="res://icon.svg"
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://78frqwmy41sn"
 
 [audio]
 

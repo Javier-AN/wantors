@@ -2,6 +2,7 @@
 MAIN_MENU_PLAY_BUTTON,Play,Jugar,Xogar
 MAIN_MENU_ITEM_COLLECTION_BUTTON,Item collection,Colección de ítems,Colección de ítems
 MAIN_MENU_SETTINGS_BUTTON,Settings,Opciones,Opcións
+MAIN_MENU_CREDITS_BUTTON,Credits,Créditos,Créditos
 MAIN_MENU_EXIT_BUTTON,Exit,Salir,Saír
 
 SETTINGS_TITLE,Settings,Opciones,Opcións
@@ -13,6 +14,15 @@ SETTINGS_BACK_BUTTON,Save and return,Guardar y volver,Gardar e voltar
 
 COLLECTION_TITLE,Collection,Colección,Colección
 COLLECTION_BACK,Back,Atrás,Atrás
+,,,
+CREDITS_TITLE,Credits,Créditos,Créditos
+CREDITS_CREATOR,Creator,Creador,Creador
+CREDITS_WRITER,Item descriptions,Descripción de ítems,Descripcións de ítems
+CREDITS_ARTIST,Beetle sprite,Sprite del escarabajo,Sprite do escaravello
+CREDITS_MUSIC,Music,Música,Música
+CREDITS_MUSIC_AUTOR,Dani Maccari in collaboration with Tallbeard Studios,Dani Maccari en colaboración con Tallbeard Studios,Dani Maccari en colaboración con Tallbeard Studios
+CREDITS_SFX,Sound effects,Efectos de sonido,Efectos de son
+CREDITS_BACK_BUTTON,Back,Atrás,Atrás
 
 PAUSE_TITLE,Game is paused,El juego está en pausa,O xogo está pausado
 PAUSE_RESUME_BUTTON,Resume,Continuar,Continuar

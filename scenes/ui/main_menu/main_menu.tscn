@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cj716r1ilnxwq" path="res://assets/music/Bioluminescence.ogg" id="2_5mqxt"]
 [ext_resource type="PackedScene" uid="uid://b6jgki7kmf2b2" path="res://scenes/components/stars_particles/stars_particles.tscn" id="2_8ouhi"]
 [ext_resource type="Theme" uid="uid://nji3ui210xhs" path="res://theme/theme.tres" id="2_52x6y"]
+[ext_resource type="Texture2D" uid="uid://78frqwmy41sn" path="res://assets/logos/big_logo.png" id="5_8ouhi"]
 
 [node name="MainMenu" type="Control" unique_id=514492351]
 layout_mode = 3
@@ -41,11 +42,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_52x6y")
 
-[node name="TitleLabel" type="Label" parent="MainContainer" unique_id=1674283676]
+[node name="TextureRect" type="TextureRect" parent="MainContainer" unique_id=1594743310]
 layout_mode = 2
-theme_type_variation = &"TitleLabel"
-text = "WANTORS RESIST"
-horizontal_alignment = 1
+texture = ExtResource("5_8ouhi")
+stretch_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="MainContainer" unique_id=86075870]
 layout_mode = 2
@@ -65,6 +65,11 @@ text = "MAIN_MENU_ITEM_COLLECTION_BUTTON"
 layout_mode = 2
 theme_type_variation = &"BoldButton"
 text = "MAIN_MENU_SETTINGS_BUTTON"
+
+[node name="CreditsButton" type="Button" parent="MainContainer" unique_id=322705107]
+layout_mode = 2
+theme_type_variation = &"BoldButton"
+text = "MAIN_MENU_CREDITS_BUTTON"
 
 [node name="ExitButton" type="Button" parent="MainContainer" unique_id=1439049047]
 layout_mode = 2
