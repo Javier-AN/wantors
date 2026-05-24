@@ -28,6 +28,23 @@ func _load_items_in_dir(dir_path):
 		file_name = dir.get_next()
 
 
+## Unlocks the first locked item.
+func unlock_next_item() -> int:
+	var pool_size = item_pool.size()
+	# Check if all items are unlocked
+	if unlocked_items.size() >= pool_size:
+		return -1
+	# Select a random locked item
+	var new_item: int = 0
+	for i in range(item_pool.size()):
+		if i not in unlocked_items:
+			new_item = i
+			break
+	# Unlock it
+	unlocked_items.append(new_item)
+	return new_item
+
+
 ## Unlocks a random item.
 func unlock_random_item() -> int:
 	var pool_size = item_pool.size()

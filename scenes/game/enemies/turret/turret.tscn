@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddqohh2wfestw" path="res://scenes/game/enemies/turret/turret.gd" id="1_21sts"]
 [ext_resource type="Texture2D" uid="uid://brvwq3ywdqg3y" path="res://assets/images/turret_enemy.png" id="3_16tiy"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision_area/soft_collision_area.gd" id="3_riv4i"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/classes/soft_collision_area.gd" id="3_riv4i"]
 [ext_resource type="PackedScene" uid="uid://bwlg0dlnwv7ub" path="res://scenes/game/weapons/enemy_gun/enemy_gun.tscn" id="4_16tiy"]
 [ext_resource type="PackedScene" uid="uid://fmq3rb4at11w" path="res://scenes/game/weapons/bullets/rock_bullet.tscn" id="5_x66dg"]
 [ext_resource type="Texture2D" uid="uid://c5nromwlwksah" path="res://assets/images/rock_gun.png" id="6_igshu"]
@@ -151,7 +151,7 @@ position = Vector2(9, -4)
 scale = Vector2(2, 2)
 muzzle = NodePath("GunMuzzle")
 bullet_scene = ExtResource("5_x66dg")
-bullet_speed = 120.0
+bullet_speed = 110.0
 
 [node name="GunMuzzle" type="Marker2D" parent="Gun" unique_id=355125042]
 position = Vector2(4.5, 0)

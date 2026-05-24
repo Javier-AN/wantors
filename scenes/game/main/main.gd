@@ -54,11 +54,10 @@ func _new_level() -> void:
 	_level_label.text = str(_level + 1)
 	# Adapt difficulty to new level
 	_horde_size = 5 + _level
-	_upgrade_chance = _level * 0.1
-	if _upgrade_chance > 0.4:
-		_upgrade_chance = 0.4
+	# Logarithmic growth, reaching 0.4 on the 10th level.
+	_upgrade_chance = Utils.log_base(_level + 1, 11) * 0.4
 	# Start the spawner
-	spawner.reset_mob_count(5 + _level * 10)
+	spawner.reset_mob_count(10 + _level * 7)
 	timer.start()
 
 

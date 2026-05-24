@@ -34,7 +34,7 @@ ITEM_POTION_SUBTITLE,"Made by a magician, not a physician!",¡Magia que no te ha
 ITEM_MAGAZINE_TITLE,Magazine,Cargador,Cargador
 ITEM_MAGAZINE_SUBTITLE,Very dangerous!,¡Lo carga el diablo!,Cargouno o demo!
 ITEM_BIG_BULLET_TITLE,Big bullet,Gran bala,Gran bala
-ITEM_BIG_BULLET_SUBTITLE,Size doesn't matter!,¡El tamaño no importa!,O tamano non importa!
+ITEM_BIG_BULLET_SUBTITLE,Size does matter!,¡El tamaño importa!,O tamano importa!
 ITEM_GUNPOWDER_TITLE,Gunpowder,Pólvora,Pólvora
 ITEM_GUNPOWDER_SUBTITLE,Don't play with fire!,¡No juegues con fuego!,Non xogues con lume!
 ITEM_ACORN_TITLE,Acorn,Bellota,Bellota

@@ -28,3 +28,8 @@ func pick_randoms(array: Array, n: int) -> Array:
 ## Returns [param file_name] without the [code].remap[/code] extension.
 func trim_remap(file_name: String) -> String:
 	return file_name.left(-6) if file_name.ends_with(".remap") else file_name
+
+
+## Returns the logarithm of [param x] in base [param base].
+func log_base(x: float, base: float):
+	return log(x) / log(base)

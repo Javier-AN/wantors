@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://df6wne60chj4y"]
 
-[ext_resource type="Script" uid="uid://c8a3dh1vu3e6t" path="res://scenes/ui/player_health_bar/player_health_bar.gd" id="1_qib4x"]
+[ext_resource type="Script" uid="uid://c8a3dh1vu3e6t" path="res://scenes/components/player_health_bar/player_health_bar.gd" id="1_qib4x"]
 
 [node name="PlayerHealthBar" type="ProgressBar" unique_id=783831132]
 custom_minimum_size = Vector2(200, 50)

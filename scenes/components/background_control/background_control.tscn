@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cymlcmslutdit"]
 
-[ext_resource type="Script" uid="uid://l8solkl4i6ft" path="res://scenes/components/background_control/background_control.gd" id="1_wlf1n"]
+[ext_resource type="PackedScene" uid="uid://b6jgki7kmf2b2" path="res://scenes/components/stars_particles/stars_particles.tscn" id="1_wlf1n"]
 
 [node name="BackgroundControl" type="ColorRect" unique_id=866268576]
 custom_minimum_size = Vector2(1920, 1080)
@@ -9,4 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wlf1n")
+color = Color(0.14509805, 0.11764706, 0.23529412, 1)
+
+[node name="StarsParticles" parent="." unique_id=355015193 instance=ExtResource("1_wlf1n")]

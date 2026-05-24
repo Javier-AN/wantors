@@ -44,6 +44,8 @@ func _update_direction():
 	_direction.x = Input.get_axis("move_left", "move_right")
 	_direction.y = Input.get_axis("move_up", "move_down")
 	_direction = _direction.limit_length()
+	PositionController.update_direction(_direction)
+	
 
 
 # Updates the sprite animation

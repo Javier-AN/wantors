@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bq5tnrwqnsnxt" path="res://scenes/game/enemies/zombie/zombie.gd" id="1_cuqfc"]
 [ext_resource type="Texture2D" uid="uid://dksxol0qt3lnv" path="res://assets/images/zombie_enemy.png" id="2_ge328"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision_area/soft_collision_area.gd" id="3_hdtn6"]
-[ext_resource type="Script" uid="uid://4y8pwsc7gkm2" path="res://scenes/components/attack_area/attack_area.gd" id="4_ge328"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/classes/soft_collision_area.gd" id="3_hdtn6"]
+[ext_resource type="Script" uid="uid://4y8pwsc7gkm2" path="res://scenes/classes/attack_area.gd" id="4_ge328"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egq3m"]
 atlas = ExtResource("2_ge328")
@@ -164,8 +164,7 @@ radius = 6.0
 size = Vector2(18, 54)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flbma"]
-radius = 9.5
-height = 26.0
+radius = 11.0
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("soft_collision_area", "sprites")]
 y_sort_enabled = true
@@ -174,8 +173,8 @@ collision_mask = 4
 script = ExtResource("1_cuqfc")
 knockback_factor = 1.0
 soft_collision_area = NodePath("SoftCollisionArea")
-speed = 75.0
-max_health = 10
+speed = 80.0
+max_health = 15
 hit_time = 0.4
 sprites = [NodePath("Sprite")]
 

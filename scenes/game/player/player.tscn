@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwe1py1i72efq" path="res://assets/images/player.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bou6d8xgklpvg" path="res://scenes/game/player/player.gd" id="1_dovo2"]
-[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/components/soft_collision_area/soft_collision_area.gd" id="3_lvxji"]
+[ext_resource type="Script" uid="uid://bycill6nappa" path="res://scenes/classes/soft_collision_area.gd" id="3_lvxji"]
 [ext_resource type="PackedScene" uid="uid://dub4gdmwrordq" path="res://scenes/game/weapons/player_gun/player_gun.tscn" id="4_abehh"]
 [ext_resource type="Texture2D" uid="uid://gvtsa1oxgndg" path="res://assets/images/gun.png" id="5_prej5"]
 
@@ -199,7 +199,7 @@ collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_dovo2")
 soft_collision_area = NodePath("SoftCollisionArea")
-speed = 90.0
+speed = 100.0
 max_health = 50
 hit_time = 0.4
 sprites = [NodePath("Sprite"), NodePath("PlayerGun/GunSprite")]

@@ -23,7 +23,7 @@ func _ready() -> void:
 
 
 func _unlock_new_item() -> int:
-	var unlocked := ItemCollectionController.unlock_random_item()
+	var unlocked := ItemCollectionController.unlock_next_item()
 	SaveController.save_game_data()
 	return unlocked
 

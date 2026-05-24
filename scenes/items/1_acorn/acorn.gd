@@ -2,7 +2,7 @@ class_name Acorn
 extends Item
 
 
-const HIT_TIME_PLUS: float = 0.2
+const HIT_TIME_PLUS: float = 0.4
 
 
 func get_description() -> String: 

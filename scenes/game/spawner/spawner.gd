@@ -14,12 +14,14 @@ signal enemies_cleared
 ## Different types of enemies that can be spawned.
 @export var enemies: Array[PackedScene]
 ## Minimum distance from the player at which an enemy can spawn.
-@export var min_distance: float = 200.0
+@export var min_distance: float = 300.0
 ## Maximum distance from the player at which an enemy can spawn.
-@export var max_distance: float = 300.0
+@export var max_distance: float = 600.0
 ## Maxmium number of attempts to find a valid location to spawn an ememy.
 ## After failing this many attempts, the spawn is cancelled.
 @export var max_attempts: int = 10
+## Time in between horde spawns.
+@export var cooldown: float = 0.05
 
 ## Maximum amount of mobs that can be spawned between resets.
 var mob_cap: int = 50
@@ -72,6 +74,7 @@ func spawn_enemies(amount: int, upgrade_chance: float = 0.0) -> void:
 		if spawn_enemy(enemy_type):
 			_mob_count += 1
 			_alive_enemies += 1
+			await get_tree().create_timer(cooldown).timeout
 
 
 # Has a chance to upgrade the enemy type
@@ -108,7 +111,8 @@ func spawn_enemy(enemy_type: int = 0) -> bool:
 func _new_spawn_position() -> Vector2:
 	for i in range(0, max_attempts):
 		# Random angle
-		var angle := randf_range(0.0, 2*PI)
+		var player_angle := PositionController.player_direction.angle()
+		var angle := randf_range(player_angle + PI/4, player_angle + 7*PI/4)
 		# Random valid distance
 		var length := randf_range(min_distance, max_distance)
 		# Build the position vector from the random values

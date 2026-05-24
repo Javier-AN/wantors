@@ -2,8 +2,6 @@ extends Node
 
 ## Background color.
 const BACKGROUND_COLOR := Color("251e3c")
-## Background color.
-const LIGHT_BACKGROUND_COLOR := Color("352a55")
 ## Creature hit color.
 const HIT_COLOR := Color("fffdff")
 ## Player damage color.
