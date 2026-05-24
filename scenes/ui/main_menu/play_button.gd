@@ -7,7 +7,6 @@ extends Button
 
 func _ready() -> void:
 	pressed.connect(_play, CONNECT_ONE_SHOT)
-	grab_focus.call_deferred()
 
 
 func _play() -> void:

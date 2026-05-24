@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.14509805, 0.11764706, 0.23529412, 1)
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ctsv7kmnl1v0p"
+
 [autoload]
 
 PositionController="*uid://0pk52jh70y27"
@@ -27,6 +31,7 @@ SaveController="*uid://hfp5qick1q05"
 PreferencesController="*uid://b1j7fy75x64yd"
 PauseController="*uid://c1873vvnpt3x8"
 BulletController="*uid://cefpfw25o44pn"
+UiSoundController="*uid://cowdhvxpumh5h"
 
 [display]
 
