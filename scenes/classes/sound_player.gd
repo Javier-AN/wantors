@@ -10,6 +10,7 @@ var playback: AudioStreamPlaybackPolyphonic
 func _enter_tree() -> void:
 	# Create an audio player
 	var player = AudioStreamPlayer.new()
+	player.process_mode = Node.PROCESS_MODE_ALWAYS
 	player.bus = "SFX"
 	add_child(player)
 

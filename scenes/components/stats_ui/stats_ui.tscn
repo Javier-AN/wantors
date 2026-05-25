@@ -18,17 +18,25 @@ layout_mode = 2
 layout_mode = 2
 text = "STATS_SPEED"
 
+[node name="PlayerSpeedSeparator" type="Label" parent="PlayerSpeed" unique_id=341849594]
+layout_mode = 2
+text = "-"
+
 [node name="PlayerSpeedValue" type="Label" parent="PlayerSpeed" unique_id=1679737917]
 layout_mode = 2
 
-[node name="PlayerHitTime" type="HBoxContainer" parent="." unique_id=523510573]
+[node name="PlayerProtection" type="HBoxContainer" parent="." unique_id=523510573]
 layout_mode = 2
 
-[node name="PlayerHitTimeText" type="Label" parent="PlayerHitTime" unique_id=2023342636]
+[node name="PlayerProtectionText" type="Label" parent="PlayerProtection" unique_id=2023342636]
 layout_mode = 2
-text = "STATS_HIT_TIME"
+text = "STATS_PROTECTION"
 
-[node name="PlayerHitTimeValue" type="Label" parent="PlayerHitTime" unique_id=1225892155]
+[node name="PlayerProtectionSeparator" type="Label" parent="PlayerProtection" unique_id=34611638]
+layout_mode = 2
+text = "-"
+
+[node name="PlayerProtectionValue" type="Label" parent="PlayerProtection" unique_id=1225892155]
 layout_mode = 2
 
 [node name="BulletSpeed" type="HBoxContainer" parent="." unique_id=32066900]
@@ -37,6 +45,10 @@ layout_mode = 2
 [node name="BulletSpeedText" type="Label" parent="BulletSpeed" unique_id=1763094861]
 layout_mode = 2
 text = "STATS_BULLET_SPEED"
+
+[node name="BulletSpeedSeparator" type="Label" parent="BulletSpeed" unique_id=710631357]
+layout_mode = 2
+text = "-"
 
 [node name="BulletSpeedValue" type="Label" parent="BulletSpeed" unique_id=875869497]
 layout_mode = 2
@@ -48,6 +60,10 @@ layout_mode = 2
 layout_mode = 2
 text = "STATS_DAMAGE"
 
+[node name="BulletDamageSeparator" type="Label" parent="BulletDamage" unique_id=1038198558]
+layout_mode = 2
+text = "-"
+
 [node name="BulletDamageValue" type="Label" parent="BulletDamage" unique_id=35842409]
 layout_mode = 2
 
@@ -57,6 +73,10 @@ layout_mode = 2
 [node name="GunFireRateText" type="Label" parent="GunFireRate" unique_id=832530419]
 layout_mode = 2
 text = "STATS_FIRE_RATE"
+
+[node name="GunFireRateSeaprator" type="Label" parent="GunFireRate" unique_id=727895833]
+layout_mode = 2
+text = "-"
 
 [node name="GunFireRateValue" type="Label" parent="GunFireRate" unique_id=270561025]
 layout_mode = 2

@@ -17,6 +17,7 @@ boot_splash/bg_color=Color(0.14509805, 0.11764706, 0.23529412, 1)
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://78frqwmy41sn"
+config/icon="uid://7og2k7najbvl"
 
 [audio]
 

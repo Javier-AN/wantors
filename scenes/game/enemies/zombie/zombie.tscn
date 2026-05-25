@@ -103,17 +103,17 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kcnii")
 }],
-"loop": false,
+"loop": true,
 "name": &"hit",
-"speed": 8.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ynvao")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
-"speed": 0.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -182,7 +182,7 @@ sprites = [NodePath("Sprite")]
 position = Vector2(0, -1)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_40wdo")
-animation = &"run"
+animation = &"die"
 
 [node name="SolidsCollisionShape" type="CollisionShape2D" parent="." unique_id=1021458062]
 position = Vector2(0, 22)
@@ -211,7 +211,7 @@ shape = SubResource("RectangleShape2D_40wdo")
 position = Vector2(-0.5, 16)
 collision_layer = 0
 script = ExtResource("4_ge328")
-damage = 5
+damage = 10
 metadata/_custom_type_script = "uid://4y8pwsc7gkm2"
 
 [node name="AttackCollisionShape" type="CollisionShape2D" parent="AttackArea" unique_id=793272274]

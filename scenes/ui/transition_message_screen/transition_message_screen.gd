@@ -1,7 +1,8 @@
 class_name TransitionMessage
 extends Control
 
-@onready var _label: Label = $Label
+@onready var _label: Label = $GlobalContainer/Label
+@onready var _ok_button: Button = $GlobalContainer/OkButton
 
 var message: String
 var target: PackedScene
@@ -10,12 +11,8 @@ var target: PackedScene
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	_label.text = message
-
-
-# Called every frame
-func _process(_delta: float) -> void:
-	if Input.is_action_pressed("ui_accept"):
-		_go_to_target()
+	_ok_button.pressed.connect(_go_to_target)
+	_ok_button.grab_focus.call_deferred()
 
 
 # Changes the scene to the target

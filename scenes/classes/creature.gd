@@ -15,6 +15,8 @@ signal disappeared
 #region Variables
 ## Maximum health the mob can have.
 @export var max_health: int
+## Incoming hit damage is multiplied by this factor.
+@export var damage_factor: float = 1.0
 ## Time the hit effects last. 
 @export var hit_time: float
 ## Color the sprites turn during a hit.
@@ -52,10 +54,11 @@ func _ready() -> void:
 ## [param damage] is the amount of damage received.
 ## [param push] is the push vector of the hit.
 func take_hit(damage: int, push := Vector2.ZERO) -> void:
-	_update_health(health - damage)
+	var damage_taken: int = round(damage * damage_factor)
+	_update_health(health - damage_taken)
 	_animate_hit_color()
 	if not dead:
-		_hit_taken(damage, push)
+		_hit_taken(damage_taken, push)
 
 
 # Updates health.

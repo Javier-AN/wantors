@@ -1,19 +1,10 @@
 class_name StatsUI
 extends Control
 
-
-## Text label collection.
-@onready var text_labels: Array[Label] = [
-		$PlayerSpeed/PlayerSpeedText,
-		$PlayerHitTime/PlayerHitTimeText,
-		$BulletSpeed/BulletSpeedText,
-		$BulletDamage/BulletDamageText,
-		$GunFireRate/GunFireRateText,
-	]
 ## Value label for player speed.
 @onready var player_speed_label: Label = $PlayerSpeed/PlayerSpeedValue
 ## Value label for player damage effect time.
-@onready var player_hit_time_label: Label = $PlayerHitTime/PlayerHitTimeValue
+@onready var player_protection_label: Label = $PlayerProtection/PlayerProtectionValue
 ## Value label for bullet speed.
 @onready var bullet_speed_label: Label = $BulletSpeed/BulletSpeedValue
 ## Value label for bullet damage.
@@ -25,7 +16,6 @@ extends Control
 # Called when ready
 func _ready() -> void:
 	visible = PreferencesController.preferences.extended_ui
-	_prepare_text_labels()
 	# Set current values
 	_update_player_stats(StatsController.stats.player_stats)
 	_update_gun_stats(StatsController.stats.gun_stats)
@@ -34,16 +24,10 @@ func _ready() -> void:
 	StatsController.gun_stats_updated.connect(_update_gun_stats)
 
 
-# Adds a separator to each label
-func _prepare_text_labels() -> void:
-	for tl in text_labels:
-		tl.text = tr(tl.text) + ": "
-
-
 # Updates value labels for player stats
 func _update_player_stats(stats: StatsClass.MobStats) -> void:
 	player_speed_label.text = str(stats.speed)
-	player_hit_time_label.text = str(stats.hit_time)
+	player_protection_label.text = str(int(200.0 - stats.damage_factor * 100.0))
 
 
 # Updates value labels for gun stats

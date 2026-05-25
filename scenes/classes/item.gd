@@ -34,7 +34,8 @@ signal pressed
 # Called when ready.
 func _ready() -> void:
 	_create_button()
-	tooltip_text = get_description()
+	if item_control:
+		item_control.description = get_description()
 
 
 ## Generates an explanation of the effect the item has.

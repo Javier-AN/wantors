@@ -10,11 +10,12 @@ SETTINGS_SFX_VOLUME_LABEL,SFX volume,Volumen de los efectos,Volume dos efectos
 SETTINGS_MUSIC_VOLUME_LABEL,Music volume,Volumen de la música,Volume da música
 SETTINGS_LANGUAGE_LABEL,Language,Idioma,Lingua
 SETTINGS_EXTENDED_UI_LABEL,Show stats,Mostrar atributos,Mostrar atributos
+SETTINGS_FULL_SCREEN_LABEL,Full screen,Pantalla completa,Pantalla completa
 SETTINGS_BACK_BUTTON,Save and return,Guardar y volver,Gardar e voltar
 
 COLLECTION_TITLE,Collection,Colección,Colección
 COLLECTION_BACK,Back,Atrás,Atrás
-,,,
+
 CREDITS_TITLE,Credits,Créditos,Créditos
 CREDITS_CREATOR,Creator,Creador,Creador
 CREDITS_WRITER,Item descriptions,Descripción de ítems,Descripcións de ítems
@@ -26,6 +27,7 @@ CREDITS_BACK_BUTTON,Back,Atrás,Atrás
 
 PAUSE_TITLE,Game is paused,El juego está en pausa,O xogo está pausado
 PAUSE_RESUME_BUTTON,Resume,Continuar,Continuar
+PAUSE_SETTINGS_BUTTON,Settings,Opciones,Opcións
 PAUSE_EXIT_BUTTON,Exit,Salir,Saír
 
 STATS_HEALTH,Health,Salud,Saúde
@@ -36,6 +38,7 @@ STATS_BULLET_SPEED,Bullet speed,Velocidad de la bala,Velocidade da bala
 STATS_DAMAGE,Damage,Daño,Dano
 STATS_KNOCKBACK,Knockback,Retroceso,Retroceso
 STATS_FIRE_RATE,Fire rate,Cadencia,Cadencia
+STATS_PROTECTION,Protection,Protección,Protección
 
 ITEM_RED_APPLE_TITLE,Apple,Manzana,Mazá
 ITEM_RED_APPLE_SUBTITLE,Keeps the doctor away!,¡Sana como una manzana!,As patacas non crecen nas árbores!
@@ -54,8 +57,10 @@ ITEM_SELECT,Choose an item,Elige un ítem,Elixe un ítem
 ITEM_LOCKED,Locked,Bloqueado,Bloqueado
 ITEM_UNLOCKED,New item unlocked!,¡Nuevo ítem desbloqueado!,Novo ítem desbloqueado!
 ITEM_ALL_UNLOCKED,All of the items are already unlocked,Todos los ítems están ya desbloqueados,Todos os ítems están xa desbloqueados
+UNLOCK_OK_BUTTON,Ok,Ok,Ok
 
 GAME_LEVEL,LEVEL,NIVEL,NIVEL
 GAME_START,YOU ARE A WANTOR. YOU MUST RESIST.,ERES UN WANTOR. DEBES RESISTIR.,ES UN WANTOR. DEBES RESISTIR.
 GAME_END,"GOOD JOB, WANTOR. KEEP RESISTING.","BUEN TRABAJO, WANTOR. SIGUE RESISTIENDO.","BO TRABALLO, WANTOR. SEGUE RESISTINDO."
 GAME_DEATH,"DON'T SURRENDER, WANTOR. RESIST.",NO TE RINDAS WANTOR. RESISTE.,"NON TE RINDAS, WANTOR. RESISTE."
+MESSAGE_OK_BUTTON,Yes,Sí,Si

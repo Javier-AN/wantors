@@ -12,8 +12,18 @@ grow_vertical = 2
 script = ExtResource("1_2v5y3")
 
 [node name="BackgroundControl" parent="." unique_id=2108533997 instance=ExtResource("2_7t5ix")]
+z_index = -10
 layout_mode = 2
 
-[node name="Label" type="Label" parent="." unique_id=410806861]
+[node name="GlobalContainer" type="VBoxContainer" parent="." unique_id=306846310]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GlobalContainer" unique_id=410806861]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
+horizontal_alignment = 1
+
+[node name="OkButton" type="Button" parent="GlobalContainer" unique_id=301122755]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MESSAGE_OK_BUTTON"

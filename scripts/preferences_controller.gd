@@ -8,6 +8,8 @@ func set_preferences(new_preferences: Preferences) -> void:
 	TranslationServer.set_locale(Constants.LANGS[preferences.language])
 	_set_bus_volume("SFX", preferences.sfx_volume)
 	_set_bus_volume("Music", preferences.music_volume)
+	var value := DisplayServer.WINDOW_MODE_FULLSCREEN if new_preferences.full_screen else DisplayServer.WINDOW_MODE_WINDOWED
+	DisplayServer.window_set_mode(value)
 
 
 func set_language(new_language_index: int) -> void:
@@ -27,6 +29,12 @@ func set_music_volume(new_volume: float) -> void:
 
 func set_extended_ui(new_state: bool) -> void:
 	preferences.extended_ui = new_state
+
+
+func set_full_screen(new_state: bool) -> void:
+	preferences.full_screen = new_state
+	var value := DisplayServer.WINDOW_MODE_FULLSCREEN if new_state else DisplayServer.WINDOW_MODE_WINDOWED
+	DisplayServer.window_set_mode(value)
 
 
 func _set_bus_volume(bus_name: String, volume: float) -> void:

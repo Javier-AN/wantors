@@ -2,13 +2,14 @@ class_name Acorn
 extends Item
 
 
-const HIT_TIME_PLUS: float = 0.4
+const DAMAGE_FACTOR_FACTOR: float = 0.8
 
 
-func get_description() -> String: 
-	return "%s: +%.1f" % [tr(&"STATS_HIT_TIME"), HIT_TIME_PLUS]
+func get_description() -> String:
+	var protection: float = (1.0 - DAMAGE_FACTOR_FACTOR) * 100.0
+	return "%s: +%.f%%" % [tr(&"STATS_PROTECTION"), protection]
 
 
 func transform_stats(stats: StatsClass.Stats) -> StatsClass.Stats:
-	stats.player_stats.hit_time += HIT_TIME_PLUS
+	stats.player_stats.damage_factor *= DAMAGE_FACTOR_FACTOR
 	return stats

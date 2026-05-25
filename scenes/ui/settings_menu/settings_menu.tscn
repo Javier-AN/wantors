@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b6isqb1idy2wk" path="res://scenes/ui/settings_menu/language_selection.gd" id="1_qa56a"]
 [ext_resource type="Script" uid="uid://dnw0ghgfsyy68" path="res://scenes/ui/settings_menu/extended_ui_check_button.gd" id="2_225ns"]
 [ext_resource type="Script" uid="uid://ba8dkelfjlh5p" path="res://scenes/ui/settings_menu/music_volume_slider.gd" id="2_ying2"]
+[ext_resource type="Script" uid="uid://ccspj4n6387po" path="res://scenes/ui/settings_menu/full_screen_check_button.gd" id="6_ijx8i"]
 
 [node name="SettingsMenu" type="MarginContainer" unique_id=516747370]
 anchors_preset = 15
@@ -96,6 +97,12 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../LanguageSelectionContainer/NextLanguageButton")
 text = "SETTINGS_EXTENDED_UI_LABEL"
 script = ExtResource("2_225ns")
+
+[node name="FullScreenCheckButton" type="CheckButton" parent="GlobalContainer" unique_id=953492034]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LanguageSelectionContainer/NextLanguageButton")
+text = "SETTINGS_FULL_SCREEN_LABEL"
+script = ExtResource("6_ijx8i")
 
 [node name="HSeparatorBottom" type="HSeparator" parent="GlobalContainer" unique_id=1566099768]
 layout_mode = 2

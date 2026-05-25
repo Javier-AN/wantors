@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cg38ejkuuhcxp" path="res://scenes/components/item_control/item_control.gd" id="1_eltgw"]
 
 [node name="ItemControl" type="MarginContainer" unique_id=1156721269]
-custom_minimum_size = Vector2(550, 120)
+custom_minimum_size = Vector2(550, 200)
 offset_right = 350.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
@@ -31,7 +31,10 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="GlobalContainer/PanelContainer/MarginContainer" unique_id=187316164]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
 expand_mode = 2
 stretch_mode = 5
@@ -47,6 +50,11 @@ layout_mode = 2
 theme_type_variation = &"BoldLabel"
 
 [node name="SubtitleLabel" type="Label" parent="GlobalContainer/TextContainer" unique_id=1528107227]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="DescriptionLabel" type="Label" parent="GlobalContainer/TextContainer" unique_id=1176119470]
 custom_minimum_size = Vector2(238, 0)
 layout_mode = 2
 autowrap_mode = 3

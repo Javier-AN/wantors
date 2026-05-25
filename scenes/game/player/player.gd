@@ -70,7 +70,7 @@ func _update_animation():
 #endregion
 
 
-#region Stats and health
+#region Hit and die
 
 func take_hit(damage: int, push := Vector2.ZERO) -> void:
 	if not _invulnerable:
@@ -84,11 +84,27 @@ func _hit_ended() -> void:
 	_invulnerable = false
 
 
+# Called when health reaches zero.
+func _die():
+	super()
+	if gun:
+		gun.queue_free()
+	if _damage_collision:
+		_damage_collision.queue_free()
+	_sprite.play("die")
+	_sprite.animation_finished.connect(_disappear)
+
+#endregion
+
+
+#region Stats
+
 # Updates self stat values.
 func _update_stats(stats: StatsClass.MobStats) -> void:
 	speed = stats.speed
 	hit_time = stats.hit_time
 	max_health = stats.max_health
+	damage_factor = stats.damage_factor
 	_global_update_stats()
 	_update_health(health)
 
@@ -101,7 +117,7 @@ func _update_health(new_health: int):
 
 # Tells global controller values were changed.
 func _global_update_stats():
-	var stats := StatsClass.MobStats.new(speed, hit_time, max_health)
+	var stats := StatsClass.MobStats.new(speed, hit_time, max_health, damage_factor)
 	StatsController.update_player_stats(stats)
 
 
@@ -109,16 +125,6 @@ func _global_update_stats():
 func _global_update_health():
 	StatsController.update_player_health(health)
 
-
-# Called when health reaches zero.
-func _die():
-	super()
-	if gun:
-		gun.queue_free()
-	if _damage_collision:
-		_damage_collision.queue_free()
-	_sprite.play("die")
-	_sprite.animation_finished.connect(_disappear)
 
 #endregion
 

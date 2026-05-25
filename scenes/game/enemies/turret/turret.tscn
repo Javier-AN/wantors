@@ -82,17 +82,17 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_71dqq")
 }],
-"loop": false,
+"loop": true,
 "name": &"hit",
-"speed": 0.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kn4k8")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
-"speed": 0.0
+"speed": 1.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_numyy"]

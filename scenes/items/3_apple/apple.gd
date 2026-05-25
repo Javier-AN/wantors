@@ -2,7 +2,7 @@ class_name RedApple
 extends Item
 
 
-const MAX_HEALTH_PLUS: int = 20
+const MAX_HEALTH_PLUS: int = 25
 
 
 func get_description() -> String: 

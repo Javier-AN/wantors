@@ -24,11 +24,14 @@ class MobStats:
 	var hit_time: float
 	## Mob health.
 	var max_health: int
+	## Mob damage factor.
+	var damage_factor: float
 
-	func _init(s: float, det: float, mh: int):
+	func _init(s: float, det: float, mh: int, df: float):
 		speed = s
 		hit_time = det
 		max_health = mh
+		damage_factor = df
 
 
 ## Gun stat values collection.
