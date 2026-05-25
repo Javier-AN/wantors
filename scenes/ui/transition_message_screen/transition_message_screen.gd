@@ -1,22 +1,22 @@
 class_name TransitionMessage
 extends Control
 
-@onready var _timer: Timer = $Timer
-@onready var _label: Label = $GlobalContainer/Label
-@onready var _ok_button: Button = $GlobalContainer/OkButton
-
 var message: String
 var target: PackedScene
 var typing_interval: float = 0.06
 var _translated_text: String
 var _current_char: int = 0
 
+@onready var _timer: Timer = $Timer
+@onready var _label: Label = $GlobalContainer/Label
+@onready var _ok_button: Button = $GlobalContainer/OkButton
+
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	_translated_text = tr(message)
 	_timer.timeout.connect(_type)
-	_timer.start(typing_interval * 20)
+	_timer.start(typing_interval * 10)
 
 
 # Types the next letter

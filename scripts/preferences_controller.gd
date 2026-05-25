@@ -1,5 +1,7 @@
 extends Node
 
+signal stats_visibility_changed
+
 var preferences: Preferences
 
 
@@ -29,6 +31,7 @@ func set_music_volume(new_volume: float) -> void:
 
 func set_extended_ui(new_state: bool) -> void:
 	preferences.extended_ui = new_state
+	stats_visibility_changed.emit(new_state)
 
 
 func set_full_screen(new_state: bool) -> void:

@@ -2,11 +2,11 @@ class_name Turret
 extends Creature
 ## An AI controlled enemy mob that follows the player around.
 
-## Enemy sprite.
+# Enemy sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
-## Enemy gun.
+# Enemy gun.
 @onready var _gun: EnemyGun = $Gun
-## Hitbox for receicing damage.
+# Hitbox for receicing damage.
 @onready var _damage_body: StaticBody2D = $DamageCollisionBody
 # Indicates if the node is flipped horizontally.
 @onready var _flipped: bool = global_position.x > 0

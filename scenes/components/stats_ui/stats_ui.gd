@@ -15,7 +15,8 @@ extends Control
 
 # Called when ready
 func _ready() -> void:
-	visible = PreferencesController.preferences.extended_ui
+	_set_visibility(PreferencesController.preferences.extended_ui)
+	PreferencesController.stats_visibility_changed.connect(_set_visibility)
 	# Set current values
 	_update_player_stats(StatsController.stats.player_stats)
 	_update_gun_stats(StatsController.stats.gun_stats)
@@ -24,14 +25,19 @@ func _ready() -> void:
 	StatsController.gun_stats_updated.connect(_update_gun_stats)
 
 
+# Sets the visibility
+func _set_visibility(new_state: bool) -> void:
+	visible = new_state
+
+
 # Updates value labels for player stats
 func _update_player_stats(stats: StatsClass.MobStats) -> void:
-	player_speed_label.text = str(stats.speed)
+	player_speed_label.text = str(int(stats.speed))
 	player_protection_label.text = str(int(200.0 - stats.damage_factor * 100.0))
 
 
 # Updates value labels for gun stats
 func _update_gun_stats(stats: StatsClass.GunStats) -> void:
-	bullet_speed_label.text = str(stats.bullet_speed)
+	bullet_speed_label.text = str(int(stats.bullet_speed))
 	bullet_damage_label.text = str(stats.bullet_damage)
 	gun_fire_rate_label.text = str(snapped(10 / stats.shooting_cooldown, 0.1))

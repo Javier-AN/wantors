@@ -6,7 +6,7 @@ extends Area2D
 @export var damage: int
 
 
-# Called when ready.
+# Called every tick.
 func _physics_process(_delta: float) -> void:
 	if has_overlapping_bodies():
 		var target := get_overlapping_bodies()[0].get_parent()

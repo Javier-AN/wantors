@@ -20,7 +20,7 @@ text = "STATS_SPEED"
 
 [node name="PlayerSpeedSeparator" type="Label" parent="PlayerSpeed" unique_id=341849594]
 layout_mode = 2
-text = "-"
+text = ":"
 
 [node name="PlayerSpeedValue" type="Label" parent="PlayerSpeed" unique_id=1679737917]
 layout_mode = 2
@@ -34,7 +34,7 @@ text = "STATS_PROTECTION"
 
 [node name="PlayerProtectionSeparator" type="Label" parent="PlayerProtection" unique_id=34611638]
 layout_mode = 2
-text = "-"
+text = ":"
 
 [node name="PlayerProtectionValue" type="Label" parent="PlayerProtection" unique_id=1225892155]
 layout_mode = 2
@@ -48,7 +48,7 @@ text = "STATS_BULLET_SPEED"
 
 [node name="BulletSpeedSeparator" type="Label" parent="BulletSpeed" unique_id=710631357]
 layout_mode = 2
-text = "-"
+text = ":"
 
 [node name="BulletSpeedValue" type="Label" parent="BulletSpeed" unique_id=875869497]
 layout_mode = 2
@@ -62,7 +62,7 @@ text = "STATS_DAMAGE"
 
 [node name="BulletDamageSeparator" type="Label" parent="BulletDamage" unique_id=1038198558]
 layout_mode = 2
-text = "-"
+text = ":"
 
 [node name="BulletDamageValue" type="Label" parent="BulletDamage" unique_id=35842409]
 layout_mode = 2
@@ -76,7 +76,7 @@ text = "STATS_FIRE_RATE"
 
 [node name="GunFireRateSeaprator" type="Label" parent="GunFireRate" unique_id=727895833]
 layout_mode = 2
-text = "-"
+text = ":"
 
 [node name="GunFireRateValue" type="Label" parent="GunFireRate" unique_id=270561025]
 layout_mode = 2

@@ -6,9 +6,15 @@ extends ProgressBar
 
 # Called when ready
 func _ready() -> void:
-	_label.visible = PreferencesController.preferences.extended_ui
+	_set_visibility(PreferencesController.preferences.extended_ui)
+	PreferencesController.stats_visibility_changed.connect(_set_visibility)
 	_update_player_health(StatsController.player_health)
 	StatsController.player_health_updated.connect(_update_player_health)
+
+
+# Sets the visibility of the label
+func _set_visibility(new_state: bool) -> void:
+	_label.visible = new_state
 
 
 # Updates value label for player health

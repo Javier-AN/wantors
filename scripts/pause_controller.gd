@@ -40,6 +40,7 @@ func force_quit() -> void:
 	game_paused = false
 	pause_menu_visible = false
 	_update()
+	SfxSoundPlayer.reset()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 

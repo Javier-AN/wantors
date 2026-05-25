@@ -103,7 +103,7 @@ height = 27.995735
 height = 44.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wdo"]
-size = Vector2(18, 44)
+size = Vector2(18, 38)
 
 [node name="Turret" type="CharacterBody2D" unique_id=1900202702 node_paths=PackedStringArray("sprites")]
 y_sort_enabled = true
@@ -142,7 +142,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageCollisionBody" unique_id=1156815274]
-position = Vector2(1.5, -26.5)
+position = Vector2(1.5, -23.5)
 shape = SubResource("RectangleShape2D_40wdo")
 
 [node name="Gun" parent="." unique_id=1026290943 node_paths=PackedStringArray("muzzle") instance=ExtResource("4_16tiy")]

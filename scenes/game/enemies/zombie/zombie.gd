@@ -2,11 +2,11 @@ class_name Zombie
 extends EnemyMob
 ## An AI controlled enemy mob that follows the player around.
 
-## Enemy sprite.
+# Enemy sprite.
 @onready var _sprite: AnimatedSprite2D = $Sprite
-## Hitbox for receicing damage.
+# Hitbox for receicing damage.
 @onready var _damage_body: StaticBody2D = $DamageCollisionBody
-## Hitbox for producing damage.
+# Hitbox for producing damage.
 @onready var _attack_area: AttackArea = $AttackArea
 
 
