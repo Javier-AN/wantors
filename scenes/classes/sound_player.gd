@@ -5,12 +5,13 @@ extends Node
 ## https://forum.godotengine.org/t/best-proper-way-to-do-ui-sounds-hover-click/39081/2
 
 var playback: AudioStreamPlaybackPolyphonic
+var pausable: bool
 
 
 func _enter_tree() -> void:
 	# Create an audio player
 	var player = AudioStreamPlayer.new()
-	player.process_mode = Node.PROCESS_MODE_ALWAYS
+	player.process_mode = PROCESS_MODE_PAUSABLE if pausable else PROCESS_MODE_ALWAYS
 	player.bus = "SFX"
 	add_child(player)
 

@@ -1,6 +1,11 @@
 extends SoundPlayer
 
 
+func _enter_tree():
+	pausable = true
+	super()
+
+
 func _on_node_added(node: Node) -> void:
 	if node is Player:
 		node.hit.connect(_play_player_hit)
