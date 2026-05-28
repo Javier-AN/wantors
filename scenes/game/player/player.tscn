@@ -244,7 +244,7 @@ scale = Vector2(2, 2)
 muzzle = NodePath("GunMuzzle")
 
 [node name="GunMuzzle" type="Marker2D" parent="PlayerGun" unique_id=1616912414]
-position = Vector2(12, 0)
+position = Vector2(14, 0)
 
 [node name="GunSprite" type="AnimatedSprite2D" parent="PlayerGun" unique_id=496845377]
 position = Vector2(8.5, 0)

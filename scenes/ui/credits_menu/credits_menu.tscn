@@ -25,86 +25,121 @@ horizontal_alignment = 1
 [node name="HSeparatorTop" type="HSeparator" parent="GlobalContainer" unique_id=1171037322]
 layout_mode = 2
 
-[node name="CreditsContainer" type="VBoxContainer" parent="GlobalContainer" unique_id=777280056]
+[node name="ScrollContainer" type="ScrollContainer" parent="GlobalContainer" unique_id=341613340]
+custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
-theme_override_constants/separation = 50
+horizontal_scroll_mode = 0
 
-[node name="CreatorContainer" type="VBoxContainer" parent="GlobalContainer/CreditsContainer" unique_id=740804983]
+[node name="MarginContainer" type="MarginContainer" parent="GlobalContainer/ScrollContainer" unique_id=1892607810]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="CreditsContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer" unique_id=777280056]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 80
+
+[node name="CreatorContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=740804983]
 layout_mode = 2
 
-[node name="CreatorTextLabel" type="Label" parent="GlobalContainer/CreditsContainer/CreatorContainer" unique_id=349247871]
+[node name="CreatorTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/CreatorContainer" unique_id=349247871]
 layout_mode = 2
 theme_type_variation = &"MenuLabel"
 text = "CREDITS_CREATOR"
 horizontal_alignment = 1
 
-[node name="CreatorLabel" type="Label" parent="GlobalContainer/CreditsContainer/CreatorContainer" unique_id=222664554]
+[node name="CreatorLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/CreatorContainer" unique_id=222664554]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
 text = "Javier Álvarez"
 horizontal_alignment = 1
 
-[node name="WriterContainer" type="VBoxContainer" parent="GlobalContainer/CreditsContainer" unique_id=2087726169]
+[node name="WriterContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=2087726169]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="WriterTextLabel" type="Label" parent="GlobalContainer/CreditsContainer/WriterContainer" unique_id=2024245135]
+[node name="WriterTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/WriterContainer" unique_id=2024245135]
 layout_mode = 2
 theme_type_variation = &"MenuLabel"
 text = "CREDITS_WRITER"
 horizontal_alignment = 1
 
-[node name="WriterLabel" type="Label" parent="GlobalContainer/CreditsContainer/WriterContainer" unique_id=53473288]
+[node name="WriterLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/WriterContainer" unique_id=53473288]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
 text = "Javier Álvarez, Noa Punzón"
 horizontal_alignment = 1
 
-[node name="ArtistContainer" type="VBoxContainer" parent="GlobalContainer/CreditsContainer" unique_id=688772940]
+[node name="ArtistContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=688772940]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ArtistTextLabel" type="Label" parent="GlobalContainer/CreditsContainer/ArtistContainer" unique_id=299501757]
+[node name="ArtistTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/ArtistContainer" unique_id=299501757]
 layout_mode = 2
 theme_type_variation = &"MenuLabel"
 text = "CREDITS_ARTIST"
 horizontal_alignment = 1
 
-[node name="ArtistLabel" type="Label" parent="GlobalContainer/CreditsContainer/ArtistContainer" unique_id=1190750196]
+[node name="ArtistLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/ArtistContainer" unique_id=1190750196]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
 text = "Olivia Meijide"
 horizontal_alignment = 1
 
-[node name="MusicContainer" type="VBoxContainer" parent="GlobalContainer/CreditsContainer" unique_id=1486858452]
+[node name="MusicContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=1486858452]
 layout_mode = 2
 
-[node name="MusicTextLabel" type="Label" parent="GlobalContainer/CreditsContainer/MusicContainer" unique_id=946326375]
+[node name="MusicTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/MusicContainer" unique_id=946326375]
 layout_mode = 2
 theme_type_variation = &"MenuLabel"
 text = "CREDITS_MUSIC"
 horizontal_alignment = 1
 
-[node name="MusicLabel" type="Label" parent="GlobalContainer/CreditsContainer/MusicContainer" unique_id=1586089799]
+[node name="MusicLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/MusicContainer" unique_id=1586089799]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
 text = "CREDITS_MUSIC_AUTOR"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="SFXContainer" type="VBoxContainer" parent="GlobalContainer/CreditsContainer" unique_id=456267480]
+[node name="SFXContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=456267480]
 layout_mode = 2
 
-[node name="SFXTextLabel" type="Label" parent="GlobalContainer/CreditsContainer/SFXContainer" unique_id=2092269425]
+[node name="SFXTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/SFXContainer" unique_id=2092269425]
 layout_mode = 2
 theme_type_variation = &"MenuLabel"
 text = "CREDITS_SFX"
 horizontal_alignment = 1
 
-[node name="SFXLabel" type="Label" parent="GlobalContainer/CreditsContainer/SFXContainer" unique_id=604018021]
+[node name="SFXLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/SFXContainer" unique_id=604018021]
 layout_mode = 2
 theme_type_variation = &"BoldLabel"
 text = "JDSherbert"
+horizontal_alignment = 1
+
+[node name="FontsContainer" type="VBoxContainer" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer" unique_id=742669167]
+layout_mode = 2
+
+[node name="FontsTextLabel" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/FontsContainer" unique_id=2131851753]
+layout_mode = 2
+theme_type_variation = &"MenuLabel"
+text = "CREDITS_FONTS"
+horizontal_alignment = 1
+
+[node name="FontLabel1" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/FontsContainer" unique_id=1776563511]
+layout_mode = 2
+theme_type_variation = &"BoldLabel"
+text = "CREDITS_FONT_1"
+horizontal_alignment = 1
+
+[node name="FontLabel2" type="Label" parent="GlobalContainer/ScrollContainer/MarginContainer/CreditsContainer/FontsContainer" unique_id=1510489553]
+layout_mode = 2
+theme_type_variation = &"BoldLabel"
+text = "CREDITS_FONT_2"
 horizontal_alignment = 1
 
 [node name="HSeparatorBottom" type="HSeparator" parent="GlobalContainer" unique_id=1566099768]

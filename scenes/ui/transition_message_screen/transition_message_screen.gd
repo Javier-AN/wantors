@@ -19,6 +19,13 @@ func _ready() -> void:
 	_timer.start(typing_interval * 10)
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		_timer.stop()
+		_label.text = _translated_text
+		_show_button()
+
+
 # Types the next letter
 func _type() -> void:
 	if _current_char < _translated_text.length():
@@ -42,7 +49,8 @@ func _type() -> void:
 # Shows the ok button
 func _show_button() -> void:
 	_ok_button.visible = true
-	_ok_button.pressed.connect(_go_to_target)
+	if not _ok_button.pressed.is_connected(_go_to_target):
+		_ok_button.pressed.connect(_go_to_target)
 	_ok_button.grab_focus.call_deferred()
 
 
