@@ -9,9 +9,9 @@ Wantors is a top-down shooter roguelite game made with Godot.
 
 # Licenses
 
-- Texts, logos and the name Wantors: All rights reserved, no license granted.
+- Texts, logos and the name Wantors: All rights reserved, no license granted. May be shown and used to showcase the game.
 - Source code: [The Unlicense](https://unlicense.org).
-- Sprites: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed).
+- Sprites: [Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 - Other assets: See credits.
 
 # Credits
