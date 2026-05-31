@@ -1,20 +1,40 @@
 Wantors is a top-down shooter roguelite game made with Godot.
 
-# Installation
+# 1. Installation
 
 1. Go to [Releases](https://github.com/Javier-AN/wantors-resist/releases), the top one is the latest.
 2. Under Assets, download the specific zip for your OS.
 3. Unzip it.
-4. Run the executable to open the game.
 
-# Licenses
+# 2. How to play
+
+Open wantors_version.exe (Windows) or wantors_version.x86_64 (Linux) to play.
+
+## Controls
+
+| Controls | Keyboard        | Controller     |
+| -------- | --------------- | -------------- |
+| Movement | WASD            | Left joystick  |
+| Shoot    | Keyboard arrows | Right joystick |
+| Pause    | Esc             | Start          |
+
+## Cheat codes
+
+| Keyboard key | Where to use it | Effect               |
+| ------------ | --------------- | -------------------- |
+| Home         | While playing   | End current level    |
+| End          | While playing   | Win instantly        |
+| Page down    | Item collection | Unlock the next item |
+| Page up      | Item collection | Reset item unlocks   |
+
+# 3. Licenses
 
 - Texts, logos and the name Wantors: All rights reserved, no license granted. May be shown and used to showcase the game.
 - Source code: [The Unlicense](https://unlicense.org).
 - Sprites: [Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 - Other assets: See credits.
 
-# Credits
+# 4. Credits
 
 ## Music
 

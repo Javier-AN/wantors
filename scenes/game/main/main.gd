@@ -6,7 +6,7 @@ var _level: int = 0
 var _horde_size: int
 var _upgrade_chance: float
 
-@onready var _final_level: int = 2 + ItemCollectionController.unlocked_items.size()
+@onready var _final_level: int = ItemCollectionController.unlocked_items.size()
 
 @onready var player: Player = $Player
 @onready var timer: Timer = $Timer
@@ -37,11 +37,12 @@ func _ready() -> void:
 	_new_level()
 
 
-# Called every tick
-func _physics_process(_delta: float) -> void:
-	# ONLY FOR TESTING PURPOSES
-	if Input.is_action_just_pressed("ui_home"):
-		_level_finished()
+# CHEATS. ONLY FOR TESTING PURPOSES.
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_home"):
+		spawner.clear()
+	elif event.is_action_pressed("ui_end"):
+		_end_game()
 
 
 # Spawns a new horde of enemies

@@ -28,6 +28,11 @@ func _load_items_in_dir(dir_path):
 		file_name = dir.get_next()
 
 
+## Resets the unlocked items.
+func reset_unlocks() -> void:
+	unlocked_items = [0, 1]
+
+
 ## Unlocks the first locked item.
 func unlock_next_item() -> int:
 	var pool_size = item_pool.size()

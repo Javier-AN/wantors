@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="wantors"
+config/name="Wantors Resist"
 run/main_scene="uid://bhr1hfex75jv5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.14509805, 0.11764706, 0.23529412, 1)

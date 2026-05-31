@@ -59,6 +59,17 @@ func reset_mob_count(new_cap: int = 0) -> void:
 		mob_cap = new_cap
 
 
+## Fills the mob cap and deletes all enemies.
+func clear() -> void:
+	_mob_count = mob_cap
+	_mob_cap_reached = true
+	mob_cap_reached.emit()
+	for enemy in _enemy_container.get_children():
+		enemy.queue_free()
+	_alive_enemies = 0
+	enemies_cleared.emit()
+
+
 ## Spawns a group of enemies.
 ## 
 ## [param amount] dictates the number of enemies that should try to spawn.
